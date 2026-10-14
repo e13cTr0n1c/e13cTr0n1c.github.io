@@ -793,6 +793,27 @@
     }
   </style>
   <link rel="stylesheet" href="../../assets/chrome.css">
+<style>/* ps-letter */
+.ps-pair{display:grid;gap:20px;margin:20px 0}
+@media (min-width:900px){.ps-pair{grid-template-columns:3fr 2fr;align-items:start}.ps-pair .ps-offer{margin:0}}
+.ps-letter{margin:0;padding:18px;background:#fff;color:#000;border:3px solid #000;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:15px;line-height:1.5}
+.ps-letter h2{font-family:'Arial Black',Arial,sans-serif;font-size:19px;line-height:1.25;margin:0 0 8px;color:#000}
+.ps-letter p{margin:0 0 10px}
+.ps-letter .ps-fields{display:grid;gap:10px;margin:0 0 12px}
+.ps-letter label{display:block;font-size:13px;font-weight:700;margin:0 0 4px}
+.ps-letter input{width:100%;box-sizing:border-box;min-height:44px;padding:8px 10px;font:inherit;background:#fff;color:#000;border:2px solid #000;border-radius:0}
+.ps-letter input:focus-visible,.ps-letter button:focus-visible,.ps-letter a:focus-visible{outline:3px solid #000;outline-offset:2px;box-shadow:0 0 0 6px #d6ff00}
+.ps-letter .ps-paper{white-space:pre-wrap;word-wrap:break-word;background:#fbfbf7;border:1px solid #000;border-left:6px solid #d6ff00;padding:14px;margin:0 0 12px;font-size:14px;max-height:none}
+.ps-letter .ps-acts{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.ps-letter button,.ps-letter .ps-buy{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 16px;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;border:2px solid #000}
+.ps-letter button{background:#fff;color:#000}
+.ps-letter .ps-buy{background:#d6ff00;color:#000}
+.ps-letter .ps-buy:hover{background:#000;color:#d6ff00}
+.ps-letter .ps-note{font-size:13px}
+.ps-offer .ps-deal{display:inline-block;background:#000;color:#d6ff00;padding:2px 8px;font-weight:700}
+@media (max-width:420px){.ps-letter{padding:14px}.ps-letter .ps-acts>*{flex:1 1 100%}}
+@media (prefers-reduced-motion:reduce){.ps-letter *,.ps-offer *{transition:none!important;animation:none!important}}
+</style>
 <style>/* ps-offer */
 .ps-offer{margin:20px 0;padding:18px;background:#fff;color:#000;border:3px solid #000;box-shadow:6px 6px 0 #d6ff00;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:15px;line-height:1.5}
 .ps-offer h2{font-family:'Arial Black',Arial,sans-serif;font-size:19px;line-height:1.25;margin:0 0 10px;color:#000}
@@ -883,10 +904,60 @@
         <div class="result-row total"><span class="result-label">Invoice + interest + compensation</span><span class="result-value" id="out-grand"></span></div>
       </div>
     </section>
+<div class="ps-pair">
+<section class="ps-letter" id="claim-letter" aria-labelledby="ps-letter-h"><h2 id="ps-letter-h">Your claim letter, free preview</h2>
+<p>I fill in your own figures from the calculator. Nothing leaves your browser.</p>
+<div class="ps-fields"><div><label for="ps-l-me">Your name or business</label><input id="ps-l-me" type="text" autocomplete="organization"></div><div><label for="ps-l-them">Customer name</label><input id="ps-l-them" type="text" autocomplete="off"></div><div><label for="ps-l-inv">Invoice number</label><input id="ps-l-inv" type="text" autocomplete="off"></div></div>
+<div class="ps-paper" id="ps-letter-paper" aria-live="polite"></div>
+<div class="ps-acts"><button type="button" id="ps-letter-copy" hidden>Copy the letter</button><span id="ps-letter-status" class="ps-note" role="status"></span></div>
+<p class="ps-note">This is a template, not legal advice. Check the figures and the facts before you send it.</p>
+</section>
 <aside class="ps-offer" aria-labelledby="ps-offer-h"><h2 id="ps-offer-h">Want this tracked all year?</h2>
 <p>The UK Freelancer Time, Invoice &amp; Late Payment Tracker 2026/27 does it in one sheet.</p>
 <p><a class="ps-buy" href="https://arthurverse67.gumroad.com/l/kjxnrp?ref=ps-late-payment-interest-calculator">Get the tracker (£14.99)</a></p>
 </aside>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var L = window.LatePay, $ = function (id) { return document.getElementById(id); }, form = $('lp-form'), box = $('ps-letter-paper');
+  if (!L || !form || !box) return;
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function today() { var d = new Date(); return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+  function gbp(n) { return '£' + Number(n).toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+  function pct(n) { return Number(n).toFixed(2).replace(/\.?0+$/, '') + '%'; }
+  function v(id, d) { var x = $(id).value.trim(); return x || d; }
+  function draw() {
+    var mode = form.querySelector('input[name="mode"]:checked').value, input = { amount: $('amount').value, paidDate: $('paid').value || today() };
+    if (mode === 'due') input.dueDate = $('due').value; else { input.invoiceDate = $('invdate').value; input.termsDays = $('terms').value; }
+    var r = $('amount').value === '' ? { error: 1 } : L.calculate(input), copy = $('ps-letter-copy');
+    if (r.error || !r.late) { box.textContent = 'Enter a late invoice above and your claim letter appears here, with your own figures.'; copy.hidden = true; return; }
+    copy.hidden = false;
+    var me = v('ps-l-me', '[Your name or business]'), them = v('ps-l-them', '[Customer name]'), inv = v('ps-l-inv', '[number]'), ri = r.rateInfo;
+    var paidAlready = r.paidDate < today();
+    var lines = [
+      me, '', L.nice(L.parse(today())), '', 'Dear ' + them + ',', '',
+      'Invoice ' + inv + ': claim for statutory interest and compensation', '',
+      'Invoice ' + inv + ' for ' + gbp(r.amount) + ' was due for payment on ' + r.dueNice + '. ' + (paidAlready ? 'It was paid on ' + r.paidNice + ', ' + r.daysLate + ' days late.' : 'It is now ' + r.daysLate + ' days overdue and has not been paid.'), '',
+      'Under the Late Payment of Commercial Debts (Interest) Act 1998, I am claiming:', '',
+      'Statutory interest at ' + pct(r.rate) + ' a year (8% plus the Bank of England base rate of ' + pct(ri.base) + ' on ' + ri.refNice + '), from ' + r.interestStartNice + ' to ' + r.paidNice + ': ' + gbp(r.interest) + ' (' + gbp(r.daily) + ' a day for ' + r.daysLate + ' days).', '',
+      'Fixed compensation for the cost of recovering the debt: ' + gbp(r.compensation) + '.', '',
+      (paidAlready ? 'Please pay ' + gbp(r.total) + ' within 7 days of the date of this letter.' : 'Please pay ' + gbp(r.grandTotal) + ', which is the invoice plus the amounts above, within 7 days of the date of this letter. Interest keeps running at ' + gbp(r.daily) + ' a day until the invoice is paid.'), '',
+      'My bank details are on the original invoice. If you think any of this is wrong, please tell me straight away.', '',
+      'Yours sincerely,', '', me
+    ];
+    box.textContent = lines.join('\n');
+  }
+  form.addEventListener('input', draw); form.addEventListener('change', draw);
+  ['ps-l-me', 'ps-l-them', 'ps-l-inv'].forEach(function (id) { $(id).addEventListener('input', draw); });
+  $('ps-letter-copy').addEventListener('click', function () {
+    var t = box.textContent, s = $('ps-letter-status');
+    function ok() { s.textContent = 'Copied. Paste it into an email or a document.'; }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(ok, function () { s.textContent = 'Select the letter and copy it by hand.'; });
+    else s.textContent = 'Select the letter and copy it by hand.';
+  });
+  draw();
+});
+</script>
 
     <section class="prose" id="how-it-works" aria-labelledby="how-h">
       <h2 id="how-h">How statutory interest is worked out</h2>
