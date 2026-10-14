@@ -810,7 +810,7 @@
 .ps-letter .ps-buy{background:#d6ff00;color:#000}
 .ps-letter .ps-buy:hover{background:#000;color:#d6ff00}
 .ps-letter .ps-note{font-size:13px}
-.ps-offer .ps-deal{display:inline-block;background:#000;color:#d6ff00;padding:2px 8px;font-weight:700}
+.ps-offer .ps-deal{display:inline-flex;align-items:center;min-height:44px;background:#000;color:#d6ff00;padding:4px 10px;font-weight:700;text-decoration:underline}.ps-offer .ps-deal:hover{text-decoration:none}
 @media (max-width:420px){.ps-letter{padding:14px}.ps-letter .ps-acts>*{flex:1 1 100%}}
 @media (prefers-reduced-motion:reduce){.ps-letter *,.ps-offer *{transition:none!important;animation:none!important}}
 </style>
@@ -910,10 +910,13 @@
 <div class="ps-fields"><div><label for="ps-l-me">Your name or business</label><input id="ps-l-me" type="text" autocomplete="organization"></div><div><label for="ps-l-them">Customer name</label><input id="ps-l-them" type="text" autocomplete="off"></div><div><label for="ps-l-inv">Invoice number</label><input id="ps-l-inv" type="text" autocomplete="off"></div></div>
 <div class="ps-paper" id="ps-letter-paper" aria-live="polite"></div>
 <div class="ps-acts"><button type="button" id="ps-letter-copy" hidden>Copy the letter</button><span id="ps-letter-status" class="ps-note" role="status"></span></div>
+<p class="ps-unlock"><a class="ps-buy" href="https://arthurverse67.gumroad.com/l/uk-late-payment-claim-letter?ref=ps-late-payment-interest-calculator">Get the editable letter pack, £3</a></p>
+<p class="ps-note">The pack has this letter plus a first reminder and a final notice before action, in Word and Google Docs, with a one page how to.</p>
 <p class="ps-note">This is a template, not legal advice. Check the figures and the facts before you send it.</p>
 </section>
 <aside class="ps-offer" aria-labelledby="ps-offer-h"><h2 id="ps-offer-h">Want this tracked all year?</h2>
 <p>The UK Freelancer Time, Invoice &amp; Late Payment Tracker 2026/27 does it in one sheet.</p>
+<p class="ps-deal-line" data-until="2026-10-14T22:59:00Z"><a class="ps-deal" href="https://arthurverse67.gumroad.com/l/kjxnrp/LATEPAY?ref=ps-late-payment-interest-calculator">LATEPAY: 25% off the tracker until 23:59 tonight (UK time)</a></p><script>document.querySelectorAll('.ps-deal-line[data-until]').forEach(function(el){if(Date.now()>Date.parse(el.getAttribute('data-until')))el.remove();});</script>
 <p><a class="ps-buy" href="https://arthurverse67.gumroad.com/l/kjxnrp?ref=ps-late-payment-interest-calculator">Get the tracker (£14.99)</a></p>
 </aside>
 </div>
