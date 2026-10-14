@@ -728,6 +728,18 @@
 
 </style>
   <link rel="stylesheet" href="../../assets/chrome.css">
+<style>/* ps-offer */
+.ps-offer{margin:20px 0;padding:18px;background:#fff;color:#000;border:3px solid #000;box-shadow:6px 6px 0 #d6ff00;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:15px;line-height:1.5}
+.ps-offer h2{font-family:'Arial Black',Arial,sans-serif;font-size:19px;line-height:1.25;margin:0 0 10px;color:#000}
+.ps-offer p{margin:0 0 10px}
+.ps-offer .ps-buy{display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;background:#d6ff00;color:#000;border:2px solid #000;font-weight:700;text-decoration:none}
+.ps-offer .ps-buy:hover,.ps-offer .ps-buy:focus-visible{background:#000;color:#d6ff00}
+.ps-offer .ps-2nd{font-size:13px}.ps-offer .ps-2nd a{display:inline-block;padding:13px 0;line-height:18px;color:#000}
+.ps-offer .ps-launch{display:inline-block;background:#000;color:#d6ff00;padding:2px 8px;font-weight:700}
+.ps-offer-quiet{margin:20px 0;padding:12px 0;border-top:2px solid #000;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;color:#000}
+.ps-offer-quiet a{display:inline-flex;align-items:center;min-height:44px;color:#000;text-decoration-color:#d6ff00;text-decoration-thickness:3px}
+@media (max-width:420px){.ps-offer{padding:14px;box-shadow:4px 4px 0 #d6ff00}.ps-offer .ps-buy{display:flex;justify-content:center;text-align:center}}
+</style>
 </head>
 <body>
 <header class="ps-top"><div class="ps-in"><a class="ps-brand" href="../../"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f6b4f"/><rect x="8" y="11" width="16" height="3.2" rx="1.2" fill="#fff"/><rect x="8" y="18" width="16" height="3.2" rx="1.2" fill="#fff"/></svg><span>Plain Sums</span></a><nav aria-label="Main"><a href="../../">Home</a><a href="../../tools/" aria-current="page">Tools</a><a href="../../templates/">Templates</a><a href="../../about/">About</a></nav></div></header>
@@ -865,6 +877,12 @@
       </div>
       <div class="breakdown" id="out-breakdown"></div>
     </section>
+<aside class="ps-offer" aria-labelledby="ps-offer-h"><h2 id="ps-offer-h">Want this tracked all year?</h2>
+<p>The UK CIS Subcontractor Self Assessment Tracker 2026/27 does it in one sheet.</p>
+<!-- LAUNCH25-OFFER START: remove on 2 Nov 2026 --><p class="ps-launch-line" data-until="2026-10-31T23:59:00Z"><span class="ps-launch">LAUNCH25 takes 25% off until 31 Oct.</span></p><script>document.querySelectorAll('.ps-launch-line[data-until]').forEach(function(el){if(Date.now()>Date.parse(el.getAttribute('data-until')))el.remove();});</script><!-- LAUNCH25-OFFER END -->
+<p><a class="ps-buy" href="https://arthurverse67.gumroad.com/l/vszqef?ref=ps-cis-deduction-calculator">Get the tracker (£14.99)</a></p>
+<p class="ps-2nd">Running both sides of CIS? I also do the <a href="https://arthurverse67.gumroad.com/l/cis-bundle?ref=ps-cis-deduction-calculator">Both Sides of CIS Bundle 2026/27</a> (£21.99).</p>
+</aside>
 
     <details class="how">
       <summary>How this estimate works</summary>
@@ -980,6 +998,7 @@
       <p>This is an estimate, not tax advice. HMRC’s verification result and your records decide the actual deduction.</p>
     </footer>
   </div>
+<p class="ps-offer-quiet">Want this tracked all year? The <a href="https://arthurverse67.gumroad.com/l/vszqef?ref=ps-cis-deduction-calculator">UK CIS Subcontractor Self Assessment Tracker 2026/27</a> does it in one sheet (£14.99).</p>
 <footer class="ps-foot"><div class="ps-in"><nav aria-label="Site"><a href="../../about/">About</a><a href="../../privacy/">Privacy</a><a href="../../cookies/">Cookies</a><a href="../../terms/">Terms</a><a href="../../disclaimer/">Disclaimer</a></nav><p>Free UK calculators and spreadsheet templates. Estimates, not tax advice. Not affiliated with HMRC.</p><p>&copy; 2026 Arthur Jones</p></div></footer>
 
 
