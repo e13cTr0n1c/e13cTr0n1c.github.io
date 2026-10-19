@@ -17,6 +17,8 @@
 - [VAT threshold checker](https://e13ctr0n1c.github.io/tools/vat-threshold-checker/): For sole traders and small firms. Enter 12 months of sales and see your rolling total against £90,000, your headroom and any deadline to register.
 - [Window cleaning price rise calculator](https://e13ctr0n1c.github.io/tools/window-cleaning-price-rise-calculator/): For window cleaners. See the new price per clean, what a rise adds over a year, and how many customers you could lose and still take the same.
 - [Stretched funded hours calculator](https://e13ctr0n1c.github.io/tools/stretched-funded-hours-calculator/): For childminders and parents in England. Stretch 570 or 1,140 funded hours over the weeks a setting is open: hours a week, hours to claim per funded term week, and paid hours.
+- [Did my allotment pay its way?](https://e13ctr0n1c.github.io/tools/allotment-pay-its-way-calculator/): For allotment holders. Enter what you picked and what you spent, set your own prices, and see if the plot paid its way this season.
+- [Christmas Collection Slot Planner](https://e13ctr0n1c.github.io/tools/christmas-collection-slot-planner/): For butchers, farm shops and bakers. Work out how many Christmas orders you can hand over in each collection slot, day by day, and whether your days and hours are enough.
 
 ## Templates
 

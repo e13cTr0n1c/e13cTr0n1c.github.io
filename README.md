@@ -5,13 +5,13 @@ Free UK tax and money calculators and paid spreadsheet templates. Served by GitH
 Generated. Do not edit the HTML here by hand: the generator lives on the build box at `/workspace/ukbt/build/gen.py`
 (sources: `/workspace/web-apps/<tool>/` for the three original calculators, `build/new_tools.py` and `build/new-tools/`
 for the other three, `build/templates_pages.py` for the templates).
-The two newest calculators (`window-cleaning-price-rise-calculator`, `stretched-funded-hours-calculator`) are hand edited HTML, not generated.
-Their paid product links stay hidden until `ROUND_BOOK_URL` / `CHILDMINDER_WORKBOOK_URL` is set at the top of each tool's `app.js`.
+The four newest calculators (`window-cleaning-price-rise-calculator`, `stretched-funded-hours-calculator`, `allotment-pay-its-way-calculator`, `christmas-collection-slot-planner`) are hand edited HTML, not generated.
+Their paid product links are set by one constant at the top of each tool's `app.js` (`ROUND_BOOK_URL`, `CHILDMINDER_WORKBOOK_URL`, `ALLOTMENT_PLANNER_URL`, `CHRISTMAS_ORDER_BOOK_URL`); an empty value hides the button.
 
 | Path | What |
 |---|---|
 | `/` | Home, CIS calculators first |
-| `/tools/<slug>/` | Eight calculators |
+| `/tools/<slug>/` | Ten calculators |
 | `/templates/<slug>/` | Eight Gumroad templates |
 | `/about/`, `/privacy/`, `/cookies/`, `/terms/`, `/disclaimer/` | Site pages |
 | `/cis-deduction-calculator/`, `/cis-refund-estimator/`, `/probate-iht-calculator/` | Redirects from the old project paths to `/tools/<slug>/` |
