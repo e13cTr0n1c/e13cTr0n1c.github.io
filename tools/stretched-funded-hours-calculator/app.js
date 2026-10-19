@@ -1,6 +1,6 @@
 // The workbook listing URL (Etsy or Payhip). While this is empty the call to action stays hidden.
 // Paste the full https:// listing URL between the quotes; ?ref=ps-uk-childminder-register-funded-hours-invoices is added for you.
-const CHILDMINDER_WORKBOOK_URL = '';
+const CHILDMINDER_WORKBOOK_URL = 'https://arthurverse67.gumroad.com/l/xobzx';
 const CHILDMINDER_WORKBOOK_REF = 'ps-uk-childminder-register-funded-hours-invoices';
 
 (function () {

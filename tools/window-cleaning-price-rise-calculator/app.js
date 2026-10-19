@@ -1,6 +1,6 @@
 // The round book listing URL (Etsy or Payhip). While this is empty the call to action stays hidden.
 // Paste the full https:// listing URL between the quotes; ?ref=ps-uk-window-cleaner-round-book is added for you.
-const ROUND_BOOK_URL = '';
+const ROUND_BOOK_URL = 'https://arthurverse67.gumroad.com/l/btewfm';
 const ROUND_BOOK_REF = 'ps-uk-window-cleaner-round-book';
 
 (function () {
