@@ -15,6 +15,8 @@
 - [Late payment interest calculator](https://e13ctr0n1c.github.io/tools/late-payment-interest-calculator/): For businesses chasing a late invoice. Work out the statutory interest at 8% plus base rate, and the £40, £70 or £100 compensation.
 - [Gift Inheritance Tax taper checker](https://e13ctr0n1c.github.io/tools/gift-iht-taper-checker/): For anyone who has given money away. See how far a gift is through the 7 years, its taper rate, and the day it drops out of Inheritance Tax.
 - [VAT threshold checker](https://e13ctr0n1c.github.io/tools/vat-threshold-checker/): For sole traders and small firms. Enter 12 months of sales and see your rolling total against £90,000, your headroom and any deadline to register.
+- [Window cleaning price rise calculator](https://e13ctr0n1c.github.io/tools/window-cleaning-price-rise-calculator/): For window cleaners. See the new price per clean, what a rise adds over a year, and how many customers you could lose and still take the same.
+- [Stretched funded hours calculator](https://e13ctr0n1c.github.io/tools/stretched-funded-hours-calculator/): For childminders and parents in England. Stretch 570 or 1,140 funded hours over the weeks a setting is open: hours a week, hours to claim per funded term week, and paid hours.
 
 ## Templates
 
