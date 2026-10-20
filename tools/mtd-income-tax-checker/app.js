@@ -1,6 +1,6 @@
 // The listing URL for a matching Gumroad product. While this is empty the call to action stays hidden.
 // The full https:// listing URL goes between the quotes; ?ref=ps-uk-mtd-checker is added for you.
-const MTD_PRODUCT_URL = '';
+const MTD_PRODUCT_URL = 'https://arthurverse67.gumroad.com/l/mtdchecklist';
 const MTD_PRODUCT_REF = 'ps-uk-mtd-checker';
 
 (function () {
