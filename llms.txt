@@ -19,6 +19,7 @@
 - [Stretched funded hours calculator](https://e13ctr0n1c.github.io/tools/stretched-funded-hours-calculator/): For childminders and parents in England. Stretch 570 or 1,140 funded hours over the weeks a setting is open: hours a week, hours to claim per funded term week, and paid hours.
 - [Did my allotment pay its way?](https://e13ctr0n1c.github.io/tools/allotment-pay-its-way-calculator/): For allotment holders. Enter what you picked and what you spent, set your own prices, and see if the plot paid its way this season.
 - [Christmas Collection Slot Planner](https://e13ctr0n1c.github.io/tools/christmas-collection-slot-planner/): For butchers, farm shops and bakers. Work out how many Christmas orders you can hand over in each collection slot, day by day, and whether your days and hours are enough.
+- [Making Tax Digital checker](https://e13ctr0n1c.github.io/tools/mtd-income-tax-checker/): For sole traders and landlords. Add self employment turnover and property income before expenses and see if Making Tax Digital for Income Tax applies from 6 April 2026 (over £50,000), 2027 (over £30,000) or 2028 (over £20,000).
 
 ## Templates
 
