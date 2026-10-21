@@ -3,7 +3,7 @@
  * Every percentage and rate lives in UPRATING_2027 so it can be updated in one place after the
  * Budget on 28 October 2026. See UPRATING_UPDATE.md in this folder.
  *
- * Sources, checked 21 October 2026:
+ * Sources, checked 21 October 2026 (CPI confirmed on the ONS release of 21 October 2026):
  *  CPI 12 months to September 2026: 3.5%
  *    https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/september2026
  *  Average weekly earnings, Great Britain, May to July 2026: total pay 3.9%, regular pay 3.5%
@@ -51,28 +51,33 @@
 
   function uprate(weekly, rule, c) {
     c = c || UPRATING_2027;
-    var p = pctFor(rule, c), nw = r2(weekly * (1 + p / 100)), wk = c.weeksPerYear;
+    var p = pctFor(rule, c), raw = weekly * (1 + p / 100), nw = r2(raw), wk = c.weeksPerYear;
     return { pct: p, oldWeekly: r2(weekly), newWeekly: nw, increaseWeekly: r2(nw - weekly),
       old4: r2(weekly * 4), new4: r2(nw * 4), increase4: r2((nw - weekly) * 4),
+      oldMonth: r2(weekly * wk / 12), newMonth: r2(raw * wk / 12), increaseMonth: r2((raw - weekly) * wk / 12),
       oldYear: r2(weekly * wk), newYear: r2(nw * wk), increaseYear: r2((nw - weekly) * wk) };
   }
 
   // inputs: { newSP: "241.30", pipDaily: "", ... }
-  function calculate(inputs, c) {
-    c = c || UPRATING_2027; inputs = inputs || {};
+  // freq: "weekly" (default) or "monthly". Monthly amounts are turned into weekly as x 12 / 52.
+  function toWeekly(v, freq, c) { c = c || UPRATING_2027; return freq === "monthly" ? v * 12 / c.weeksPerYear : v; }
+  function calculate(inputs, c, freq) {
+    c = c || UPRATING_2027; inputs = inputs || {}; freq = freq === "monthly" ? "monthly" : "weekly";
+    var max = freq === "monthly" ? 25000 : 5000;
     var rows = [], errors = {}, t = { oldWeekly: 0, newWeekly: 0 };
     c.benefits.forEach(function (b) {
       var v = num(inputs[b.id]);
       if (v === null || v === 0) return;
-      if (isNaN(v) || v < 0 || v > 5000) { errors[b.id] = "Enter a weekly amount between £0 and £5,000."; return; }
-      var u = uprate(v, b.rule, c); u.id = b.id; u.name = b.name; u.rule = b.rule; rows.push(u);
+      if (isNaN(v) || v < 0 || v > max) { errors[b.id] = freq === "monthly" ? "Enter a monthly amount between £0 and £25,000." : "Enter a weekly amount between £0 and £5,000."; return; }
+      var u = uprate(toWeekly(v, freq, c), b.rule, c); u.id = b.id; u.name = b.name; u.rule = b.rule; rows.push(u);
       t.oldWeekly += u.oldWeekly; t.newWeekly += u.newWeekly;
     });
     var tot = { oldWeekly: r2(t.oldWeekly), newWeekly: r2(t.newWeekly) };
     tot.increaseWeekly = r2(tot.newWeekly - tot.oldWeekly);
     tot.old4 = r2(tot.oldWeekly * 4); tot.new4 = r2(tot.newWeekly * 4); tot.increase4 = r2(tot.increaseWeekly * 4);
+    tot.oldMonth = r2(tot.oldWeekly * c.weeksPerYear / 12); tot.newMonth = r2(tot.newWeekly * c.weeksPerYear / 12); tot.increaseMonth = r2(tot.increaseWeekly * c.weeksPerYear / 12);
     tot.oldYear = r2(tot.oldWeekly * c.weeksPerYear); tot.newYear = r2(tot.newWeekly * c.weeksPerYear); tot.increaseYear = r2(tot.increaseWeekly * c.weeksPerYear);
-    return { ok: Object.keys(errors).length === 0, errors: errors, rows: rows, total: tot, status: c.status };
+    return { ok: Object.keys(errors).length === 0, errors: errors, rows: rows, total: tot, status: c.status, freq: freq };
   }
 
   // Pay rise vs inflation. oldPay and newPay in the same units (a year, a month or an hour).
@@ -90,6 +95,6 @@
       verdict: Math.abs(realGain) < 0.005 ? "level" : realGain > 0 ? "beating" : "behind" };
   }
 
-  var api = { UPRATING_2027: UPRATING_2027, tripleLock: tripleLock, tripleLockDriver: tripleLockDriver, pctFor: pctFor, find: find, uprate: uprate, calculate: calculate, payVsInflation: payVsInflation };
+  var api = { UPRATING_2027: UPRATING_2027, tripleLock: tripleLock, tripleLockDriver: tripleLockDriver, pctFor: pctFor, find: find, uprate: uprate, toWeekly: toWeekly, calculate: calculate, payVsInflation: payVsInflation };
   if (typeof module !== "undefined" && module.exports) module.exports = api; else root.UPRATING = api;
 })(this);
