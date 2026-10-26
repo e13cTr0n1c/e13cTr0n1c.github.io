@@ -794,6 +794,9 @@ input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--danger
 details.how[open] summary::after{content:"×"}
 .below{margin-top:0.9rem;font-size:0.9rem;color:var(--muted)}
 </style>
+<style>/* uprating monthly 2026-10-21 */
+.freq{border:0;padding:0;margin:0 0 1rem;display:flex;gap:1.25rem;flex-wrap:wrap;align-items:center}.freq legend{font-weight:600;margin-bottom:.4rem}.freq label{display:inline-flex;gap:.4rem;align-items:center;font-weight:400}
+</style>
 <style>/* uprating 2026-10-21 */
 .fill{margin-top:.4rem;align-self:flex-start;background:var(--accent-soft,#e3f0ea);color:var(--accent,#0f6b4f);border:1px solid var(--accent,#0f6b4f);border-radius:6px;padding:.3rem .6rem;font:inherit;font-size:.85rem;cursor:pointer}
 .fill:hover{text-decoration:underline}
@@ -816,36 +819,40 @@ details.how[open] summary::after{content:"×"}
 
     <aside class="disclaimer" role="note">
       <strong>Important</strong>
-      These are estimates, expected until confirmed at the 28 October Budget. The State Pension uses an expected triple lock rise of <span data-tl>3.9%</span> (earnings growth of <span data-earn>3.9%</span>, ONS, May to July 2026). Most disability and carer benefits use CPI of <span data-cpi>3.5%</span> (ONS, September 2026). Official figures are rounded by the government and may differ by a few pence. Not financial advice.
+      These are estimates, expected until the government confirms them in its uprating announcement (usually alongside the Budget, due on 28 October 2026). The State Pension uses an expected triple lock rise of <span data-tl>3.9%</span> (earnings growth of <span data-earn>3.9%</span>, ONS, May to July 2026). Most disability and carer benefits use CPI of <span data-cpi>3.5%</span> (ONS, September 2026). Official figures are rounded by the government and may differ by a few pence. Not financial advice.
     </aside>
 
     <form id="b-form" novalidate>
       <section class="card" aria-labelledby="s1">
-        <h2 id="s1">1 · Your weekly amounts now</h2>
+        <h2 id="s1">1 · Your <span id="s1-per">weekly</span> amounts now</h2>
+        <fieldset class="field freq"><legend>I am entering amounts</legend>
+          <label><input type="radio" name="freq" value="weekly" checked> Weekly</label>
+          <label><input type="radio" name="freq" value="monthly"> Monthly</label>
+        </fieldset>
         <p class="tag" data-tag>Expected until confirmed at the 28 October 2026 Budget</p>
         <div class="grid2">
-<div class="field" id="f-newSP"><label for="newSP">New State Pension <span class="optional">(weekly)</span></label>
+<div class="field" id="f-newSP"><label for="newSP">New State Pension <span class="optional" data-per>(weekly)</span></label>
 <div class="input-wrap"><span class="prefix" aria-hidden="true">£</span><input type="number" id="newSP" name="newSP" inputmode="decimal" min="0" max="5000" step="0.01" aria-describedby="newSP-pct newSP-err"></div>
 <span class="hint" id="newSP-pct"></span><button type="button" class="fill" data-fill="newSP">Full rate £241.30</button><span class="err" id="newSP-err" role="alert"></span></div>
-<div class="field" id="f-basicSP"><label for="basicSP">Basic State Pension <span class="optional">(weekly)</span></label>
+<div class="field" id="f-basicSP"><label for="basicSP">Basic State Pension <span class="optional" data-per>(weekly)</span></label>
 <div class="input-wrap"><span class="prefix" aria-hidden="true">£</span><input type="number" id="basicSP" name="basicSP" inputmode="decimal" min="0" max="5000" step="0.01" aria-describedby="basicSP-pct basicSP-err"></div>
 <span class="hint" id="basicSP-pct"></span><button type="button" class="fill" data-fill="basicSP">Full rate £184.90</button><span class="err" id="basicSP-err" role="alert"></span></div>
-<div class="field" id="f-pipDaily"><label for="pipDaily">PIP daily living <span class="optional">(weekly)</span></label>
+<div class="field" id="f-pipDaily"><label for="pipDaily">PIP daily living <span class="optional" data-per>(weekly)</span></label>
 <div class="input-wrap"><span class="prefix" aria-hidden="true">£</span><input type="number" id="pipDaily" name="pipDaily" inputmode="decimal" min="0" max="5000" step="0.01" aria-describedby="pipDaily-pct pipDaily-err"></div>
 <span class="hint" id="pipDaily-pct"></span><button type="button" class="fill" data-fill="pipDaily">Higher rate £114.60</button><span class="err" id="pipDaily-err" role="alert"></span></div>
-<div class="field" id="f-pipMobility"><label for="pipMobility">PIP mobility <span class="optional">(weekly)</span></label>
+<div class="field" id="f-pipMobility"><label for="pipMobility">PIP mobility <span class="optional" data-per>(weekly)</span></label>
 <div class="input-wrap"><span class="prefix" aria-hidden="true">£</span><input type="number" id="pipMobility" name="pipMobility" inputmode="decimal" min="0" max="5000" step="0.01" aria-describedby="pipMobility-pct pipMobility-err"></div>
 <span class="hint" id="pipMobility-pct"></span><button type="button" class="fill" data-fill="pipMobility">Higher rate £80.00</button><span class="err" id="pipMobility-err" role="alert"></span></div>
-<div class="field" id="f-dla"><label for="dla">DLA (care and mobility added together) <span class="optional">(weekly)</span></label>
+<div class="field" id="f-dla"><label for="dla">DLA (care and mobility added together) <span class="optional" data-per>(weekly)</span></label>
 <div class="input-wrap"><span class="prefix" aria-hidden="true">£</span><input type="number" id="dla" name="dla" inputmode="decimal" min="0" max="5000" step="0.01" aria-describedby="dla-pct dla-err"></div>
 <span class="hint" id="dla-pct"></span><button type="button" class="fill" data-fill="dla">Top rates £194.60</button><span class="err" id="dla-err" role="alert"></span></div>
-<div class="field" id="f-aa"><label for="aa">Attendance Allowance <span class="optional">(weekly)</span></label>
+<div class="field" id="f-aa"><label for="aa">Attendance Allowance <span class="optional" data-per>(weekly)</span></label>
 <div class="input-wrap"><span class="prefix" aria-hidden="true">£</span><input type="number" id="aa" name="aa" inputmode="decimal" min="0" max="5000" step="0.01" aria-describedby="aa-pct aa-err"></div>
 <span class="hint" id="aa-pct"></span><button type="button" class="fill" data-fill="aa">Higher rate £114.60</button><span class="err" id="aa-err" role="alert"></span></div>
-<div class="field" id="f-carers"><label for="carers">Carer&#x27;s Allowance <span class="optional">(weekly)</span></label>
+<div class="field" id="f-carers"><label for="carers">Carer&#x27;s Allowance <span class="optional" data-per>(weekly)</span></label>
 <div class="input-wrap"><span class="prefix" aria-hidden="true">£</span><input type="number" id="carers" name="carers" inputmode="decimal" min="0" max="5000" step="0.01" aria-describedby="carers-pct carers-err"></div>
 <span class="hint" id="carers-pct"></span><button type="button" class="fill" data-fill="carers">Full rate £86.45</button><span class="err" id="carers-err" role="alert"></span></div>
-<div class="field" id="f-otherCpi"><label for="otherCpi">Other CPI linked benefit <span class="optional">(weekly)</span></label>
+<div class="field" id="f-otherCpi"><label for="otherCpi">Other CPI linked benefit <span class="optional" data-per>(weekly)</span></label>
 <div class="input-wrap"><span class="prefix" aria-hidden="true">£</span><input type="number" id="otherCpi" name="otherCpi" inputmode="decimal" min="0" max="5000" step="0.01" aria-describedby="otherCpi-pct otherCpi-err"></div>
 <span class="hint" id="otherCpi-pct"></span><span class="hint">For example Bereavement Support or Industrial Injuries Disablement Benefit, if it rises by CPI.</span><span class="err" id="otherCpi-err" role="alert"></span></div>
         </div>
@@ -859,12 +866,12 @@ details.how[open] summary::after{content:"×"}
       <p class="note" id="b-msg" hidden></p>
       <div id="b-wrap">
         <div class="table-wrap"><table class="calc">
-          <caption class="sr-only">Expected new weekly, 4 weekly and yearly amounts</caption>
-          <thead><tr><th scope="col">Payment</th><th scope="col" class="num">Now a week</th><th scope="col" class="num">New a week</th><th scope="col" class="num">New every 4 weeks</th><th scope="col" class="num">New a year</th><th scope="col" class="num">Rise a year</th></tr></thead>
+          <caption class="sr-only">Expected new weekly, monthly and yearly amounts</caption>
+          <thead><tr><th scope="col">Payment</th><th scope="col" class="num">Now a week</th><th scope="col" class="num">New a week</th><th scope="col" class="num">New a month</th><th scope="col" class="num">New a year</th><th scope="col" class="num">Rise a month</th><th scope="col" class="num">Rise a year</th></tr></thead>
           <tbody id="b-rows"></tbody>
         </table></div>
       </div>
-      <p class="below">Yearly figures are 52 weeks. Most of these are paid every 4 weeks, which is 4 times the weekly rate.</p>
+      <p class="below">Yearly figures are 52 weeks. Monthly figures are the yearly figure divided by 12. Most of these are paid every 4 weeks, which is 4 times the weekly rate. If you enter monthly amounts I turn them into weekly as times 12, divided by 52.</p>
     </section>
 
     <section class="prose" id="uc" aria-labelledby="uc-h">
@@ -923,6 +930,7 @@ details.how[open] summary::after{content:"×"}
       <h2 id="rel-h">Related</h2>
       <div class="related">
         <a href="../">All free UK calculators<span>The full list of Plain Sums calculators. No sign up, nothing leaves your browser.</span></a>
+        <a href="../pay-rise-vs-inflation-calculator/">Is my pay rise beating inflation?<span>Enter your old and new yearly, monthly or hourly pay and see the real terms change against CPI.</span></a>
         <a href="../child-benefit-charge-calculator/">Child Benefit charge calculator<span>See how much of the High Income Child Benefit Charge you owe.</span></a>
       </div>
     </section>

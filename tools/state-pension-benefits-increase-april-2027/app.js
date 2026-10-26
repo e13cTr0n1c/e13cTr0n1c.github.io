@@ -11,22 +11,23 @@
   C.benefits.forEach(function (b) {
     var h = $(b.id + "-pct"); if (h) h.textContent = "Expected rise " + pc(U.pctFor(b.rule)) + (b.rule === "tripleLock" ? " (triple lock)" : " (CPI)");
   });
-  var LABELS = ["", "Now a week", "New a week", "New every 4 weeks", "New a year", "Rise a year"];
+  var LABELS = ["", "Now a week", "New a week", "New a month", "New a year", "Rise a month", "Rise a year"];
+  function freq() { var f = document.querySelector("input[name=freq]:checked"); return f ? f.value : "weekly"; }
   function runB() {
     var inp = {}; C.benefits.forEach(function (b) { inp[b.id] = $(b.id).value; });
-    var r = U.calculate(inp);
+    var r = U.calculate(inp, null, freq());
     C.benefits.forEach(function (b) { var m = r.errors[b.id] || ""; $(b.id + "-err").textContent = m; if (m) $(b.id).setAttribute("aria-invalid", "true"); else $(b.id).removeAttribute("aria-invalid"); });
     var body = $("b-rows"); body.innerHTML = "";
-    if (!r.rows.length) { $("b-wrap").hidden = true; $("b-msg").hidden = false; $("b-msg").textContent = r.ok ? "Type in a weekly amount, or press a full rate button, to see your April 2027 figures." : "Check the boxes marked above."; $("b-total").textContent = ""; $("b-sub").textContent = ""; return; }
+    if (!r.rows.length) { $("b-wrap").hidden = true; $("b-msg").hidden = false; $("b-msg").textContent = r.ok ? "Type in an amount, or press a full rate button, to see your April 2027 figures." : "Check the boxes marked above."; $("b-total").textContent = ""; $("b-sub").textContent = ""; return; }
     $("b-msg").hidden = true; $("b-wrap").hidden = false;
     r.rows.forEach(function (x) {
       var tr = document.createElement("tr");
-      [x.name + " (+" + pc(x.pct) + ")", gbp(x.oldWeekly), gbp(x.newWeekly), gbp(x.new4), gbp(x.newYear), "+" + gbp(x.increaseYear)].forEach(function (v, i) { var td = document.createElement(i ? "td" : "th"); if (i) { td.className = "num"; td.setAttribute("data-label", LABELS[i]); } else td.scope = "row"; td.textContent = v; tr.appendChild(td); });
+      [x.name + " (+" + pc(x.pct) + ")", gbp(x.oldWeekly), gbp(x.newWeekly), gbp(x.newMonth), gbp(x.newYear), "+" + gbp(x.increaseMonth), "+" + gbp(x.increaseYear)].forEach(function (v, i) { var td = document.createElement(i ? "td" : "th"); if (i) { td.className = "num"; td.setAttribute("data-label", LABELS[i]); } else td.scope = "row"; td.textContent = v; tr.appendChild(td); });
       body.appendChild(tr);
     });
     var t = r.total;
     $("b-total").textContent = "+" + gbp(t.increaseWeekly) + " a week";
-    $("b-sub").textContent = "From " + gbp(t.oldWeekly) + " to " + gbp(t.newWeekly) + " a week. That is " + gbp(t.new4) + " every 4 weeks (up " + gbp(t.increase4) + ") and " + gbp(t.newYear) + " a year (up " + gbp(t.increaseYear) + ").";
+    $("b-sub").textContent = "From " + gbp(t.oldWeekly) + " to " + gbp(t.newWeekly) + " a week. That is " + gbp(t.newMonth) + " a month on average (up " + gbp(t.increaseMonth) + "), " + gbp(t.new4) + " every 4 weeks (up " + gbp(t.increase4) + ") and " + gbp(t.newYear) + " a year (up " + gbp(t.increaseYear) + ").";
   }
   function runP() {
     var r = U.payVsInflation($("oldPay").value, $("newPay").value);
@@ -42,9 +43,10 @@
     $("p-explain").textContent = "Prices rose " + pc(r.cpi) + " in the year to September 2026, so to stand still your pay needed to go from " + gbp(r.oldPay) + " to " + gbp(r.needed) + ". Your new pay is " + gbp(r.newPay) + ", " + (r.verdict === "beating" ? "so you are " + gbp(r.realGain) + " better off in real terms, a real rise of " + pc(r.realPct) + "." : r.verdict === "behind" ? "so in real terms you are " + gbp(-r.realGain) + " worse off, a real cut of " + pc(-r.realPct) + ", even though the number on your payslip went up." : "so you are just keeping pace with prices.");
   }
   document.querySelectorAll("button[data-fill]").forEach(function (btn) {
-    btn.addEventListener("click", function () { var b = U.find(btn.getAttribute("data-fill")); $(b.id).value = b.full.toFixed(2); runB(); });
+    btn.addEventListener("click", function () { var b = U.find(btn.getAttribute("data-fill")); $(b.id).value = (freq() === "monthly" ? b.full * 52 / 12 : b.full).toFixed(2); runB(); });
   });
   $("b-form").addEventListener("input", runB);
+  $("b-form").addEventListener("change", function (e) { if (e.target.name !== "freq") return; var f = freq(); document.querySelectorAll("[data-per]").forEach(function (el) { el.textContent = f === "monthly" ? "(monthly)" : "(weekly)"; }); $("s1-per").textContent = f === "monthly" ? "monthly" : "weekly"; runB(); });
   $("p-form").addEventListener("input", runP);
   $("b-form").addEventListener("submit", function (e) { e.preventDefault(); });
   $("p-form").addEventListener("submit", function (e) { e.preventDefault(); });
