@@ -22,6 +22,10 @@
 - [Making Tax Digital checker](https://e13ctr0n1c.github.io/tools/mtd-income-tax-checker/): For sole traders and landlords. Add self employment turnover and property income before expenses and see if Making Tax Digital for Income Tax applies from 6 April 2026 (over £50,000), 2027 (over £30,000) or 2028 (over £20,000).
 - [Take home pay calculator 2026/27](https://e13ctr0n1c.github.io/tools/take-home-pay-calculator/): For employees. Take home pay for 2026/27 after Income Tax (including Scotland), National Insurance, student loan Plans 1, 2, 4 and 5, Postgraduate Loan, and salary sacrifice or relief at source pensions.
 - [Family business handover tax comparison](https://e13ctr0n1c.github.io/tools/family-business-handover-tax-comparison/): A reported proposal, not law, as at 20 October 2026. Compare 24% Capital Gains Tax with 45% Income Tax on the value of a family business handed to the next generation.
+- [What's my minimum wage pay rise worth?](https://e13ctr0n1c.github.io/tools/minimum-wage-rise-calculator/): For workers on the minimum wage. Compare pay at the current and April 2027 rates by age band and hours, before and after 2026/27 tax and National Insurance.
+- [Can I live on this wage?](https://e13ctr0n1c.github.io/tools/can-i-live-on-this-wage/): Enter an hourly rate and hours to see 2026/27 take home pay, then add rent, bills and food for a monthly surplus or shortfall.
+- [Is my pay rise beating inflation?](https://e13ctr0n1c.github.io/tools/pay-rise-vs-inflation-calculator/): Enter your old and new pay and see the real terms change against 3.5% CPI, with the amount needed to keep up.
+- [EV pay per mile calculator](https://e13ctr0n1c.github.io/tools/ev-pay-per-mile-calculator/): For electric and plug in hybrid drivers. Estimate the proposed 3p and 1.5p a mile charge from April 2028 and compare it with petrol Fuel Duty.
 
 ## Templates
 
