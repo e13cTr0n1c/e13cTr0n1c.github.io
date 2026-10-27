@@ -81,6 +81,13 @@
         live: true
       },
       {
+        id: "state-pension-tax",
+        name: "Will I pay tax on my State Pension?",
+        href: "../tools/state-pension-tax-calculator/",
+        blurb: "See whether your State Pension and other taxable income mean you owe Income Tax in 2026/27 or 2027/28, with a Scotland option.",
+        live: true
+      },
+      {
         id: "ev",
         name: "EV pay per mile calculator",
         href: "../tools/ev-pay-per-mile-calculator/",
