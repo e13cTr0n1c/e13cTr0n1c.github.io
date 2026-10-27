@@ -24,3 +24,12 @@ Sources:
 - CPI: https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/september2026
 - Earnings: https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/averageweeklyearningsingreatbritain/september2026
 - Rates: https://www.gov.uk/government/publications/benefit-and-pension-rates-2026-to-2027
+
+## Full new State Pension £13,036 (April 2027)
+
+Commonly quoted as £13,036 a year (£250.70 a week). Weekly equivalent of £13,036 ÷ 52 = £250.69.
+This tool's penny rounding of £241.30 × 1.039 is £250.71 a week (£13,036.92 a year).
+Stored on `UPRATING_2027.fullNewSP` with `label: "expected"`. GOV.UK still shows £241.30 for 2026/27
+only. Treat as expected from ONS triple lock inputs until a DWP benefit and pension rates 2027 to 2028
+publication confirms it. Checked 27 October 2026.
+

@@ -3,13 +3,19 @@
  * Every percentage and rate lives in UPRATING_2027 so it can be updated in one place after the
  * Budget on 28 October 2026. See UPRATING_UPDATE.md in this folder.
  *
- * Sources, checked 21 October 2026 (CPI confirmed on the ONS release of 21 October 2026):
+ * Sources, checked 27 October 2026 (CPI confirmed on the ONS release of 21 October 2026):
  *  CPI 12 months to September 2026: 3.5%
  *    https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/september2026
  *  Average weekly earnings, Great Britain, May to July 2026: total pay 3.9%, regular pay 3.5%
  *    https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/averageweeklyearningsingreatbritain/september2026
  *  Triple lock (highest of earnings, CPI or 2.5%): https://www.gov.uk/new-state-pension/what-youll-get
  *    The earnings figure used by convention is total pay for May to July, so the expected rise is 3.9%.
+ *  Full new State Pension from April 2027: commonly quoted as £13,036 a year (£250.70 a week).
+ *    Weekly equivalent of £13,036 / 52 = £250.69. Media and industry notes often use £250.70
+ *    (250.70 x 52 = £13,036.40). This tool's penny rounding of £241.30 at 3.9% is £250.71
+ *    (£13,036.92 a year). GOV.UK still lists the 2026/27 full rate of £241.30 a week only.
+ *    Label: expected from published ONS triple lock inputs, not yet confirmed in a DWP
+ *    benefit and pension rates 2027 to 2028 publication.
  *  2026/27 weekly rates (GOV.UK):
  *    New State Pension £241.30  https://www.gov.uk/new-state-pension/what-youll-get
  *    Basic State Pension £184.90  https://www.gov.uk/state-pension/how-much-you-get
@@ -21,15 +27,30 @@
 (function (root) {
   "use strict";
   var UPRATING_2027 = {
-    status: "expected",            // change to "confirmed" after the Budget
+    status: "expected",            // change to "confirmed" after DWP rates / Budget confirmation
     budgetDate: "28 October 2026",
-    checked: "21 October 2026",
+    checked: "27 October 2026",
     effectiveFrom: "April 2027",
     cpi: 3.5,                      // CPI, 12 months to September 2026
     earningsTotal: 3.9,            // AWE total pay, May to July 2026
     earningsRegular: 3.5,          // AWE regular pay, May to July 2026 (for reference only)
     tripleLockFloor: 2.5,
     weeksPerYear: 52,
+    // Commonly quoted full new State Pension from April 2027. Not on GOV.UK as a 2027/28 rate yet.
+    // yearlyQuoted 13036; weeklyQuoted 250.70 (media). yearlyExactFromWeeklyQuoted = 250.70*52 = 13036.40.
+    // weeklyFromYearlyQuoted = 13036/52 = 250.6923... -> 250.69. Engine penny rounding: 250.71 / 13036.92.
+    fullNewSP: {
+      label: "expected",           // expected from ONS inputs; not DWP confirmed
+      yearlyQuoted: 13036,
+      weeklyQuoted: 250.70,
+      weeklyFromYearly: 250.69,    // 13036 / 52 rounded to the penny
+      sourceNote: "Derived from the 2026/27 full rate of £241.30 (GOV.UK) uplifted by 3.9% ONS total pay. GOV.UK has not yet published a 2027/28 rate.",
+      sources: [
+        "https://www.gov.uk/new-state-pension/what-youll-get",
+        "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/averageweeklyearningsingreatbritain/september2026",
+        "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/september2026"
+      ]
+    },
     benefits: [
       { id: "newSP", name: "New State Pension", rule: "tripleLock", full: 241.30, fullLabel: "full rate" },
       { id: "basicSP", name: "Basic State Pension", rule: "tripleLock", full: 184.90, fullLabel: "full rate" },
