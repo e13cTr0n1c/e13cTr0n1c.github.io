@@ -3,19 +3,21 @@
  * Every percentage and rate lives in UPRATING_2027 so it can be updated in one place after the
  * Budget on 28 October 2026. See UPRATING_UPDATE.md in this folder.
  *
- * Sources, checked 27 October 2026 (CPI confirmed on the ONS release of 21 October 2026):
+ * Sources, checked 21 October 2026 (CPI confirmed on the ONS release of 21 October 2026):
  *  CPI 12 months to September 2026: 3.5%
  *    https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/september2026
  *  Average weekly earnings, Great Britain, May to July 2026: total pay 3.9%, regular pay 3.5%
  *    https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/averageweeklyearningsingreatbritain/september2026
  *  Triple lock (highest of earnings, CPI or 2.5%): https://www.gov.uk/new-state-pension/what-youll-get
  *    The earnings figure used by convention is total pay for May to July, so the expected rise is 3.9%.
- *  Full new State Pension from April 2027: commonly quoted as £13,036 a year (£250.70 a week).
- *    Weekly equivalent of £13,036 / 52 = £250.69. Media and industry notes often use £250.70
- *    (250.70 x 52 = £13,036.40). This tool's penny rounding of £241.30 at 3.9% is £250.71
- *    (£13,036.92 a year). GOV.UK still lists the 2026/27 full rate of £241.30 a week only.
- *    Label: expected from published ONS triple lock inputs, not yet confirmed in a DWP
- *    benefit and pension rates 2027 to 2028 publication.
+ *  Confirmed 28 October 2026, full new State Pension from 6 April 2027: £13,036.40 a year (£250.70 a week,
+ *    a 3.9% rise). Source: HM Treasury, Pension Tax Allowance Explainer, published 28 October 2026
+ *    https://www.gov.uk/government/publications/pension-tax-allowance-explainer/pension-tax-allowance-explainer
+ *    Budget 2026 (HTML) confirms the triple lock applies through to April 2029
+ *    https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html
+ *    The government rounds £241.30 x 1.039 (£250.71) down to £250.70, so the full rate uses the official figure.
+ *  Still expected: basic State Pension and the CPI linked benefits. DWP had not published "Benefit and
+ *    pension rates 2027 to 2028" on GOV.UK when checked on 28 October 2026, so those stay estimates.
  *  2026/27 weekly rates (GOV.UK):
  *    New State Pension £241.30  https://www.gov.uk/new-state-pension/what-youll-get
  *    Basic State Pension £184.90  https://www.gov.uk/state-pension/how-much-you-get
@@ -27,32 +29,19 @@
 (function (root) {
   "use strict";
   var UPRATING_2027 = {
-    status: "expected",            // change to "confirmed" after DWP rates / Budget confirmation
+    status: "partial",             // "partial": full new State Pension confirmed, the rest expected until DWP publishes 2027/28 rates
     budgetDate: "28 October 2026",
-    checked: "27 October 2026",
+    checked: "28 October 2026",
     effectiveFrom: "April 2027",
     cpi: 3.5,                      // CPI, 12 months to September 2026
     earningsTotal: 3.9,            // AWE total pay, May to July 2026
     earningsRegular: 3.5,          // AWE regular pay, May to July 2026 (for reference only)
     tripleLockFloor: 2.5,
     weeksPerYear: 52,
-    // Commonly quoted full new State Pension from April 2027. Not on GOV.UK as a 2027/28 rate yet.
-    // yearlyQuoted 13036; weeklyQuoted 250.70 (media). yearlyExactFromWeeklyQuoted = 250.70*52 = 13036.40.
-    // weeklyFromYearlyQuoted = 13036/52 = 250.6923... -> 250.69. Engine penny rounding: 250.71 / 13036.92.
-    fullNewSP: {
-      label: "expected",           // expected from ONS inputs; not DWP confirmed
-      yearlyQuoted: 13036,
-      weeklyQuoted: 250.70,
-      weeklyFromYearly: 250.69,    // 13036 / 52 rounded to the penny
-      sourceNote: "Derived from the 2026/27 full rate of £241.30 (GOV.UK) uplifted by 3.9% ONS total pay. GOV.UK has not yet published a 2027/28 rate.",
-      sources: [
-        "https://www.gov.uk/new-state-pension/what-youll-get",
-        "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/averageweeklyearningsingreatbritain/september2026",
-        "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/september2026"
-      ]
-    },
     benefits: [
-      { id: "newSP", name: "New State Pension", rule: "tripleLock", full: 241.30, fullLabel: "full rate" },
+      { id: "newSP", name: "New State Pension", rule: "tripleLock", full: 241.30, fullLabel: "full rate",
+        confirmed: { weekly: 250.70, yearly: 13036.40, pct: 3.9, checked: "28 October 2026",
+          source: "https://www.gov.uk/government/publications/pension-tax-allowance-explainer/pension-tax-allowance-explainer" } },
       { id: "basicSP", name: "Basic State Pension", rule: "tripleLock", full: 184.90, fullLabel: "full rate" },
       { id: "pipDaily", name: "PIP daily living", rule: "cpi", full: 114.60, fullLabel: "higher rate", rates: [76.70, 114.60] },
       { id: "pipMobility", name: "PIP mobility", rule: "cpi", full: 80.00, fullLabel: "higher rate", rates: [30.30, 80.00] },
@@ -70,9 +59,11 @@
   function pctFor(rule, c) { c = c || UPRATING_2027; return rule === "tripleLock" ? tripleLock(c) : c.cpi; }
   function find(id) { for (var i = 0; i < UPRATING_2027.benefits.length; i++) if (UPRATING_2027.benefits[i].id === id) return UPRATING_2027.benefits[i]; return null; }
 
-  function uprate(weekly, rule, c) {
+  // official: a published 2027/28 weekly figure for the full rate, used when weekly is the full rate
+  function uprate(weekly, rule, c, official) {
     c = c || UPRATING_2027;
     var p = pctFor(rule, c), raw = weekly * (1 + p / 100), nw = r2(raw), wk = c.weeksPerYear;
+    if (official) { raw = official; nw = official; }
     return { pct: p, oldWeekly: r2(weekly), newWeekly: nw, increaseWeekly: r2(nw - weekly),
       old4: r2(weekly * 4), new4: r2(nw * 4), increase4: r2((nw - weekly) * 4),
       oldMonth: r2(weekly * wk / 12), newMonth: r2(raw * wk / 12), increaseMonth: r2((raw - weekly) * wk / 12),
@@ -90,7 +81,8 @@
       var v = num(inputs[b.id]);
       if (v === null || v === 0) return;
       if (isNaN(v) || v < 0 || v > max) { errors[b.id] = freq === "monthly" ? "Enter a monthly amount between £0 and £25,000." : "Enter a weekly amount between £0 and £5,000."; return; }
-      var u = uprate(toWeekly(v, freq, c), b.rule, c); u.id = b.id; u.name = b.name; u.rule = b.rule; rows.push(u);
+      var w = toWeekly(v, freq, c), off = b.confirmed && Math.abs(w - b.full) < 0.005 ? b.confirmed.weekly : null;
+      var u = uprate(w, b.rule, c, off); u.id = b.id; u.name = b.name; u.rule = b.rule; u.confirmed = !!off; rows.push(u);
       t.oldWeekly += u.oldWeekly; t.newWeekly += u.newWeekly;
     });
     var tot = { oldWeekly: r2(t.oldWeekly), newWeekly: r2(t.newWeekly) };

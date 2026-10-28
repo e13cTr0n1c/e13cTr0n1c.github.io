@@ -25,11 +25,14 @@ Sources:
 - Earnings: https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/averageweeklyearningsingreatbritain/september2026
 - Rates: https://www.gov.uk/government/publications/benefit-and-pension-rates-2026-to-2027
 
-## Full new State Pension £13,036 (April 2027)
+## Budget day, 28 October 2026
 
-Commonly quoted as £13,036 a year (£250.70 a week). Weekly equivalent of £13,036 ÷ 52 = £250.69.
-This tool's penny rounding of £241.30 × 1.039 is £250.71 a week (£13,036.92 a year).
-Stored on `UPRATING_2027.fullNewSP` with `label: "expected"`. GOV.UK still shows £241.30 for 2026/27
-only. Treat as expected from ONS triple lock inputs until a DWP benefit and pension rates 2027 to 2028
-publication confirms it. Checked 27 October 2026.
-
+- Confirmed: full new State Pension £13,036.40 a year from 6 April 2027 (£250.70 a week, a 3.9% rise).
+  Source: HM Treasury, Pension Tax Allowance Explainer, published 28 October 2026,
+  https://www.gov.uk/government/publications/pension-tax-allowance-explainer/pension-tax-allowance-explainer
+  Stored on the `newSP` benefit as `confirmed`. When someone enters the full rate (£241.30), the engine uses
+  the official £250.70 instead of its own penny rounding (£250.71). Part rates still use 3.9%.
+- `status` is now `"partial"`: the tags read "Full new State Pension confirmed. Other rates expected until DWP publishes them".
+- Not yet confirmed: basic State Pension, PIP, DLA, Attendance Allowance, Carer's Allowance and the Universal
+  Credit standard allowance. DWP's "Benefit and pension rates 2027 to 2028" was not on GOV.UK when checked.
+  When it is, add `confirmed` blocks for those, set `status` to `"confirmed"` and update the FAQ worked examples.
