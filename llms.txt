@@ -25,7 +25,7 @@
 - [What's my minimum wage pay rise worth?](https://e13ctr0n1c.github.io/tools/minimum-wage-rise-calculator/): For workers on the minimum wage. Compare pay at the current and April 2027 rates by age band and hours, before and after 2026/27 tax and National Insurance.
 - [Can I live on this wage?](https://e13ctr0n1c.github.io/tools/can-i-live-on-this-wage/): Enter an hourly rate and hours to see 2026/27 take home pay, then add rent, bills and food for a monthly surplus or shortfall.
 - [Is my pay rise beating inflation?](https://e13ctr0n1c.github.io/tools/pay-rise-vs-inflation-calculator/): Enter your old and new pay and see the real terms change against 3.5% CPI, with the amount needed to keep up.
-- [EV pay per mile calculator](https://e13ctr0n1c.github.io/tools/ev-pay-per-mile-calculator/): For electric and plug in hybrid drivers. Estimate the proposed 3p and 1.5p a mile charge from April 2028 and compare it with petrol Fuel Duty.
+- [EV pay per mile calculator](https://e13ctr0n1c.github.io/tools/ev-pay-per-mile-calculator/): For electric and plug in hybrid drivers. Estimate the 3p and 1.5p a mile charge from April 2028, confirmed at Budget 2026, and compare it with petrol Fuel Duty.
 
 ## Templates
 

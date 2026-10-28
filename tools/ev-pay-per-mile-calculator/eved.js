@@ -1,22 +1,30 @@
 /* Electric Vehicle Excise Duty (eVED) pay per mile estimate, compared with petrol Fuel Duty.
    Pure logic, no DOM. Works in the browser (window.Eved) and in Node (require).
-   Figures checked 26 October 2026. On Budget day, edit RATES only. */
+   Figures checked 28 October 2026 against the Budget 2026 documents on GOV.UK:
+     eVED 3p and 1.5p a mile from 1 April 2028: Budget 2026: Overview of tax legislation and rates (OOTLAR), para 1.76
+       https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar
+     Fuel Duty 52.95p a litre until 30 June 2027, then 60.59p from 1 July 2027: OOTLAR para 2.18 and Annex A
+       https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/annex-a-rates-and-allowances */
 (function (root) {
   "use strict";
   var RATES = {
-    checked: "2026-10-26",
+    checked: "2026-10-28",
+    status: "confirmed",           // confirmed at Budget 2026; eVED still needs Finance Bill 2026-27 to pass
     evedStart: "1 April 2028",
     // pence per mile
     eved: { bev: 3, hydrogen: 3, phev: 1.5 },
-    // unleaded petrol Fuel Duty, pence per litre, in force today (5p cut runs to 31 December 2026)
+    // unleaded petrol Fuel Duty, pence per litre, in force today (Budget 2026 extends the 5p cut to 30 June 2027)
     fuelDutyPpl: 52.95,
-    fuelDutyNote: "52.95p a litre until 31 December 2026, then 55.95p from 1 January 2027 and 57.95p from 1 March 2027 unless the Budget changes it",
+    fuelDutyFromJuly2027Ppl: 60.59,
+    fuelDutyNote: "52.95p a litre until 30 June 2027, then 60.59p from 1 July 2027 (Budget 2026)",
     defaultMpg: 45,
     litresPerUkGallon: 4.54609,
     sources: {
       eved: "https://www.gov.uk/government/publications/electric-vehicle-excise-duty-eved/electric-vehicle-excise-duty-eved",
       evedResponse: "https://www.gov.uk/government/consultations/consultation-on-the-introduction-of-electric-vehicle-excise-duty-eved/outcome/the-introduction-of-electric-vehicle-excise-duty-eved-consultation-response",
-      fuelDuty: "https://www.gov.uk/government/publications/amended-fuel-duty-rates-for-2026-to-2027/amended-fuel-duty-rates-2026-to-2027"
+      fuelDuty: "https://www.gov.uk/government/publications/amended-fuel-duty-rates-for-2026-to-2027/amended-fuel-duty-rates-2026-to-2027",
+      budget2026: "https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar",
+      budget2026Rates: "https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/annex-a-rates-and-allowances"
     }
   };
   var PERIODS = { year: 1, month: 12, week: 52 };
