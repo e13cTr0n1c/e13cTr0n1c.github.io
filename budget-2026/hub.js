@@ -10,59 +10,153 @@
 
   var BUDGET_DAY_2026 = {
     budgetDate: "28 October 2026",
-    lastUpdated: "27 October 2026",
-    checked: "2026-10-27",
-    status: "awaiting", // change to "announced" once Budget documents are published
+    lastUpdated: "28 October 2026",
+    checked: "2026-10-28",
+    status: "announced", // Budget documents published on GOV.UK on 28 October 2026
     title: "UK Budget 2026 hub",
     lede: "Plain Sums tools that help you make sense of the 28 October 2026 Budget. Every figure is an estimate, not tax, legal or financial advice.",
     sources: [
-      { label: "GOV.UK Budget collection (awaiting 2026 documents)", href: "https://www.gov.uk/government/topical-events" },
-      { label: "ONS consumer price inflation, September 2026", href: "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/september2026" },
-      { label: "ONS average weekly earnings, September 2026", href: "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/averageweeklyearningsingreatbritain/september2026" },
-      { label: "GOV.UK new State Pension", href: "https://www.gov.uk/new-state-pension/what-youll-get" }
+      {
+        "label": "Budget 2026 (HTML), HM Treasury, GOV.UK",
+        "href": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html"
+      },
+      {
+        "label": "Budget 2026: Overview of tax legislation and rates (OOTLAR), GOV.UK",
+        "href": "https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar"
+      },
+      {
+        "label": "Budget 2026 OOTLAR, Annex A: rates and allowances, GOV.UK",
+        "href": "https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/annex-a-rates-and-allowances"
+      },
+      {
+        "label": "HM Treasury: Pension Tax Allowance explainer, GOV.UK",
+        "href": "https://www.gov.uk/government/publications/pension-tax-allowance-explainer/pension-tax-allowance-explainer"
+      },
+      {
+        "label": "ONS consumer price inflation, September 2026",
+        "href": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/september2026"
+      },
+      {
+        "label": "ONS average weekly earnings, September 2026",
+        "href": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/averageweeklyearningsingreatbritain/september2026"
+      }
     ],
     announcedSoFar: [
       {
-        id: "state-pension",
-        title: "Full new State Pension from April 2027",
-        body: "Expected to rise by 3.9% under the triple lock to about £13,036 a year (£250.70 a week as commonly quoted). Built from ONS earnings growth of 3.9% (May to July 2026) and CPI of 3.5% (September 2026). Not yet listed on GOV.UK as a 2027/28 rate, and awaiting the DWP benefit and pension rates publication.",
-        status: "expected",
-        placeholder: false
+        "id": "tax-ni",
+        "title": "Income Tax and National Insurance on pay",
+        "status": "confirmed",
+        "placeholder": false,
+        "body": "No change to the headline rates of Income Tax, National Insurance or VAT. For 2027/28 the Personal Allowance stays at £12,570, the basic rate band at £37,700 and the higher rate threshold at £50,270, and employee National Insurance stays at 8% and 2%. So take home pay from a job does not change because of the Budget.",
+        "source": {
+          "label": "Budget 2026 OOTLAR, Annex A: rates and allowances, GOV.UK",
+          "href": "https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/annex-a-rates-and-allowances"
+        }
       },
       {
-        id: "cpi",
-        title: "September 2026 CPI",
-        body: "CPI was 3.5% in the 12 months to September 2026 (ONS). That figure feeds many Budget linked upratings.",
-        status: "published",
-        placeholder: false
+        "id": "savings-property",
+        "title": "Tax on savings and property income",
+        "status": "confirmed",
+        "placeholder": false,
+        "body": "From 6 April 2027 savings income is taxed at 24%, 44% and 49% instead of 20%, 40% and 45%. Property income gets its own rates at the same 24%, 44% and 49%. Dividend rates stay at 10.75%, 35.75% and 39.35%.",
+        "source": {
+          "label": "Budget 2026 OOTLAR, Annex A: rates and allowances, GOV.UK",
+          "href": "https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/annex-a-rates-and-allowances"
+        }
       },
       {
-        id: "earnings",
-        title: "Average earnings growth",
-        body: "Total pay growth for May to July 2026 was 3.9% (ONS). That is the expected triple lock driver for the State Pension.",
-        status: "published",
-        placeholder: false
+        "id": "state-pension",
+        "title": "Full new State Pension from April 2027",
+        "status": "confirmed",
+        "placeholder": false,
+        "body": "The full new State Pension goes up 3.9% under the triple lock to £250.70 a week, £13,036.40 a year, from 6 April 2027. The Budget keeps the triple lock through to April 2029.",
+        "source": {
+          "label": "HM Treasury: Pension Tax Allowance explainer, GOV.UK",
+          "href": "https://www.gov.uk/government/publications/pension-tax-allowance-explainer/pension-tax-allowance-explainer"
+        }
       },
       {
-        id: "tax-ni",
-        title: "Income Tax and National Insurance changes",
-        body: "Awaiting Budget documents. No change is assumed in the Budget pay calculator until the Overview of Tax Legislation and Rates is published.",
-        status: "awaiting",
-        placeholder: true
+        "id": "min-wage",
+        "title": "National Living Wage and minimum wage from 1 April 2027",
+        "status": "confirmed",
+        "placeholder": false,
+        "body": "National Living Wage (21 and over) £13.21 an hour, up 3.9%. 18 to 20 rate £11.27. 16 and 17 year olds and apprentices £8.31. Accommodation offset £11.53 a day.",
+        "source": {
+          "label": "Budget 2026 (HTML), GOV.UK",
+          "href": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html"
+        }
       },
       {
-        id: "uc",
-        title: "Universal Credit standard allowance",
-        body: "Awaiting Budget documents. The April 2027 figure is set at the Budget, not by CPI alone.",
-        status: "awaiting",
-        placeholder: true
+        "id": "mileage",
+        "title": "Mileage rates",
+        "status": "confirmed",
+        "placeholder": false,
+        "body": "The 55p a mile rate for the first 10,000 business miles is made permanent, and the rate above 10,000 miles goes up from 25p to 35p from 6 April 2027.",
+        "source": {
+          "label": "Budget 2026: Overview of tax legislation and rates (OOTLAR), GOV.UK",
+          "href": "https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar"
+        }
       },
       {
-        id: "other",
-        title: "Other Budget measures",
-        body: "Awaiting Budget documents. Fuel duty, EV pay per mile timing, thresholds and any other announced measures will be listed here once published.",
-        status: "awaiting",
-        placeholder: true
+        "id": "eved",
+        "title": "Electric Vehicle Excise Duty (pay per mile)",
+        "status": "confirmed",
+        "placeholder": false,
+        "body": "From 1 April 2028, 3p a mile for fully electric and hydrogen cars and 1.5p a mile for plug in hybrids, going up with CPI from 2029/30. It still needs Finance Bill 2026 to 27 to pass.",
+        "source": {
+          "label": "Budget 2026: Overview of tax legislation and rates (OOTLAR), GOV.UK",
+          "href": "https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar"
+        }
+      },
+      {
+        "id": "fuel-duty",
+        "title": "Fuel Duty",
+        "status": "confirmed",
+        "placeholder": false,
+        "body": "The 5p a litre cut is extended to 30 June 2027, so petrol and diesel stay at 52.95p a litre until then. From 1 July 2027 the rate goes to 60.59p a litre.",
+        "source": {
+          "label": "Budget 2026 OOTLAR, Annex A: rates and allowances, GOV.UK",
+          "href": "https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/annex-a-rates-and-allowances"
+        }
+      },
+      {
+        "id": "student-loans",
+        "title": "Student loan interest",
+        "status": "confirmed",
+        "placeholder": false,
+        "body": "Interest on Plan 2 and Plan 3 student loans is capped at 6% from 1 September 2026 to 31 August 2027.",
+        "source": {
+          "label": "Budget 2026 (HTML), GOV.UK",
+          "href": "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html"
+        }
+      },
+      {
+        "id": "cpi",
+        "title": "September 2026 CPI",
+        "status": "published",
+        "placeholder": false,
+        "body": "CPI was 3.5% in the 12 months to September 2026 (ONS). That figure is the usual basis for uprating most benefits in April 2027."
+      },
+      {
+        "id": "benefits",
+        "title": "Other benefits from April 2027 (PIP, DLA, Attendance Allowance, Carer's Allowance, basic State Pension)",
+        "status": "awaiting",
+        "placeholder": true,
+        "body": "Awaiting the DWP benefit and pension rates 2027 to 2028, which were not on GOV.UK when I checked. The checker shows these as expected figures based on 3.5% CPI, not confirmed."
+      },
+      {
+        "id": "uc",
+        "title": "Universal Credit standard allowance",
+        "status": "awaiting",
+        "placeholder": true,
+        "body": "I could not find the 2027/28 standard allowance in the Budget documents. It stays as a placeholder until DWP publishes the 2027 to 2028 rates."
+      },
+      {
+        "id": "scotland",
+        "title": "Scottish Income Tax",
+        "status": "awaiting",
+        "placeholder": true,
+        "body": "Scottish rates and bands are set by the Scottish Government in the Scottish Budget, not by this Budget. The tools keep the 2026/27 Scottish bands until then."
       }
     ],
     tools: [
@@ -70,28 +164,28 @@
         id: "budget-pay",
         name: "Budget 2026 pay calculator",
         href: "../tools/budget-2026-pay-calculator/",
-        blurb: "See your 2026/27 take home pay now and after the Budget, with the difference a year and a month.",
+        blurb: "Check your take home pay before and after the Budget. For pay from a job the Budget makes no change in 2027/28.",
         live: true
       },
       {
         id: "state-pension",
         name: "April 2027 State Pension and benefits checker",
         href: "../tools/state-pension-benefits-increase-april-2027/",
-        blurb: "Estimate how much your State Pension, PIP, DLA, Attendance Allowance or Carer's Allowance goes up from April 2027.",
+        blurb: "See the confirmed full new State Pension from April 2027 and estimate how much PIP, DLA, Attendance Allowance or Carer's Allowance goes up.",
         live: true
       },
       {
         id: "ev",
         name: "EV pay per mile calculator",
         href: "../tools/ev-pay-per-mile-calculator/",
-        blurb: "Estimate the proposed 3p and 1.5p a mile charge from April 2028 and compare it with petrol Fuel Duty.",
+        blurb: "Estimate the 3p and 1.5p a mile charge from April 2028, confirmed at Budget 2026, and compare it with petrol Fuel Duty.",
         live: true
       },
       {
         id: "min-wage",
         name: "Minimum wage rise calculator",
         href: "../tools/minimum-wage-rise-calculator/",
-        blurb: "See what the April 2027 National Living Wage and National Minimum Wage rises are worth before and after tax.",
+        blurb: "See what the confirmed April 2027 rises to £13.21 and £11.27 an hour are worth before and after tax.",
         live: true
       },
       {
@@ -118,8 +212,8 @@
       {
         id: "mileage",
         name: "Mileage allowance calculator",
-        href: "https://raw.githack.com/e13cTr0n1c/e13cTr0n1c.github.io/80db376d5f22cfef30c9c6d6f4e7be2cdfbfa644/tools/mileage-allowance-tax-relief-calculator/",
-        blurb: "Work out HMRC AMAP rates, taxable excess and Mileage Allowance Relief for employees, plus self employed simplified expenses. Preview until it is live on the site.",
+        href: "https://raw.githack.com/e13cTr0n1c/e13cTr0n1c.github.io/377a363857c315e847c24c0e152e5f9ebbfe0b9a/tools/mileage-allowance-tax-relief-calculator/",
+        blurb: "Work out HMRC mileage rates, including the 35p rate above 10,000 miles from April 2027, taxable excess and Mileage Allowance Relief. Preview until it is live on the site.",
         live: false,
         preview: true
       }
@@ -163,9 +257,14 @@
     BUDGET_DAY_2026.announcedSoFar.forEach(function (item) {
       var art = el("article", { className: item.placeholder ? "hub-item placeholder" : "hub-item", id: "announced-" + item.id });
       art.appendChild(el("h3", { text: item.title }));
-      var tag = item.placeholder ? "Awaiting Budget documents" : (item.status === "expected" ? "Expected, not yet on GOV.UK as a 2027/28 rate" : "Published");
+      var tag = item.placeholder ? "Not confirmed yet" : (item.status === "confirmed" ? "Confirmed in the Budget documents" : (item.status === "expected" ? "Expected, not yet on GOV.UK as a 2027/28 rate" : "Published"));
       art.appendChild(el("p", { className: "hub-tag", text: tag }));
       art.appendChild(el("p", { text: item.body }));
+      if (item.source) {
+        var sp = el("p", { className: "hub-src", text: "Source: " });
+        sp.appendChild(el("a", { href: item.source.href, rel: "noopener", text: item.source.label }));
+        art.appendChild(sp);
+      }
       target.appendChild(art);
     });
   }
@@ -180,7 +279,7 @@
     var st = document.getElementById("hub-status");
     if (st) {
       st.textContent = BUDGET_DAY_2026.status === "announced"
-        ? "Budget figures are in. Tools below use the announced numbers where we have updated them."
+        ? "The Budget documents are on GOV.UK. The items below are taken from them, and anything not confirmed yet is marked."
         : "Budget day is " + BUDGET_DAY_2026.budgetDate + ". Figures below are estimates from published ONS data or marked as awaiting Budget documents.";
     }
     var src = document.getElementById("hub-sources");
