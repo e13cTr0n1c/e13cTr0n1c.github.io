@@ -1,11 +1,15 @@
 /* HMRC Approved Mileage Allowance Payments (AMAP) and Mileage Allowance Relief.
    Pure logic, no DOM. Works in the browser (window.Mileage) and in Node (require).
-   Rates checked 27 October 2026. Keep every figure in RATES only. */
+   Rates checked 28 October 2026. Keep every figure in RATES only.
+   The 35p rate above 10,000 miles from 6 April 2027, and the 55p rate made permanent, are confirmed in
+   Budget 2026: Overview of tax legislation and rates (OOTLAR), para 2.7, and Budget 2026 (HTML):
+   https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar
+   https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html */
 (function (root) {
   "use strict";
 
   var RATES = {
-    checked: "2026-10-27",
+    checked: "2026-10-28",
     thresholdMiles: 10000,
     // pence per mile by tax year and vehicle kind
     years: {
@@ -17,6 +21,7 @@
       },
       "2027-28": {
         label: "2027/28 (6 April 2027 to 5 April 2028)",
+        status: "confirmed in Budget 2026",
         car: { first: 55, after: 35 },
         motorcycle: { first: 24, after: 24 },
         bicycle: { first: 20, after: 20 }
@@ -42,7 +47,8 @@
     claimUrl: "https://www.gov.uk/tax-relief-for-employees/vehicles-you-use-for-work",
     sources: {
       treasury: "https://www.gov.uk/government/news/everyday-fixes-to-make-life-easier-for-millions-of-britons",
-      mse: "https://www.moneysavingexpert.com/news/2026/10/mileage-rates-allowance-rise/",
+      budget2026: "https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar",
+      budget2026Html: "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html",
       amap: "https://www.gov.uk/government/publications/rates-and-allowances-travel-mileage-and-fuel-allowances/travel-mileage-and-fuel-rates-and-allowances",
       claim: "https://www.gov.uk/tax-relief-for-employees/vehicles-you-use-for-work",
       scottish: "https://www.gov.uk/scottish-income-tax"
