@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Do I Need to Tell HMRC About My Side Hustle? Trading Allowance Checker 2027</title>
+  <meta name="description" content="Check if your side income is covered by the trading allowance, £1,000 in 2026 to 2027 and £3,000 from 6 April 2027, and whether the allowance or your costs gives the lower profit. Free, no sign up.">
+  <link rel="canonical" href="https://e13ctr0n1c.github.io/tools/side-hustle-trading-allowance-checker/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f7f6f2">
+  <link rel="sitemap" type="application/xml" href="https://e13ctr0n1c.github.io/sitemap.xml">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Plain Sums">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://e13ctr0n1c.github.io/tools/side-hustle-trading-allowance-checker/">
+  <meta property="og:title" content="Do I Need to Tell HMRC About My Side Hustle? Trading Allowance Checker 2027">
+  <meta property="og:description" content="Check if your side income is covered by the trading allowance, £1,000 in 2026 to 2027 and £3,000 from 6 April 2027, and whether the allowance or your costs gives the lower profit. Free, no sign up.">
+  <meta property="og:image" content="https://e13ctr0n1c.github.io/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Do I Need to Tell HMRC About My Side Hustle? Trading Allowance Checker 2027">
+  <meta name="twitter:description" content="Check if your side income is covered by the trading allowance, £1,000 in 2026 to 2027 and £3,000 from 6 April 2027, and whether the allowance or your costs gives the lower profit. Free, no sign up.">
+  <meta name="twitter:image" content="https://e13ctr0n1c.github.io/og-image.png">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Side hustle trading allowance checker","url":"https://e13ctr0n1c.github.io/tools/side-hustle-trading-allowance-checker/","description":"Check if your side income is covered by the trading allowance, £1,000 in 2026 to 2027 and £3,000 from 6 April 2027, and whether the allowance or your costs gives the lower profit. Free, no sign up.","applicationCategory":"FinanceApplication","operatingSystem":"Any (web browser)","inLanguage":"en-GB","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}
+  </script>
+  <style>
+    :root {
+      --bg: #10141a;
+      --surface: #1a222c;
+      --surface-2: #243040;
+      --border: #2e3d4f;
+      --text: #e8eef4;
+      --muted: #8b9cb0;
+      --accent: #3d9cf0;
+      --accent-soft: rgba(61, 156, 240, 0.15);
+      --success: #3ecf8e;
+      --warning: #f0b429;
+      --danger: #f07178;
+      --radius: 12px;
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+      --font: "DM Sans", system-ui, -apple-system, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font);
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(61, 156, 240, 0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 100% 100%, rgba(62, 207, 142, 0.08), transparent),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    header {
+      margin-bottom: 1.75rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--warning);
+      background: rgba(240, 180, 41, 0.12);
+      border: 1px solid rgba(240, 180, 41, 0.35);
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      margin-bottom: 0.85rem;
+    }
+
+    h1 {
+      font-size: clamp(1.55rem, 4vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.5rem;
+      line-height: 1.2;
+    }
+
+    .lede {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 38em;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.35rem 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .card h2 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin: 0 0 1rem;
+    }
+
+    .field {
+      margin-bottom: 1.1rem;
+    }
+
+    .field:last-child { margin-bottom: 0; }
+
+    label {
+      display: block;
+      font-weight: 500;
+      font-size: 0.925rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .hint {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 400;
+      margin-top: 0.25rem;
+    }
+
+    .input-wrap {
+      position: relative;
+      display: flex;
+      align-items: stretch;
+    }
+
+    .prefix {
+      display: flex;
+      align-items: center;
+      padding: 0 0.75rem;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-right: none;
+      border-radius: 8px 0 0 8px;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 0.7rem 0.85rem;
+      font: inherit;
+      font-size: 1.05rem;
+      color: var(--text);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .input-wrap input {
+      border-radius: 0 8px 8px 0;
+    }
+
+    input[type="number"]:focus,
+    select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-soft);
+    }
+
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type="number"] { -moz-appearance: textfield; }
+
+    .status-grid {
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    @media (min-width: 520px) {
+      .status-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .status-option {
+      position: relative;
+    }
+
+    .status-option input {
+      position: absolute;
+      opacity: 0;
+      width: 1px;
+      height: 1px;
+    }
+
+    .status-option label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      padding: 0.85rem 0.9rem;
+      background: var(--bg);
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 0;
+      transition: border-color 0.15s, background 0.15s;
+      min-height: 100%;
+    }
+
+    .status-option input:focus-visible + label {
+      box-shadow: 0 0 0 3px var(--accent-soft);
+    }
+
+    .status-option input:checked + label {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .status-rate {
+      font-family: var(--mono);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .status-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .status-desc {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .toggle-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.85rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .toggle-row input[type="checkbox"] {
+      width: 1.15rem;
+      height: 1.15rem;
+      margin-top: 0.15rem;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .toggle-row label {
+      margin: 0;
+      cursor: pointer;
+    }
+
+    #vat-fields { display: none; }
+    #vat-fields.visible { display: block; }
+
+    .results {
+      border-color: rgba(61, 156, 240, 0.4);
+    }
+
+    .result-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .result-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .result-row.highlight {
+      margin-top: 0.35rem;
+      padding: 1rem;
+      background: var(--accent-soft);
+      border: 1px solid rgba(61, 156, 240, 0.35);
+      border-radius: 10px;
+      border-bottom: 1px solid rgba(61, 156, 240, 0.35);
+    }
+
+    .result-label {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .result-value {
+      font-family: var(--mono);
+      font-size: 1.05rem;
+      font-weight: 500;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .result-row.highlight .result-label {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .result-row.highlight .result-value {
+      font-size: 1.35rem;
+      color: var(--success);
+    }
+
+    .result-row.deduction .result-value {
+      color: var(--danger);
+    }
+
+    .breakdown {
+      margin-top: 1rem;
+      padding: 0.9rem 1rem;
+      background: var(--bg);
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .breakdown strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .disclaimer {
+      background: rgba(240, 180, 41, 0.08);
+      border: 1px solid rgba(240, 180, 41, 0.3);
+      border-radius: var(--radius);
+      padding: 1rem 1.15rem;
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .disclaimer strong {
+      color: var(--warning);
+      display: block;
+      margin-bottom: 0.35rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .disclaimer a {
+      color: var(--accent);
+    }
+
+    details.how {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.85rem 1.15rem;
+      margin-bottom: 1.25rem;
+    }
+
+    details.how summary {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    details.how summary::-webkit-details-marker { display: none; }
+
+    details.how summary::after {
+      content: "+";
+      font-size: 1.25rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    details.how[open] summary::after { content: "−"; }
+
+    details.how .how-body {
+      margin-top: 0.85rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    details.how ul {
+      margin: 0.5rem 0;
+      padding-left: 1.2rem;
+    }
+
+    details.how li { margin-bottom: 0.35rem; }
+
+    details.how a { color: var(--accent); }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+
+    footer a { color: var(--accent); }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .answer {
+      margin: 1rem 0 0;
+      padding: 0.9rem 1rem;
+      background: var(--accent-soft);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      font-size: 0.95rem;
+    }
+    .answer a { color: var(--accent); }
+
+    .prose {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.35rem 1.25rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.95rem;
+    }
+    .prose h2 {
+      font-size: 1.2rem;
+      margin: 0 0 0.75rem;
+      letter-spacing: -0.01em;
+    }
+    .prose h3 {
+      font-size: 1rem;
+      margin: 1.25rem 0 0.35rem;
+    }
+    .prose p, .prose li { color: var(--muted); }
+    .prose strong { color: var(--text); }
+    .prose a { color: var(--accent); }
+    .prose ol, .prose ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+    .prose li { margin-bottom: 0.35rem; }
+    .prose .src { font-size: 0.8rem; margin-top: 0.25rem; }
+
+    .table-wrap { overflow-x: auto; margin: 0.75rem 0; }
+    table.calc {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    table.calc th, table.calc td {
+      text-align: left;
+      padding: 0.5rem 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    table.calc th { color: var(--text); font-weight: 600; }
+    table.calc td { color: var(--muted); }
+    table.calc td.num, table.calc th.num { text-align: right; font-family: var(--mono); white-space: nowrap; }
+    table.calc tr.total td { color: var(--text); font-weight: 600; }
+
+    .cta {
+      background: rgba(62, 207, 142, 0.08);
+      border: 1px solid rgba(62, 207, 142, 0.35);
+      border-radius: var(--radius);
+      padding: 1rem 1.15rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .cta strong { color: var(--text); }
+    .cta a { color: var(--success); font-weight: 600; }
+  
+    [hidden] { display: none !important; }
+    .card a { color: var(--accent); }
+    #it-lines .result-row { border-bottom: 1px solid var(--border); padding: 0.5rem 0; }
+    .wrap { max-width: 760px; }
+    .crumbs { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.9rem; }
+    .crumbs a { color: var(--accent); text-decoration: none; }
+    .grid2 { display: grid; gap: 0 1rem; }
+    @media (min-width: 560px) { .grid2 { grid-template-columns: 1fr 1fr; } }
+    .seg { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+    .seg .status-option label { min-height: 0; }
+    .optional { font-weight: 400; color: var(--muted); }
+    input[readonly] { opacity: 0.75; cursor: not-allowed; }
+    .monthly { margin-top: 0.25rem; }
+    .monthly table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    .monthly th, .monthly td { padding: 0.3rem 0.35rem; border-bottom: 1px solid var(--border); text-align: left; }
+    .monthly th { color: var(--muted); font-weight: 600; }
+    .monthly input { width: 100%; padding: 0.4rem 0.5rem; font: inherit; font-size: 0.9rem; color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: 6px; }
+    .monthly tfoot td { color: var(--text); font-weight: 600; font-family: var(--mono); }
+    #monthly-wrap { display: none; }
+    #monthly-wrap.visible { display: block; }
+    .headline { padding: 1.1rem 1rem; border-radius: 10px; margin-bottom: 0.75rem; text-align: center; }
+    .headline.refund { background: rgba(62, 207, 142, 0.12); border: 1px solid rgba(62, 207, 142, 0.45); }
+    .headline.owed { background: rgba(240, 113, 120, 0.1); border: 1px solid rgba(240, 113, 120, 0.45); }
+    .headline .h-label { display: block; font-size: 0.85rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+    .headline .h-value { display: block; font-family: var(--mono); font-size: 2rem; font-weight: 500; margin-top: 0.2rem; }
+    .headline.refund .h-value { color: var(--success); }
+    .headline.owed .h-value { color: var(--danger); }
+    .result-row.sub .result-label { padding-left: 0.9rem; font-size: 0.85rem; }
+    .result-row.sub .result-value { font-size: 0.95rem; color: var(--muted); }
+    .result-row.total .result-label { color: var(--text); font-weight: 600; }
+    .note { margin-top: 0.75rem; padding: 0.75rem 0.9rem; border-radius: 8px; font-size: 0.85rem; color: var(--muted); background: var(--bg); border-left: 3px solid var(--warning); }
+    .note strong { color: var(--text); }
+    .note a { color: var(--accent); }
+    table.calc td.box { font-family: var(--mono); color: var(--accent); white-space: nowrap; }
+    table.calc td small { display: block; font-size: 0.75rem; opacity: 0.85; }
+    .related { display: grid; gap: 0.75rem; }
+    @media (min-width: 560px) { .related { grid-template-columns: 1fr 1fr; } }
+    .related a { display: block; padding: 0.9rem 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; text-decoration: none; color: var(--text); }
+    .related a:hover { border-color: var(--accent); }
+    .related a span { display: block; font-size: 0.82rem; color: var(--muted); margin-top: 0.2rem; }
+    button.link { background: none; border: none; color: var(--accent); font: inherit; font-size: 0.85rem; cursor: pointer; padding: 0; text-decoration: underline; }
+  
+    .status-grid.three .status-option label { min-height: 100%; }
+    .pct-wrap .prefix { border-radius: 0 8px 8px 0; border-right: 1px solid var(--border); border-left: none; order: 2; }
+    .pct-wrap input { border-radius: 8px 0 0 8px !important; }
+    .gift-row { display: grid; grid-template-columns: 1.1fr 1fr; gap: 0.6rem; margin-bottom: 0.6rem; }
+    .gift-row select { font-size: 0.95rem; padding: 0.6rem 0.7rem; }
+    .verdict { padding: 0.85rem 1rem; border-radius: 10px; margin-top: 0.75rem; background: var(--bg); border: 1px solid var(--border); font-size: 0.9rem; color: var(--muted); }
+    .verdict h3 { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--text); }
+    .verdict.good { border-color: rgba(62, 207, 142, 0.45); }
+    .verdict.warn { border-color: rgba(240, 180, 41, 0.45); }
+    .verdict.bad { border-color: rgba(240, 113, 120, 0.45); }
+    .verdict a { color: var(--accent); }
+    .verdict ul { margin: 0.35rem 0 0; padding-left: 1.1rem; }
+    .headline.none { background: rgba(62, 207, 142, 0.12); border: 1px solid rgba(62, 207, 142, 0.45); }
+    .headline.none .h-value { color: var(--success); }
+    .headline .h-sub { display: block; font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem; }
+    ol.steps { padding-left: 1.25rem; margin: 0; }
+    ol.steps li { margin-bottom: 0.6rem; color: var(--muted); font-size: 0.92rem; }
+    ol.steps li strong { color: var(--text); }
+    ol.steps a { color: var(--accent); }
+    #gift-table-wrap[hidden] { display: none; }
+  
+    /* ===== Plain Sums: light theme for the calculators (replaces the dark house style) ===== */
+    :root {
+      color-scheme: light;
+      --bg: #f7f6f2;
+      --surface: #ffffff;
+      --surface-2: #f2efe9;
+      --border: #dcd8cf;
+      --field: #8a918c;
+      --field-bg: #ffffff;
+      --text: #1c2422;
+      --muted: #55605b;
+      --accent: #0f6b4f;
+      --accent-soft: #e3f0ea;
+      --line2: #9cc5b4;
+      --success: #0f6b4f;
+      --warning: #8a5300;
+      --danger: #b3261e;
+      --radius: 10px;
+      --shadow: none;
+      --font: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      --head: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    html { background: var(--bg); }
+    body { background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; }
+    a { color: var(--accent); text-underline-offset: 3px; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    .wrap { padding-top: 1.5rem; }
+    .crumbs { font-size: 0.85rem; color: var(--muted); }
+    .crumbs a { color: var(--accent); }
+    .badge { color: #6b4300; background: #fff4df; border: 1px solid #e8c98f; }
+    h1 { color: var(--text); }
+    .lede { color: var(--muted); }
+    .card, .prose, details.how, .tool { background: var(--surface); border: 1px solid var(--border); box-shadow: none; }
+    .card h2 { color: var(--text); }
+    input[type="number"], input[type="text"], select, .monthly input { color: var(--text); background: var(--field-bg); border: 1px solid var(--field); font-size: 16px; }
+    input[type="number"]:focus, input[type="text"]:focus, select:focus, .monthly input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(15, 107, 79, 0.25); outline: none; }
+    .prefix { background: var(--surface-2); border-color: var(--field); color: var(--muted); }
+    .status-option label, .toggle-row { background: var(--surface); border: 1px solid var(--field); }
+    .status-option input:checked + label { border-color: var(--accent); background: var(--accent-soft); box-shadow: inset 0 0 0 1px var(--accent); }
+    .status-rate { color: var(--accent); }
+    .toggle-row input[type="checkbox"] { accent-color: var(--accent); }
+    .result-label { color: var(--muted); }
+    .result-row.highlight { background: var(--accent-soft); border: 1px solid var(--accent); }
+    .result-row.highlight .result-value { color: var(--accent); }
+    .result-row.deduction .result-value { color: var(--danger); }
+    .breakdown { background: var(--surface-2); border: 1px solid var(--border); color: var(--text); }
+    .headline .h-label { color: var(--muted); }
+    .headline.refund, .headline.none { background: var(--accent-soft); border: 1px solid var(--accent); }
+    .headline.refund .h-value, .headline.none .h-value { color: var(--accent); }
+    .headline.owed { background: #fdecea; border: 1px solid var(--danger); }
+    .headline.owed .h-value { color: var(--danger); }
+    .disclaimer, .note, .cta, .answer, .verdict { color: var(--text); }
+    .related a { background: var(--surface); border: 1px solid var(--border); color: var(--text); }
+    .related a span { color: var(--muted); }
+    .related a:hover { border-color: var(--accent); }
+    table.calc th { background: var(--surface-2); color: var(--text); }
+    details.how summary { color: var(--text); }
+    ::selection { background: var(--accent); color: #fff; }
+
+/* new tools (2026-10-08): date inputs and month grid */
+    input[type="date"] { width: 100%; padding: 0.7rem 0.85rem; font-family: var(--mono); font-size: 16px; color: var(--text); background: var(--field-bg); border: 1px solid var(--field); border-radius: 0; color-scheme: light; }
+    input[type="date"]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(15, 107, 79, 0.25); outline: none; }
+    .months { display: grid; gap: 0 1rem; grid-template-columns: 1fr 1fr; }
+    @media (min-width: 560px) { .months { grid-template-columns: 1fr 1fr 1fr; } }
+    .months .field { margin-bottom: 0.8rem; }
+    #out-msg:empty { display: none; }
+    .result-value { white-space: normal; overflow-wrap: anywhere; min-width: 0; }
+    @media (max-width: 559px) {
+      .result-row { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+      .result-value { text-align: left; }
+    }
+  </style>
+    <style>.tbc { display: inline-block; font-size: 0.75rem; font-weight: 600; color: #6b4300; background: #fff4df; border: 1px solid #e8c98f; border-radius: 999px; padding: 0 0.5rem; }</style>
+  <style>.ex-row{display:flex;flex-wrap:wrap;gap:0.5rem}.ex{font:inherit;font-size:0.85rem;padding:0.45rem 0.75rem;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer}.ex:hover{border-color:var(--accent)}</style>
+</head>
+<body>
+<header class="ps-top"><div class="ps-in"><a class="ps-brand" href="../../"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f6b4f"/><rect x="8" y="11" width="16" height="3.2" rx="1.2" fill="#fff"/><rect x="8" y="18" width="16" height="3.2" rx="1.2" fill="#fff"/></svg><span>Plain Sums</span></a><nav aria-label="Main"><a href="../../">Home</a><a href="../../tools/" aria-current="page">Tools</a><a href="../../templates/">Templates</a><a href="../../about/">About</a></nav></div></header>
+  <div class="wrap">
+    <p class="dx-label"><b>Income Tax</b><span>Estimate, not advice</span></p>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">Plain Sums</a> › <a href="../">Tools</a> › Side hustle trading allowance checker</nav>
+    <header>
+      <div class="badge" role="status">Budget 2026 · Estimate only · Not tax or financial advice</div>
+      <h1>Do I need to tell HMRC about my side hustle?</h1>
+      <p class="lede">For anyone selling crafts, 3D prints or digital downloads, or doing odd jobs on the side. Put in what you took in and what it cost you, pick a tax year, and I show whether the trading allowance covers it and, if not, whether the flat allowance or your actual costs gives the lower taxable profit. Nothing you type leaves your browser.</p>
+      <p class="answer" id="quick-answer"><strong>Quick answer:</strong> Budget 2026 raises the trading allowance from <strong>£1,000</strong> to <strong>£3,000</strong> from <strong>6 April 2027</strong>, for 2027 to 2028 onwards. It covers trading and miscellaneous income, and the Self Assessment reporting threshold for trading income also rises to £3,000. Sources: <a href="https://www.gov.uk/government/publications/income-tax-increasing-the-trading-allowance/increasing-the-trading-allowance" target="_blank" rel="noopener">GOV.UK: Increasing the trading allowance</a>, <a href="https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar#trading-allowance-increase" target="_blank" rel="noopener">GOV.UK Budget 2026 OOTLAR section 1.5</a>.</p>
+    </header>
+
+    <aside class="disclaimer" role="note">
+      <strong>Budget 2026 figures, still to be legislated</strong>
+      The £3,000 allowance was announced at Budget 2026 and will be legislated in the Finance Bill 2026 to 2027. I look at one person's side income in one tax year, before any other income. This is an estimate, not tax or financial advice.
+    </aside>
+
+    <form id="ta-form" novalidate>
+      <section class="card" aria-labelledby="s1">
+        <h2 id="s1">1 · Tax year</h2>
+        <div class="status-grid" role="radiogroup" aria-label="Tax year">
+          <div class="status-option"><input type="radio" name="year" id="y2026" value="2026"><label for="y2026"><span class="status-rate">£1,000</span><span class="status-name">2026 to 2027</span><span class="status-desc">6 April 2026 to 5 April 2027</span></label></div>
+          <div class="status-option"><input type="radio" name="year" id="y2027" value="2027" checked><label for="y2027"><span class="status-rate">£3,000</span><span class="status-name">2027 to 2028</span><span class="status-desc">From 6 April 2027</span></label></div>
+        </div>
+      </section>
+      <section class="card" aria-labelledby="s2">
+        <h2 id="s2">2 · Your side income</h2>
+        <div class="field">
+          <label for="gross">Money in for the tax year, before costs</label>
+          <div class="input-wrap"><span class="prefix">£</span><input type="number" id="gross" name="gross" inputmode="decimal" min="0" step="1" placeholder="2400" aria-describedby="gross-hint"></div>
+          <span class="hint" id="gross-hint">Your gross takings from all your trading and miscellaneous income added together, before platform fees or any other costs.</span>
+        </div>
+        <div class="field">
+          <label for="expenses">Actual costs <span class="optional">(optional)</span></label>
+          <div class="input-wrap"><span class="prefix">£</span><input type="number" id="expenses" name="expenses" inputmode="decimal" min="0" step="1" placeholder="0" aria-describedby="exp-hint"></div>
+          <span class="hint" id="exp-hint">Materials, filament, platform fees, postage, tools and so on. You can use these or the flat allowance, not both.</span>
+        </div>
+        <p class="hint">Try an example:</p>
+        <div class="ex-row">
+          <button type="button" class="ex" data-ex="2400,600">Crafts £2,400</button>
+          <button type="button" class="ex" data-ex="4500,1900">3D prints £4,500</button>
+          <button type="button" class="ex" data-ex="1800,150">Digital downloads £1,800</button>
+          <button type="button" class="ex" data-ex="3200,300">Odd jobs £3,200</button>
+        </div>
+      </section>
+    </form>
+
+    <section class="card results" aria-live="polite" aria-atomic="true" id="results">
+      <h2>Your answer</h2>
+      <div class="headline none" id="headline"><span class="h-label">Do I need to tell HMRC?</span><span class="h-value" id="out-headline">Not yet</span><span class="h-sub" id="out-headline-sub"></span></div>
+      <p class="note" id="out-msg"></p>
+      <div class="result-rows" id="out-rows" hidden>
+        <div class="result-row"><span class="result-label">Trading allowance that year</span><span class="result-value" id="out-allowance"></span></div>
+        <div class="result-row"><span class="result-label">Taxable profit with the flat allowance</span><span class="result-value" id="out-p-allow"></span></div>
+        <div class="result-row"><span class="result-label">Taxable profit with actual costs</span><span class="result-value" id="out-p-exp"></span></div>
+        <div class="result-row"><span class="result-label">Better choice</span><span class="result-value" id="out-best"></span></div>
+        <div class="result-row highlight"><span class="result-label">Taxable profit</span><span class="result-value" id="out-taxable"></span></div>
+      </div>
+      <p class="note">This is an estimate, not advice. It shows the taxable profit, not the tax, because the tax depends on your other income. If your costs are more than your income you may want to use actual costs to record a loss, even when the allowance covers you.</p>
+    </section>
+
+    <section class="prose" id="notes" aria-labelledby="notes-h">
+      <h2 id="notes-h">Things to know</h2>
+      <ul>
+        <li><strong>It is per person.</strong> The allowance is for individuals, so if you and your partner each run your own side hustle you each get one. <a href="https://www.gov.uk/guidance/tax-free-allowances-on-property-and-trading-income" target="_blank" rel="noopener">GOV.UK: tax free allowances</a>.</li>
+        <li><strong>Some income cannot use it.</strong> You cannot use it on income from a company you or someone connected to you owns or controls, from a partnership where you or someone connected to you is a partner, or from your employer or your spouse's or civil partner's employer. <a href="https://www.gov.uk/guidance/tax-free-allowances-on-property-and-trading-income" target="_blank" rel="noopener">GOV.UK: when you cannot use the allowances</a>.</li>
+        <li><strong>Platforms still share your data.</strong> Sites like eBay, Etsy and Vinted send HMRC your details and takings once you make 30 or more sales of goods, or get about £1,700 (2,000 euros), in a calendar year. That does not by itself mean you owe tax, and selling your own unwanted things is unlikely to be taxed. <a href="https://www.gov.uk/guidance/selling-goods-or-services-on-a-digital-platform" target="_blank" rel="noopener">GOV.UK: selling on a digital platform</a>.</li>
+        <li><strong>Allowance or costs, not both.</strong> If you take the flat allowance you cannot also deduct your actual costs. <a href="https://www.gov.uk/guidance/tax-free-allowances-on-property-and-trading-income" target="_blank" rel="noopener">GOV.UK: tax free allowances</a>.</li>
+        <li><strong>Other reasons to file.</strong> If you already send a tax return for another reason, you still fill it in. This checker only looks at your side income.</li>
+      </ul>
+    </section>
+
+    <section class="prose" id="rates" aria-labelledby="rates-h">
+      <h2 id="rates-h">The figures I use</h2>
+      <ul>
+        <li>Trading allowance £1,000 in 2026 to 2027, £3,000 from 6 April 2027 for 2027 to 2028 onwards. <a href="https://www.gov.uk/government/publications/income-tax-increasing-the-trading-allowance/increasing-the-trading-allowance" target="_blank" rel="noopener">GOV.UK policy paper</a>, <a href="https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar#trading-allowance-increase" target="_blank" rel="noopener">OOTLAR section 1.5</a>.</li>
+        <li>The allowance covers trading and miscellaneous income, now and after the rise. <a href="https://www.gov.uk/government/publications/income-tax-increasing-the-trading-allowance/increasing-the-trading-allowance" target="_blank" rel="noopener">GOV.UK policy paper</a>, <a href="https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar#trading-allowance-increase" target="_blank" rel="noopener">OOTLAR section 1.5</a>.</li>
+        <li>Self Assessment reporting threshold for trading income: over £1,000 now, rising to £3,000 from 6 April 2027. <a href="https://www.gov.uk/guidance/tax-free-allowances-on-property-and-trading-income" target="_blank" rel="noopener">GOV.UK: tax free allowances</a>, <a href="https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar#trading-allowance-increase" target="_blank" rel="noopener">OOTLAR section 1.5</a>.</li>
+        <li>Reporting for miscellaneous (other) income from 2027 to 2028. <span class="tbc">To be confirmed</span> Today other income from £1,000 to £2,500 means contacting HMRC and over £2,500 means Self Assessment. The Budget papers name the reporting rise for trading income only, so I could not confirm what happens for miscellaneous income.</li>
+        <li>Property allowance stays at £1,000. <span class="tbc">To be confirmed</span> The Budget papers I checked do not mention a change, but I could not find a GOV.UK page that says it stays the same in 2027 to 2028. <a href="https://www.gov.uk/guidance/tax-free-allowances-on-property-and-trading-income" target="_blank" rel="noopener">GOV.UK: property allowance</a>.</li>
+      </ul>
+      <h3>A worked check</h3>
+      <p>3D prints bringing in £4,500 with £1,900 of costs. In 2026 to 2027 the flat allowance gives £4,500 less £1,000, which is £3,500, while actual costs give £2,600, so costs win. In 2027 to 2028 the allowance gives £1,500, which beats £2,600, so the allowance wins and saves £1,100 of taxable profit. Crafts bringing in £2,400 need reporting in 2026 to 2027 but are fully covered from 2027 to 2028.</p>
+      <p class="src">Figures checked on GOV.UK on <time datetime="2026-10-29">29 October 2026</time>.</p>
+    </section>
+
+    <section class="prose" id="related" aria-labelledby="rel-h">
+      <h2 id="rel-h">Related tools</h2>
+      <div class="related">
+        <a href="../">All free UK money tools<span>No sign up calculators, each linked to the GOV.UK rules it uses.</span></a>
+        <a href="../budget-2026-pay-calculator/">Budget 2026 pay calculator<span>See your take home pay now and after the Budget.</span></a>
+      </div>
+    </section>
+
+    <footer>
+      <p>Free static utility · Sources: <a href="https://www.gov.uk/government/publications/income-tax-increasing-the-trading-allowance/increasing-the-trading-allowance" target="_blank" rel="noopener">GOV.UK Increasing the trading allowance</a>, <a href="https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar#trading-allowance-increase" target="_blank" rel="noopener">GOV.UK Budget 2026 OOTLAR</a>, <a href="https://www.gov.uk/guidance/tax-free-allowances-on-property-and-trading-income" target="_blank" rel="noopener">Tax free allowances on property and trading income</a>, <a href="https://www.gov.uk/guidance/selling-goods-or-services-on-a-digital-platform" target="_blank" rel="noopener">Selling on a digital platform</a> · Checked on <time datetime="2026-10-29">29 October 2026</time> · <a href="../">More tools</a> · Built by <a href="../../about/">Arthur Jones</a></p>
+      <p>This is an estimate, not legal, tax or financial advice. Check anything that matters with GOV.UK, HMRC or a qualified adviser.</p>
+    </footer>
+
+  </div>
+<footer class="ps-foot"><div class="ps-in"><nav aria-label="Site"><a href="../../about/">About</a><a href="../../privacy/">Privacy</a><a href="../../cookies/">Cookies</a><a href="../../terms/">Terms</a><a href="../../disclaimer/">Disclaimer</a></nav><p>Free UK calculators and spreadsheet templates. Estimates, not tax advice. Not affiliated with HMRC.</p><p>&copy; 2026 Arthur Jones</p></div></footer>
+
+  <script src="trading.js"></script>
+  <script src="app.js"></script>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "50becbbfccc84869ae6ea32a24a32453"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
