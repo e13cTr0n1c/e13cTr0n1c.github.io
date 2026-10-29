@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Self Assessment Timely Payments Planner 2029 (UK): Monthly or Quarterly Tax</title>
+  <meta name="description" content="Plan your cashflow for the Self Assessment timely payments change from April 2029. Compare today's 31 January and 31 July payments with monthly and quarterly in-year payments and see the extra cash needed in the 2029/30 transition year. Estimate, not advice.">
+  <link rel="canonical" href="https://e13ctr0n1c.github.io/tools/self-assessment-timely-payments-planner/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f7f6f2">
+  <link rel="sitemap" type="application/xml" href="https://e13ctr0n1c.github.io/sitemap.xml">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Plain Sums">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://e13ctr0n1c.github.io/tools/self-assessment-timely-payments-planner/">
+  <meta property="og:title" content="Self Assessment timely payments planner (2029)">
+  <meta property="og:description" content="Compare today's Self Assessment payment dates with monthly and quarterly in-year payments from April 2029, and see the extra cash needed in the transition year.">
+  <meta property="og:image" content="https://e13ctr0n1c.github.io/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Self Assessment timely payments planner (2029)">
+  <meta name="twitter:description" content="Compare today's Self Assessment payment dates with monthly and quarterly in-year payments from April 2029, and see the extra cash needed in the transition year.">
+  <meta name="twitter:image" content="https://e13ctr0n1c.github.io/og-image.png">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Self Assessment timely payments planner","url":"https://e13ctr0n1c.github.io/tools/self-assessment-timely-payments-planner/","description":"Compare today's Self Assessment payment dates with monthly and quarterly in-year payments from April 2029, and see the extra cash needed in the transition year.","applicationCategory":"FinanceApplication","operatingSystem":"Any (web browser)","inLanguage":"en-GB","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}
+  </script>
+  <style>
+    :root {
+      --bg: #10141a;
+      --surface: #1a222c;
+      --surface-2: #243040;
+      --border: #2e3d4f;
+      --text: #e8eef4;
+      --muted: #8b9cb0;
+      --accent: #3d9cf0;
+      --accent-soft: rgba(61, 156, 240, 0.15);
+      --success: #3ecf8e;
+      --warning: #f0b429;
+      --danger: #f07178;
+      --radius: 12px;
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+      --font: "DM Sans", system-ui, -apple-system, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font);
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(61, 156, 240, 0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 100% 100%, rgba(62, 207, 142, 0.08), transparent),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    header {
+      margin-bottom: 1.75rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--warning);
+      background: rgba(240, 180, 41, 0.12);
+      border: 1px solid rgba(240, 180, 41, 0.35);
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      margin-bottom: 0.85rem;
+    }
+
+    h1 {
+      font-size: clamp(1.55rem, 4vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.5rem;
+      line-height: 1.2;
+    }
+
+    .lede {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 38em;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.35rem 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .card h2 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin: 0 0 1rem;
+    }
+
+    .field {
+      margin-bottom: 1.1rem;
+    }
+
+    .field:last-child { margin-bottom: 0; }
+
+    label {
+      display: block;
+      font-weight: 500;
+      font-size: 0.925rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .hint {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 400;
+      margin-top: 0.25rem;
+    }
+
+    .input-wrap {
+      position: relative;
+      display: flex;
+      align-items: stretch;
+    }
+
+    .prefix {
+      display: flex;
+      align-items: center;
+      padding: 0 0.75rem;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-right: none;
+      border-radius: 8px 0 0 8px;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 0.7rem 0.85rem;
+      font: inherit;
+      font-size: 1.05rem;
+      color: var(--text);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .input-wrap input {
+      border-radius: 0 8px 8px 0;
+    }
+
+    input[type="number"]:focus,
+    select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-soft);
+    }
+
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type="number"] { -moz-appearance: textfield; }
+
+    .status-grid {
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    @media (min-width: 520px) {
+      .status-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .status-option {
+      position: relative;
+    }
+
+    .status-option input {
+      position: absolute;
+      opacity: 0;
+      width: 1px;
+      height: 1px;
+    }
+
+    .status-option label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      padding: 0.85rem 0.9rem;
+      background: var(--bg);
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 0;
+      transition: border-color 0.15s, background 0.15s;
+      min-height: 100%;
+    }
+
+    .status-option input:focus-visible + label {
+      box-shadow: 0 0 0 3px var(--accent-soft);
+    }
+
+    .status-option input:checked + label {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .status-rate {
+      font-family: var(--mono);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .status-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .status-desc {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .toggle-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.85rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .toggle-row input[type="checkbox"] {
+      width: 1.15rem;
+      height: 1.15rem;
+      margin-top: 0.15rem;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .toggle-row label {
+      margin: 0;
+      cursor: pointer;
+    }
+
+    #vat-fields { display: none; }
+    #vat-fields.visible { display: block; }
+
+    .results {
+      border-color: rgba(61, 156, 240, 0.4);
+    }
+
+    .result-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .result-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .result-row.highlight {
+      margin-top: 0.35rem;
+      padding: 1rem;
+      background: var(--accent-soft);
+      border: 1px solid rgba(61, 156, 240, 0.35);
+      border-radius: 10px;
+      border-bottom: 1px solid rgba(61, 156, 240, 0.35);
+    }
+
+    .result-label {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .result-value {
+      font-family: var(--mono);
+      font-size: 1.05rem;
+      font-weight: 500;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .result-row.highlight .result-label {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .result-row.highlight .result-value {
+      font-size: 1.35rem;
+      color: var(--success);
+    }
+
+    .result-row.deduction .result-value {
+      color: var(--danger);
+    }
+
+    .breakdown {
+      margin-top: 1rem;
+      padding: 0.9rem 1rem;
+      background: var(--bg);
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .breakdown strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .disclaimer {
+      background: rgba(240, 180, 41, 0.08);
+      border: 1px solid rgba(240, 180, 41, 0.3);
+      border-radius: var(--radius);
+      padding: 1rem 1.15rem;
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .disclaimer strong {
+      color: var(--warning);
+      display: block;
+      margin-bottom: 0.35rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .disclaimer a {
+      color: var(--accent);
+    }
+
+    details.how {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.85rem 1.15rem;
+      margin-bottom: 1.25rem;
+    }
+
+    details.how summary {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    details.how summary::-webkit-details-marker { display: none; }
+
+    details.how summary::after {
+      content: "+";
+      font-size: 1.25rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    details.how[open] summary::after { content: "−"; }
+
+    details.how .how-body {
+      margin-top: 0.85rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    details.how ul {
+      margin: 0.5rem 0;
+      padding-left: 1.2rem;
+    }
+
+    details.how li { margin-bottom: 0.35rem; }
+
+    details.how a { color: var(--accent); }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+
+    footer a { color: var(--accent); }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .answer {
+      margin: 1rem 0 0;
+      padding: 0.9rem 1rem;
+      background: var(--accent-soft);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      font-size: 0.95rem;
+    }
+    .answer a { color: var(--accent); }
+
+    .prose {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.35rem 1.25rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.95rem;
+    }
+    .prose h2 {
+      font-size: 1.2rem;
+      margin: 0 0 0.75rem;
+      letter-spacing: -0.01em;
+    }
+    .prose h3 {
+      font-size: 1rem;
+      margin: 1.25rem 0 0.35rem;
+    }
+    .prose p, .prose li { color: var(--muted); }
+    .prose strong { color: var(--text); }
+    .prose a { color: var(--accent); }
+    .prose ol, .prose ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+    .prose li { margin-bottom: 0.35rem; }
+    .prose .src { font-size: 0.8rem; margin-top: 0.25rem; }
+
+    .table-wrap { overflow-x: auto; margin: 0.75rem 0; }
+    table.calc {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    table.calc th, table.calc td {
+      text-align: left;
+      padding: 0.5rem 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    table.calc th { color: var(--text); font-weight: 600; }
+    table.calc td { color: var(--muted); }
+    table.calc td.num, table.calc th.num { text-align: right; font-family: var(--mono); white-space: nowrap; }
+    table.calc tr.total td { color: var(--text); font-weight: 600; }
+
+    .cta {
+      background: rgba(62, 207, 142, 0.08);
+      border: 1px solid rgba(62, 207, 142, 0.35);
+      border-radius: var(--radius);
+      padding: 1rem 1.15rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .cta strong { color: var(--text); }
+    .cta a { color: var(--success); font-weight: 600; }
+  
+    [hidden] { display: none !important; }
+    .card a { color: var(--accent); }
+    #it-lines .result-row { border-bottom: 1px solid var(--border); padding: 0.5rem 0; }
+    .wrap { max-width: 760px; }
+    .crumbs { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.9rem; }
+    .crumbs a { color: var(--accent); text-decoration: none; }
+    .grid2 { display: grid; gap: 0 1rem; }
+    @media (min-width: 560px) { .grid2 { grid-template-columns: 1fr 1fr; } }
+    .seg { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+    .seg .status-option label { min-height: 0; }
+    .optional { font-weight: 400; color: var(--muted); }
+    input[readonly] { opacity: 0.75; cursor: not-allowed; }
+    .monthly { margin-top: 0.25rem; }
+    .monthly table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    .monthly th, .monthly td { padding: 0.3rem 0.35rem; border-bottom: 1px solid var(--border); text-align: left; }
+    .monthly th { color: var(--muted); font-weight: 600; }
+    .monthly input { width: 100%; padding: 0.4rem 0.5rem; font: inherit; font-size: 0.9rem; color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: 6px; }
+    .monthly tfoot td { color: var(--text); font-weight: 600; font-family: var(--mono); }
+    #monthly-wrap { display: none; }
+    #monthly-wrap.visible { display: block; }
+    .headline { padding: 1.1rem 1rem; border-radius: 10px; margin-bottom: 0.75rem; text-align: center; }
+    .headline.refund { background: rgba(62, 207, 142, 0.12); border: 1px solid rgba(62, 207, 142, 0.45); }
+    .headline.owed { background: rgba(240, 113, 120, 0.1); border: 1px solid rgba(240, 113, 120, 0.45); }
+    .headline .h-label { display: block; font-size: 0.85rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+    .headline .h-value { display: block; font-family: var(--mono); font-size: 2rem; font-weight: 500; margin-top: 0.2rem; }
+    .headline.refund .h-value { color: var(--success); }
+    .headline.owed .h-value { color: var(--danger); }
+    .result-row.sub .result-label { padding-left: 0.9rem; font-size: 0.85rem; }
+    .result-row.sub .result-value { font-size: 0.95rem; color: var(--muted); }
+    .result-row.total .result-label { color: var(--text); font-weight: 600; }
+    .note { margin-top: 0.75rem; padding: 0.75rem 0.9rem; border-radius: 8px; font-size: 0.85rem; color: var(--muted); background: var(--bg); border-left: 3px solid var(--warning); }
+    .note strong { color: var(--text); }
+    .note a { color: var(--accent); }
+    table.calc td.box { font-family: var(--mono); color: var(--accent); white-space: nowrap; }
+    table.calc td small { display: block; font-size: 0.75rem; opacity: 0.85; }
+    .related { display: grid; gap: 0.75rem; }
+    @media (min-width: 560px) { .related { grid-template-columns: 1fr 1fr; } }
+    .related a { display: block; padding: 0.9rem 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; text-decoration: none; color: var(--text); }
+    .related a:hover { border-color: var(--accent); }
+    .related a span { display: block; font-size: 0.82rem; color: var(--muted); margin-top: 0.2rem; }
+    button.link { background: none; border: none; color: var(--accent); font: inherit; font-size: 0.85rem; cursor: pointer; padding: 0; text-decoration: underline; }
+  
+    .status-grid.three .status-option label { min-height: 100%; }
+    .pct-wrap .prefix { border-radius: 0 8px 8px 0; border-right: 1px solid var(--border); border-left: none; order: 2; }
+    .pct-wrap input { border-radius: 8px 0 0 8px !important; }
+    .gift-row { display: grid; grid-template-columns: 1.1fr 1fr; gap: 0.6rem; margin-bottom: 0.6rem; }
+    .gift-row select { font-size: 0.95rem; padding: 0.6rem 0.7rem; }
+    .verdict { padding: 0.85rem 1rem; border-radius: 10px; margin-top: 0.75rem; background: var(--bg); border: 1px solid var(--border); font-size: 0.9rem; color: var(--muted); }
+    .verdict h3 { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--text); }
+    .verdict.good { border-color: rgba(62, 207, 142, 0.45); }
+    .verdict.warn { border-color: rgba(240, 180, 41, 0.45); }
+    .verdict.bad { border-color: rgba(240, 113, 120, 0.45); }
+    .verdict a { color: var(--accent); }
+    .verdict ul { margin: 0.35rem 0 0; padding-left: 1.1rem; }
+    .headline.none { background: rgba(62, 207, 142, 0.12); border: 1px solid rgba(62, 207, 142, 0.45); }
+    .headline.none .h-value { color: var(--success); }
+    .headline .h-sub { display: block; font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem; }
+    ol.steps { padding-left: 1.25rem; margin: 0; }
+    ol.steps li { margin-bottom: 0.6rem; color: var(--muted); font-size: 0.92rem; }
+    ol.steps li strong { color: var(--text); }
+    ol.steps a { color: var(--accent); }
+    #gift-table-wrap[hidden] { display: none; }
+  
+    /* ===== Plain Sums: light theme for the calculators (replaces the dark house style) ===== */
+    :root {
+      color-scheme: light;
+      --bg: #f7f6f2;
+      --surface: #ffffff;
+      --surface-2: #f2efe9;
+      --border: #dcd8cf;
+      --field: #8a918c;
+      --field-bg: #ffffff;
+      --text: #1c2422;
+      --muted: #55605b;
+      --accent: #0f6b4f;
+      --accent-soft: #e3f0ea;
+      --line2: #9cc5b4;
+      --success: #0f6b4f;
+      --warning: #8a5300;
+      --danger: #b3261e;
+      --radius: 10px;
+      --shadow: none;
+      --font: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      --head: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    html { background: var(--bg); }
+    body { background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.6; }
+    a { color: var(--accent); text-underline-offset: 3px; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    .wrap { padding-top: 1.5rem; }
+    .crumbs { font-size: 0.85rem; color: var(--muted); }
+    .crumbs a { color: var(--accent); }
+    .badge { color: #6b4300; background: #fff4df; border: 1px solid #e8c98f; }
+    h1 { color: var(--text); }
+    .lede { color: var(--muted); }
+    .card, .prose, details.how, .tool { background: var(--surface); border: 1px solid var(--border); box-shadow: none; }
+    .card h2 { color: var(--text); }
+    input[type="number"], input[type="text"], select, .monthly input { color: var(--text); background: var(--field-bg); border: 1px solid var(--field); font-size: 16px; }
+    input[type="number"]:focus, input[type="text"]:focus, select:focus, .monthly input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(15, 107, 79, 0.25); outline: none; }
+    .prefix { background: var(--surface-2); border-color: var(--field); color: var(--muted); }
+    .status-option label, .toggle-row { background: var(--surface); border: 1px solid var(--field); }
+    .status-option input:checked + label { border-color: var(--accent); background: var(--accent-soft); box-shadow: inset 0 0 0 1px var(--accent); }
+    .status-rate { color: var(--accent); }
+    .toggle-row input[type="checkbox"] { accent-color: var(--accent); }
+    .result-label { color: var(--muted); }
+    .result-row.highlight { background: var(--accent-soft); border: 1px solid var(--accent); }
+    .result-row.highlight .result-value { color: var(--accent); }
+    .result-row.deduction .result-value { color: var(--danger); }
+    .breakdown { background: var(--surface-2); border: 1px solid var(--border); color: var(--text); }
+    .headline .h-label { color: var(--muted); }
+    .headline.refund, .headline.none { background: var(--accent-soft); border: 1px solid var(--accent); }
+    .headline.refund .h-value, .headline.none .h-value { color: var(--accent); }
+    .headline.owed { background: #fdecea; border: 1px solid var(--danger); }
+    .headline.owed .h-value { color: var(--danger); }
+    .disclaimer, .note, .cta, .answer, .verdict { color: var(--text); }
+    .related a { background: var(--surface); border: 1px solid var(--border); color: var(--text); }
+    .related a span { color: var(--muted); }
+    .related a:hover { border-color: var(--accent); }
+    table.calc th { background: var(--surface-2); color: var(--text); }
+    details.how summary { color: var(--text); }
+    ::selection { background: var(--accent); color: #fff; }
+
+/* new tools (2026-10-08): date inputs and month grid */
+    input[type="date"] { width: 100%; padding: 0.7rem 0.85rem; font-family: var(--mono); font-size: 16px; color: var(--text); background: var(--field-bg); border: 1px solid var(--field); border-radius: 0; color-scheme: light; }
+    input[type="date"]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(15, 107, 79, 0.25); outline: none; }
+    .months { display: grid; gap: 0 1rem; grid-template-columns: 1fr 1fr; }
+    @media (min-width: 560px) { .months { grid-template-columns: 1fr 1fr 1fr; } }
+    .months .field { margin-bottom: 0.8rem; }
+    #out-msg:empty { display: none; }
+    .result-value { white-space: normal; overflow-wrap: anywhere; min-width: 0; }
+    @media (max-width: 559px) {
+      .result-row { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+      .result-value { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+<header class="ps-top"><div class="ps-in"><a class="ps-brand" href="../../"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f6b4f"/><rect x="8" y="11" width="16" height="3.2" rx="1.2" fill="#fff"/><rect x="8" y="18" width="16" height="3.2" rx="1.2" fill="#fff"/></svg><span>Plain Sums</span></a><nav aria-label="Main"><a href="../../">Home</a><a href="../../tools/" aria-current="page">Tools</a><a href="../../templates/">Templates</a><a href="../../about/">About</a></nav></div></header>
+  <div class="wrap">
+    <p class="dx-label"><b>Self Assessment</b><span>Estimate, not advice</span></p>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">Plain Sums</a> › <a href="../">Tools</a> › Self Assessment timely payments planner</nav>
+    <header>
+      <div class="badge" role="status">Schedule not final · Estimate only · Not tax or financial advice</div>
+      <h1>Self Assessment timely payments planner (2029)</h1>
+      <p class="lede">For anyone who makes Payments on Account. From April 2029 these move to smaller, automated payments during the tax year. I built this to see what that does to my cashflow, especially in the 2029/30 transition year. Put in last year's bill and how your income falls across the year. Nothing you type leaves your browser.</p>
+      <p class="answer" id="quick-answer"><strong>Quick answer:</strong> from April 2029, if you make Payments on Account you will pay during the tax year by automated payments such as Direct Debit, or through PAYE if you opt in and have enough PAYE income. Payments are still based on last year's tax and your return is still due by 31 January. 2029/30 is a transition year where the last payment for 2028/29 overlaps with the new payments. <strong>How often you pay has not been decided</strong>, so I show both monthly and quarterly. Sources: <a href="https://www.gov.uk/government/publications/fiscal-events-2026-factsheets/timely-payments-in-income-tax-self-assessment-factsheet--2" target="_blank" rel="noopener">GOV.UK timely payments factsheet</a> and <a href="https://www.gov.uk/government/consultations/timely-payments-in-income-tax-self-assessment/outcome/timely-payments-in-income-tax-self-assessment-itsa-summary-of-responses" target="_blank" rel="noopener">GOV.UK summary of consultation responses</a>.</p>
+    </header>
+
+    <aside class="disclaimer" role="note">
+      <strong>The new schedule is not final</strong>
+      HMRC says it will set out the frequency and timing of in-year payments, safeguards and how the transition works in 2027. Every monthly and quarterly figure here is my estimate on stated assumptions, not HMRC's schedule. This is an estimate, not tax or financial advice.
+    </aside>
+
+    <form id="sa-form" novalidate>
+      <section class="card" aria-labelledby="s1">
+        <h2 id="s1">1 · Your Self Assessment bill</h2>
+        <div class="field">
+          <label for="lastBill">Last year's Self Assessment bill</label>
+          <div class="input-wrap"><span class="prefix">£</span><input type="number" id="lastBill" name="lastBill" inputmode="decimal" min="0" step="1" placeholder="6000" aria-describedby="bill-hint"></div>
+          <span class="hint" id="bill-hint">What your 2028/29 return says you owe, after any tax taken at source. I assume your payments are based on it, as they are now.</span>
+          <span class="hint" id="lastBill-err" role="alert"></span>
+        </div>
+        <div class="field">
+          <label for="balancing">Balancing payment for 2028/29 due 31 January 2030 <span class="optional">(optional)</span></label>
+          <div class="input-wrap"><span class="prefix">£</span><input type="number" id="balancing" name="balancing" inputmode="decimal" min="0" step="1" placeholder="0"></div>
+          <span class="hint">Anything your 2028/29 payments on account did not cover. Leave blank if your bill was flat.</span>
+          <span class="hint" id="balancing-err" role="alert"></span>
+        </div>
+      </section>
+      <section class="card" aria-labelledby="s2">
+        <h2 id="s2">2 · How your income comes in</h2>
+        <div class="status-grid">
+          <div class="status-option"><input type="radio" id="p-steady" name="pattern" value="steady" checked><label for="p-steady"><span class="status-name">Steady</span><span class="status-desc">About the same each month</span></label></div>
+          <div class="status-option"><input type="radio" id="p-summer" name="pattern" value="summer"><label for="p-summer"><span class="status-name">Seasonal, busy in summer</span><span class="status-desc">Two thirds earned April to September</span></label></div>
+          <div class="status-option"><input type="radio" id="p-winter" name="pattern" value="winter"><label for="p-winter"><span class="status-name">Seasonal, busy in winter</span><span class="status-desc">Two thirds earned October to March</span></label></div>
+        </div>
+        <h2 id="s3" style="margin-top:1.25rem">3 · Payment frequency to compare</h2>
+        <div class="seg" role="radiogroup" aria-labelledby="s3">
+          <div class="status-option"><input type="radio" id="f-monthly" name="freq" value="monthly" checked><label for="f-monthly"><span class="status-name">Monthly</span><span class="status-desc">12 payments in the year</span></label></div>
+          <div class="status-option"><input type="radio" id="f-quarterly" name="freq" value="quarterly"><label for="f-quarterly"><span class="status-name">Quarterly</span><span class="status-desc">4 payments in the year</span></label></div>
+        </div>
+      </section>
+    </form>
+
+    <section class="card results" aria-live="polite" aria-atomic="true" id="results">
+      <h2>Your estimate</h2>
+      <div class="headline owed" id="headline"><span class="h-label">Extra cash needed in 2029/30</span><span class="h-value" id="out-headline">£0.00</span><span class="h-sub" id="out-headline-sub"></span></div>
+      <p class="note" id="out-msg"></p>
+      <div id="out-wrap" hidden>
+        <div class="result-rows">
+          <div class="result-row"><span class="result-label">Paid in 2029/30 on today's rules</span><span class="result-value" id="out-total-current"></span></div>
+          <div class="result-row"><span class="result-label">Paid in 2029/30 with <span id="out-freq-name">monthly</span> payments</span><span class="result-value" id="out-total-new"></span></div>
+          <div class="result-row highlight"><span class="result-label">Extra cash in the transition year</span><span class="result-value" id="out-extra"></span></div>
+          <div class="result-row"><span class="result-label">Regular in-year payment</span><span class="result-value" id="out-regular"></span></div>
+          <div class="result-row"><span class="result-label">Most paid in a single month in 2029/30</span><span class="result-value" id="out-peak"></span></div>
+          <div class="result-row"><span class="result-label">Cash buffer for your income pattern in a normal year</span><span class="result-value" id="out-buffer"></span></div>
+        </div>
+        <h3 style="margin:1.25rem 0 0.25rem;font-size:1rem">Today's schedule</h3>
+        <div class="table-wrap"><table class="calc" id="current-table"><thead><tr><th scope="col">Due</th><th scope="col">What</th><th scope="col" class="num">Amount</th></tr></thead><tbody></tbody></table></div>
+        <h3 style="margin:1.25rem 0 0.25rem;font-size:1rem">Month by month in 2029/30</h3>
+        <div class="table-wrap"><table class="calc" id="month-table"><thead><tr><th scope="col">Month</th><th scope="col" class="num">Today's rules</th><th scope="col" class="num">Monthly</th><th scope="col" class="num">Quarterly</th></tr></thead><tbody></tbody><tfoot></tfoot></table></div>
+      </div>
+      <p class="note">This is an estimate on a schedule that is not final. I assume monthly payments at the end of each month from April 2029, quarterly payments at the end of June, September, December and March, that the 31 July 2029 payment and 31 January 2030 balancing payment for 2028/29 are still due, and that this year's bill matches last year's. All of these are <strong>to be confirmed</strong> by HMRC.</p>
+    </section>
+
+    <section class="prose" id="rates" aria-labelledby="rates-h">
+      <h2 id="rates-h">What GOV.UK has confirmed</h2>
+      <ul>
+        <li><strong>From April 2029</strong> people who make Payments on Account will make smaller, more regular payments during the tax year they earn the income.</li>
+        <li><strong>Automated by default</strong>, for example by Direct Debit. If you have enough PAYE income from a job or a private pension you can choose to pay through PAYE instead.</li>
+        <li><strong>Still based on last year's tax</strong>, and you will be able to update it online if your circumstances change.</li>
+        <li><strong>Returns are still due by 31 January.</strong> GOV.UK does not yet say when any balancing payment will fall under the new system, so I keep it on 31 January as <strong>to be confirmed</strong>.</li>
+        <li><strong>2029/30 is a transition year</strong>, because the final payment for 2028/29 overlaps with the new in-year payments. The detail of the transition is still <strong>to be confirmed</strong>.</li>
+        <li><strong>Frequency is not decided.</strong> GOV.UK does not commit to monthly or quarterly. In the consultation, people open to change mostly preferred quarterly over monthly.</li>
+        <li><strong>Who is affected:</strong> you make Payments on Account unless last year's bill was under £1,000 or more than 80% of your tax was taken at source, for example through your tax code.</li>
+        <li><strong>Help before the switch:</strong> HMRC plans tools from 2028 to estimate your bill, track it and make voluntary payments early.</li>
+      </ul>
+      <h3>Why the transition year costs more</h3>
+      <p>Today, in the year from April 2029 you would pay the second payment for 2028/29 in July 2029 and then, in January 2030, any balancing payment plus the first payment for 2029/30. That is one year's bill. Under the new rules the July and January payments for 2028/29 still fall in that year, and the whole of the 2029/30 bill is paid during the year. That brings forward half a year's bill.</p>
+      <h3>A worked check</h3>
+      <p>Last year's bill of £6,000 and a flat bill: today you pay £3,000 in July 2029 and £3,000 in January 2030, so £6,000 in the year. Monthly, you pay £500 a month plus the £3,000 July payment, so £9,000. Quarterly, you pay £1,500 a quarter plus £3,000 in July, also £9,000. The extra cash is £3,000. If two thirds of your income comes in from October to March, monthly or quarterly payments need a buffer of £1,800 in a normal year, because you pay before the busy months arrive.</p>
+      <p class="src">Sources: <a href="https://www.gov.uk/government/publications/fiscal-events-2026-factsheets/timely-payments-in-income-tax-self-assessment-factsheet--2" target="_blank" rel="noopener">GOV.UK: Timely payments in Income Tax Self Assessment factsheet</a>, <a href="https://www.gov.uk/government/consultations/timely-payments-in-income-tax-self-assessment/outcome/timely-payments-in-income-tax-self-assessment-itsa-summary-of-responses" target="_blank" rel="noopener">GOV.UK: Timely payments in ITSA, summary of responses</a>.</p>
+    </section>
+
+    <section class="prose" id="related" aria-labelledby="rel-h">
+      <h2 id="rel-h">Related tools</h2>
+      <div class="related">
+        <a href="../">All free UK money tools<span>No sign up calculators, each linked to the GOV.UK rules it uses.</span></a>
+        <a href="../mtd-income-tax-checker/">Making Tax Digital checker<span>See whether quarterly updates apply to you.</span></a>
+      </div>
+    </section>
+
+    <footer>
+      <p>Free static utility · Sources: <a href="https://www.gov.uk/government/publications/fiscal-events-2026-factsheets/timely-payments-in-income-tax-self-assessment-factsheet--2" target="_blank" rel="noopener">GOV.UK timely payments factsheet</a>, <a href="https://www.gov.uk/government/consultations/timely-payments-in-income-tax-self-assessment/outcome/timely-payments-in-income-tax-self-assessment-itsa-summary-of-responses" target="_blank" rel="noopener">GOV.UK summary of responses</a> · Checked on <time datetime="2026-10-29">29 October 2026</time> · <a href="../">More tools</a> · Built by <a href="../../about/">Arthur Jones</a></p>
+      <p>This is an estimate, not legal, tax or financial advice. Check anything that matters with GOV.UK, HMRC or a qualified adviser.</p>
+    </footer>
+  </div>
+<footer class="ps-foot"><div class="ps-in"><nav aria-label="Site"><a href="../../about/">About</a><a href="../../privacy/">Privacy</a><a href="../../cookies/">Cookies</a><a href="../../terms/">Terms</a><a href="../../disclaimer/">Disclaimer</a></nav><p>Free UK calculators and spreadsheet templates. Estimates, not tax advice. Not affiliated with HMRC.</p><p>&copy; 2026 Arthur Jones</p></div></footer>
+
+  <script src="sa-timely.js"></script>
+  <script src="app.js"></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "50becbbfccc84869ae6ea32a24a32453"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
