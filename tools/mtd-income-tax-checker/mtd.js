@@ -12,6 +12,18 @@
     { id: "y2627", start: "6 April 2028", startIso: "2028-04-06", threshold: 20000, taxYear: "2026 to 2027" }
   ];
   var MAX = 100000000;
+  // Budget 2026 OOTLAR section 2.37 (checked 30 October 2026): groups exempt from MTD for Income Tax until further notice.
+  // Secondary legislation is still to come, so these are announced policy, not law yet.
+  var EXEMPTIONS = [
+    { id: "ex-care", label: "Eligible for qualifying care relief, for example foster carers and shared lives or supported lodgings carers" },
+    { id: "ex-entertainer", label: "A non UK resident foreign entertainer or sportsperson" },
+    { id: "ex-moving", label: "A UK taxpayer who expects to become non resident, for example because you are moving overseas" },
+    { id: "ex-insolvent", label: "In an insolvency and unable to sign up, where HMRC cannot give you a digital service" }
+  ];
+  function exemptions(ticked) {
+    var on = EXEMPTIONS.filter(function (e) { return ticked && ticked[e.id]; });
+    return { any: on.length > 0, ids: on.map(function (e) { return e.id; }), labels: on.map(function (e) { return e.label; }) };
+  }
   function num(v) {
     if (v === "" || v === null || v === undefined) return null;
     var n = Number(String(v).replace(/[£,\s]/g, ""));
@@ -36,7 +48,7 @@
     var any = out.some(function (r) { return r.entered; });
     return { error: false, stages: out, firstIn: firstIn ? firstIn.start : null, any: any };
   }
-  var api = { STAGES: STAGES, check: check, num: num,
+  var api = { STAGES: STAGES, EXEMPTIONS: EXEMPTIONS, exemptions: exemptions, check: check, num: num,
     ctaHref: function (url, ref) {
       url = String(url || "").trim();
       if (!/^https:\/\/[^\s]+$/i.test(url)) return "";

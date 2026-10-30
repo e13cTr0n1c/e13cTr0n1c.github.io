@@ -866,6 +866,14 @@ details.how[open] summary::after{content:"×"}
           </div>
         </div>
       </section>
+      <section class="card" aria-labelledby="h-ex" id="exempt-q">
+        <h2 id="h-ex">Does an exemption apply to you? <span class="optional" style="text-transform:none;letter-spacing:0">tick any that fit</span></h2>
+        <p class="note">Budget 2026 says these groups will not need Making Tax Digital for Income Tax until further notice, whatever their income. <strong>The secondary legislation is still to come</strong>, due before April 2027. <a href="https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar#mtd-for-income-tax-exemptions" rel="noopener">GOV.UK Budget 2026 OOTLAR section 2.37</a>.</p>
+        <div class="toggle-row"><input type="checkbox" id="ex-care" name="ex-care"><label for="ex-care">Do you qualify for qualifying care relief?<span class="hint">For example foster care, shared lives care, kinship care, staying put care or supported lodgings placed by a local authority or provider. <a href="https://www.gov.uk/government/publications/qualifying-care-relief-foster-carers-adult-placement-carers-kinship-carers-and-staying-put-carers-hs236-self-assessment-helpsheet/hs236-qualifying-care-relief-foster-carers-adult-placement-carers-kinship-carers-and-staying-put-carers-2026" rel="noopener">HMRC helpsheet HS236</a>.</span></label></div>
+        <div class="toggle-row"><input type="checkbox" id="ex-entertainer" name="ex-entertainer"><label for="ex-entertainer">Are you a non UK resident foreign entertainer or sportsperson?<span class="hint">You live outside the UK and earn UK income from performing or sport.</span></label></div>
+        <div class="toggle-row"><input type="checkbox" id="ex-moving" name="ex-moving"><label for="ex-moving">Do you expect to become non resident, for example because you are moving overseas?<span class="hint">GOV.UK calls this expected non resident customers.</span></label></div>
+        <div class="toggle-row"><input type="checkbox" id="ex-insolvent" name="ex-insolvent"><label for="ex-insolvent">Are you insolvent and unable to sign up to Making Tax Digital?<span class="hint">GOV.UK says some customers HMRC cannot give a digital service to, including a small number of insolvent customers, will not have to use it.</span></label></div>
+      </section>
     </form>
 
     <section class="card results" aria-live="polite" aria-atomic="true" id="results">
@@ -879,6 +887,7 @@ details.how[open] summary::after{content:"×"}
           <tbody></tbody>
         </table>
       </div>
+      <div class="note" id="out-exempt" hidden><strong>Exemption until further notice</strong> <span id="out-exempt-text"></span> <a href="https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar#mtd-for-income-tax-exemptions" rel="noopener">GOV.UK OOTLAR section 2.37</a>.</div>
       <div id="out-means" hidden>
         <p class="summary"><strong>What it means</strong></p>
         <ul class="top-list">
@@ -912,6 +921,7 @@ details.how[open] summary::after{content:"×"}
         <li>Qualifying income of £20,000 or less means you are exempt.</li>
         <li>No National Insurance number before the start of the tax year means you are exempt for that year.</li>
         <li>Some people are exempt automatically because of what was on their return, for example ministers of religion, Lloyd’s members, people who claim Married Couple’s Allowance or Blind Person’s Allowance, and for now some people who claim averaging relief or qualifying care relief or fill in the SA107 or SA109 pages.</li>
+        <li><strong>New at Budget 2026, until further notice:</strong> people eligible for qualifying care relief, non UK resident foreign entertainers and sportspeople, and people expected to become non resident. Some customers HMRC cannot give a digital service to, including a small number of insolvent customers who cannot sign up, will not have to use it either. The secondary legislation is still to come, before April 2027. <a href="https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar#mtd-for-income-tax-exemptions" rel="noopener">GOV.UK Budget 2026 OOTLAR section 2.37</a>.</li>
         <li>If you are digitally excluded, for example because of your age, a health condition, a disability or no internet access, you can apply for an exemption. Not liking software or having filed on paper before is not enough.</li>
       </ul>
       <p><a href="https://www.gov.uk/guidance/find-out-if-you-can-get-an-exemption-from-making-tax-digital-for-income-tax" rel="noopener">Read the full list of exemptions on GOV.UK</a>.</p>
@@ -919,12 +929,14 @@ details.how[open] summary::after{content:"×"}
 
     <section class="prose" id="sources" aria-labelledby="src-h">
       <h2 id="src-h">Sources</h2>
-      <p>Checked on 20 October 2026.</p>
+      <p>Checked on 20 October 2026. Budget 2026 exemptions checked on 30 October 2026.</p>
       <ul class="sources">
         <li><a href="https://www.gov.uk/guidance/check-if-youre-eligible-for-making-tax-digital-for-income-tax" rel="noopener">Find out if and when you need to use Making Tax Digital for Income Tax (GOV.UK)</a></li>
         <li><a href="https://www.gov.uk/guidance/work-out-your-qualifying-income-for-making-tax-digital-for-income-tax" rel="noopener">Work out your qualifying income for Making Tax Digital for Income Tax (GOV.UK)</a></li>
         <li><a href="https://www.gov.uk/guidance/find-out-if-you-can-get-an-exemption-from-making-tax-digital-for-income-tax" rel="noopener">Find out if you can get an exemption from Making Tax Digital for Income Tax (GOV.UK)</a></li>
         <li><a href="https://www.gov.uk/government/news/sole-traders-and-landlords-earning-more-than-30000-urged-to-act-now" rel="noopener">Sole traders and landlords earning more than £30,000 urged to act now, HMRC news, 5 October 2026 (GOV.UK)</a></li>
+        <li><a href="https://www.gov.uk/government/publications/budget-2026-overview-of-tax-legislation-and-rates-ootlar/budget-2026-overview-of-tax-legislation-and-rates-ootlar#mtd-for-income-tax-exemptions" rel="noopener">Budget 2026: Overview of tax legislation and rates, section 2.37 MTD for Income Tax: Exemptions (GOV.UK), checked 30 October 2026</a></li>
+        <li><a href="https://www.gov.uk/government/publications/qualifying-care-relief-foster-carers-adult-placement-carers-kinship-carers-and-staying-put-carers-hs236-self-assessment-helpsheet/hs236-qualifying-care-relief-foster-carers-adult-placement-carers-kinship-carers-and-staying-put-carers-2026" rel="noopener">HS236 Qualifying care relief (GOV.UK)</a></li>
         <li><a href="https://www.gov.uk/guidance/sign-up-for-making-tax-digital-for-income-tax" rel="noopener">Sign up for Making Tax Digital for Income Tax (GOV.UK)</a></li>
         <li><a href="https://www.gov.uk/guidance/choose-the-right-software-for-making-tax-digital-for-income-tax" rel="noopener">Choose the right software for Making Tax Digital for Income Tax (GOV.UK)</a></li>
       </ul>
