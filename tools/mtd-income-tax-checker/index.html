@@ -496,6 +496,9 @@
       letter-spacing: 0.04em;
     }
 
+    .deadline-banner { border-color: rgba(61, 156, 240, 0.45); background: rgba(61, 156, 240, 0.08); }
+    .deadline-banner strong { color: var(--accent); }
+
     .disclaimer a {
       color: var(--accent);
     }
@@ -806,6 +809,11 @@ details.how[open] summary::after{content:"×"}
       <p class="lede">Type in your self employment turnover and property income, before expenses, for each tax year you know. See whether Making Tax Digital for Income Tax applies to you from 6 April 2026, 2027 or 2028. Nothing you type leaves your browser.</p>
     </header>
 
+    <aside class="disclaimer deadline-banner" role="note" id="q2-banner" data-hide-after="2026-11-07" hidden>
+      <strong>Quarterly update due by Saturday 7 November 2026</strong>
+      If you are a sole trader or landlord earning more than £50,000, your second Making Tax Digital quarterly update is due by Saturday 7 November 2026. It is not a tax return and no payment is due when you send it. You send it through HMRC recognised software, or bridging software if you keep spreadsheets. If you spot a mistake, correct your records and it will show in your next update, so there is no need to resend. The Self Assessment helpline is open on Saturday 7 November from 9am to 3pm. I checked this on <time datetime="2026-11-02">2 November 2026</time>, and my checker is still an estimate, not advice. <a href="https://www.gov.uk/government/news/five-things-you-need-to-know-ahead-of-making-tax-digital-for-income-tax-quarterly-deadline" rel="noopener">GOV.UK: five things you need to know</a>.
+    </aside>
+
     <aside class="disclaimer" role="note">
       <strong>Important</strong>
       An estimate based on GOV.UK guidance checked on 20 October 2026. Not tax advice. HMRC decides from your tax return, so check anything that matters with HMRC or an accountant.
@@ -968,6 +976,7 @@ details.how[open] summary::after{content:"×"}
 <p class="ps-offer-quiet" id="cta-end" data-cta hidden>Get your records ready. <a data-cta-link>MTD readiness checklist, £3</a></p>
 <footer class="ps-foot"><div class="ps-in"><nav aria-label="Site"><a href="../../about/">About</a><a href="../../privacy/">Privacy</a><a href="../../cookies/">Cookies</a><a href="../../terms/">Terms</a><a href="../../disclaimer/">Disclaimer</a></nav><p>Free UK calculators and spreadsheet templates. Estimates, not tax advice. Not affiliated with HMRC.</p><p>&copy; 2026 Arthur Jones</p></div></footer>
 
+  <script src="banner.js"></script>
   <script src="mtd.js"></script>
   <script src="app.js"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "50becbbfccc84869ae6ea32a24a32453"}'></script><!-- End Cloudflare Web Analytics -->
