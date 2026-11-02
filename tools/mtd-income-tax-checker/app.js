@@ -31,9 +31,14 @@ const MTD_PRODUCT_REF = 'ps-uk-mtd-checker';
     else if (r.firstIn) v = "Yes, you need it from " + r.firstIn;
     else if (r.stages.every(function (s) { return s.entered; })) v = "No, not on these figures";
     else v = "Not on the years you entered";
+    var ticked = {}; M.EXEMPTIONS.forEach(function (e) { ticked[e.id] = $(e.id).checked; });
+    var ex = M.exemptions(ticked), exNote = $("out-exempt");
+    if (ex.any && r.firstIn) v = "Probably not for now, an exemption until further notice may apply";
     $("out-verdict").textContent = v;
-    hl.className = "headline " + (r.firstIn ? "owed" : "none");
-    $("out-means").hidden = !r.firstIn;
+    hl.className = "headline " + (r.firstIn && !ex.any ? "owed" : "none");
+    $("out-means").hidden = !r.firstIn || ex.any;
+    exNote.hidden = !ex.any;
+    if (ex.any) $("out-exempt-text").textContent = "You ticked: " + ex.labels.join("; ") + ". Budget 2026 says these groups will not have to use Making Tax Digital for Income Tax until further notice. The secondary legislation is still to come, so carry on filing your tax return as you do now and check GOV.UK before April 2027.";
     var tb = $("out-table").querySelector("tbody"); tb.textContent = "";
     r.stages.forEach(function (s) {
       var tr = document.createElement("tr");
