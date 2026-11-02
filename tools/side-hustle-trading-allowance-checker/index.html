@@ -645,6 +645,18 @@
   </style>
     <style>.tbc { display: inline-block; font-size: 0.75rem; font-weight: 600; color: #6b4300; background: #fff4df; border: 1px solid #e8c98f; border-radius: 999px; padding: 0 0.5rem; }</style>
   <style>.ex-row{display:flex;flex-wrap:wrap;gap:0.5rem}.ex{font:inherit;font-size:0.85rem;padding:0.45rem 0.75rem;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer}.ex:hover{border-color:var(--accent)}</style>
+<style>/* ps-offer */
+.ps-offer{margin:20px 0;padding:18px;background:#fff;color:#000;border:3px solid #000;box-shadow:6px 6px 0 #d6ff00;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:15px;line-height:1.5}
+.ps-offer h2{font-family:'Arial Black',Arial,sans-serif;font-size:19px;line-height:1.25;margin:0 0 10px;color:#000}
+.ps-offer p{margin:0 0 10px}
+.ps-offer .ps-buy{display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;background:#d6ff00;color:#000;border:2px solid #000;font-weight:700;text-decoration:none}
+.ps-offer .ps-buy:hover,.ps-offer .ps-buy:focus-visible{background:#000;color:#d6ff00}
+.ps-offer .ps-2nd{font-size:13px}.ps-offer .ps-2nd a{display:inline-block;padding:13px 0;line-height:18px;color:#000}
+.ps-offer .ps-launch{display:inline-block;background:#000;color:#d6ff00;padding:2px 8px;font-weight:700}
+.ps-offer-quiet{margin:20px 0;padding:12px 0;border-top:2px solid #000;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;color:#000}
+.ps-offer-quiet a{display:inline-flex;align-items:center;min-height:44px;color:#000;text-decoration-color:#d6ff00;text-decoration-thickness:3px}
+@media (max-width:420px){.ps-offer{padding:14px;box-shadow:4px 4px 0 #d6ff00}.ps-offer .ps-buy{display:flex;justify-content:center;text-align:center}}
+</style>
 </head>
 <body>
 <header class="ps-top"><div class="ps-in"><a class="ps-brand" href="../../"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f6b4f"/><rect x="8" y="11" width="16" height="3.2" rx="1.2" fill="#fff"/><rect x="8" y="18" width="16" height="3.2" rx="1.2" fill="#fff"/></svg><span>Plain Sums</span></a><nav aria-label="Main"><a href="../../">Home</a><a href="../../tools/" aria-current="page">Tools</a><a href="../../templates/">Templates</a><a href="../../about/">About</a></nav></div></header>
@@ -746,6 +758,7 @@
     </footer>
 
   </div>
+<div class="wrap"><aside class="ps-offer ps-sheet" id="sheet-cta" aria-label="Spreadsheet version"><p>Want to keep track over time? I made my Freelancer Time, Invoice and Late Payment Tracker spreadsheet.</p><p><a class="ps-buy" href="https://arthurverse67.gumroad.com/l/kjxnrp?utm_source=plainsums&utm_medium=calc&utm_campaign=side-hustle-trading-allowance-checker" rel="noopener">Get the spreadsheet version</a></p></aside></div>
 <footer class="ps-foot"><div class="ps-in"><nav aria-label="Site"><a href="../../about/">About</a><a href="../../privacy/">Privacy</a><a href="../../cookies/">Cookies</a><a href="../../terms/">Terms</a><a href="../../disclaimer/">Disclaimer</a></nav><p>Free UK calculators and spreadsheet templates. Estimates, not tax advice. Not affiliated with HMRC.</p><p>&copy; 2026 Arthur Jones</p></div></footer>
 
   <script src="trading.js"></script>
