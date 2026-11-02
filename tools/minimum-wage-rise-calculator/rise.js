@@ -2,19 +2,23 @@
  * Take home pay reuses the Can I live on this wage? engine (../can-i-live-on-this-wage/budget.js),
  * which runs on the 2026/27 take home pay engine (../take-home-pay-calculator/pay.js).
  * Current rates from 1 April 2026: https://www.gov.uk/national-minimum-wage-rates
- * New rates from 1 April 2027 are as reported, announced, to be confirmed in the 28 Oct Budget.
- *   Not yet on GOV.UK or in a Low Pay Commission report when checked on 26 October 2026.
- *   LPC central estimate for the 21 and over rate was £13.18 (range £13.02 to £13.34):
- *   https://www.gov.uk/government/consultations/low-pay-commission-consultation-2026/lpc-consultation-letter-2026
+ * New rates from 1 April 2027 confirmed in the Budget on 28 October 2026 (Budget 2026 (HTML), HM Treasury):
+ *   National Living Wage £13.21 (3.9%), 18 to 20 rate £11.27 (3.9%), 16 to 17 and apprentice rate £8.31,
+ *   accommodation offset £11.53 a day. The government accepted the Low Pay Commission recommendations in full.
+ *   https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html
+ *   Earlier figure in this file was £13.20 for the 21 and over rate, as reported before the Budget.
+ *   Budget 2026 OOTLAR Annex A keeps the Personal Allowance, bands and employee NI the same for 2027/28,
+ *   so working out both sides on 2026/27 tax and NI gives the same answer as 2027/28.
  */
 (function (root) {
   "use strict";
   var W = (typeof module !== "undefined" && module.exports) ? require("../can-i-live-on-this-wage/budget.js") : root.WageBudget;
   var MIN_WAGE = {
-    checked: "26 October 2026",
-    newStatus: "announced, to be confirmed in the 28 Oct Budget",
+    checked: "28 October 2026",
+    newStatus: "confirmed in the Budget on 28 October 2026",
+    source: "https://www.gov.uk/government/publications/budget-2026-document/budget-2026-html",
     bands: {
-      "21plus": { label: "21 and over", name: "National Living Wage", current: 12.71, next: 13.20 },
+      "21plus": { label: "21 and over", name: "National Living Wage", current: 12.71, next: 13.21 },
       "18to20": { label: "18 to 20", name: "18 to 20 year old rate", current: 10.85, next: 11.27 }
     }
   };
