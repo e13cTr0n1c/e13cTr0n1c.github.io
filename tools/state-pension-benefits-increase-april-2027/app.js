@@ -3,13 +3,13 @@
   var U = window.UPRATING, C = U.UPRATING_2027, $ = function (id) { return document.getElementById(id); };
   function gbp(n) { return "£" + Number(n).toLocaleString("en-GB", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
   function pc(n) { return (Math.round(n * 10) / 10).toLocaleString("en-GB", { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + "%"; }
-  var tag = C.status === "confirmed" ? "Confirmed rates" : "Expected until confirmed at the " + C.budgetDate + " Budget";
+  var tag = C.status === "confirmed" ? "Confirmed rates" : C.status === "partial" ? "Full new State Pension confirmed. Other rates expected until DWP publishes them" : "Expected until confirmed at the " + C.budgetDate + " Budget";
   document.querySelectorAll("[data-tag]").forEach(function (e) { e.textContent = tag; });
   document.querySelectorAll("[data-cpi]").forEach(function (e) { e.textContent = pc(C.cpi); });
   document.querySelectorAll("[data-tl]").forEach(function (e) { e.textContent = pc(U.tripleLock()); });
   document.querySelectorAll("[data-earn]").forEach(function (e) { e.textContent = pc(C.earningsTotal); });
   C.benefits.forEach(function (b) {
-    var h = $(b.id + "-pct"); if (h) h.textContent = "Expected rise " + pc(U.pctFor(b.rule)) + (b.rule === "tripleLock" ? " (triple lock)" : " (CPI)");
+    var h = $(b.id + "-pct"); if (h) h.textContent = (b.confirmed ? "Confirmed rise " : "Expected rise ") + pc(U.pctFor(b.rule)) + (b.rule === "tripleLock" ? " (triple lock)" : " (CPI)") + (b.confirmed ? ", full rate £" + b.confirmed.weekly.toFixed(2) + " a week" : "");
   });
   var LABELS = ["", "Now a week", "New a week", "New a month", "New a year", "Rise a month", "Rise a year"];
   function freq() { var f = document.querySelector("input[name=freq]:checked"); return f ? f.value : "weekly"; }
@@ -22,7 +22,7 @@
     $("b-msg").hidden = true; $("b-wrap").hidden = false;
     r.rows.forEach(function (x) {
       var tr = document.createElement("tr");
-      [x.name + " (+" + pc(x.pct) + ")", gbp(x.oldWeekly), gbp(x.newWeekly), gbp(x.newMonth), gbp(x.newYear), "+" + gbp(x.increaseMonth), "+" + gbp(x.increaseYear)].forEach(function (v, i) { var td = document.createElement(i ? "td" : "th"); if (i) { td.className = "num"; td.setAttribute("data-label", LABELS[i]); } else td.scope = "row"; td.textContent = v; tr.appendChild(td); });
+      [x.name + " (+" + pc(x.pct) + (x.confirmed ? ", confirmed" : "") + ")", gbp(x.oldWeekly), gbp(x.newWeekly), gbp(x.newMonth), gbp(x.newYear), "+" + gbp(x.increaseMonth), "+" + gbp(x.increaseYear)].forEach(function (v, i) { var td = document.createElement(i ? "td" : "th"); if (i) { td.className = "num"; td.setAttribute("data-label", LABELS[i]); } else td.scope = "row"; td.textContent = v; tr.appendChild(td); });
       body.appendChild(tr);
     });
     var t = r.total;
