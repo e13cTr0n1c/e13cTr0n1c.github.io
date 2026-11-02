@@ -200,7 +200,7 @@
       steps.push([{ b: "Apply for probate" }, " online (or by post on PA1P with a will, PA1A without). " + (r.probateFee > 0 ? "Fee £526, plus £2 per extra copy ordered at the same time." : "No fee for an estate of £5,000 or less.") + " It usually takes up to 12 weeks. ", ["GOV.UK: apply for probate", S.probate]]);
     steps.push([{ b: "Collect the assets, pay the debts and keep estate accounts. " }, "Pay bills and taxes before sharing anything out, record every payment in and out, and send the final accounts to the beneficiaries. HMRC can ask to see records for up to 20 years. ", ["GOV.UK: deal with the estate", "https://www.gov.uk/valuing-estate-of-someone-who-died/records"]]);
     if (r.transferable) steps.push([{ b: "Keep a record of unused allowances" }, " for the surviving spouse or civil partner's estate."]);
-    steps.push([{ b: "Want it all in one place? " }, "The ", ["Executor & Probate Tracker (England & Wales)", "https://arthurverse67.gumroad.com/l/sutaw/LAUNCH25"], " spreadsheet from the maker of this calculator has these tasks, an assets and debts register, an IHT estimate and an estate ledger that should balance to £0 (£19.99, optional)."]);
+    steps.push([{ b: "Want it all in one place? " }, "The ", ["Executor & Probate Tracker (England & Wales)", "https://arthurverse67.gumroad.com/l/sutaw"], " spreadsheet from the maker of this calculator has these tasks, an assets and debts register, an IHT estimate and an estate ledger that should balance to £0 (£19.99, optional)."]);
     steps.forEach(function (s) { var li = el("li"); li.appendChild(frag(s)); ol.appendChild(li); });
   }
 
