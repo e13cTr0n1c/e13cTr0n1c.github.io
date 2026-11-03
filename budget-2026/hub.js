@@ -161,6 +161,27 @@
     ],
     tools: [
       {
+        id: "sa-poa",
+        name: "Self Assessment payments on account calculator",
+        href: "../tools/self-assessment-payments-on-account-calculator/",
+        blurb: "Your 31 January and 31 July payments under today's rules, before the Budget's move to in year payments from April 2029.",
+        live: true
+      },
+      {
+        id: "side-hustle-tax",
+        name: "Side hustle tax calculator",
+        href: "../tools/side-hustle-tax-calculator/",
+        blurb: "Tax and Class 4 on side profit on top of a salary in 2025/26 and 2026/27, before the trading allowance rises to £3,000 in April 2027.",
+        live: true
+      },
+      {
+        id: "marriage-allowance",
+        name: "Marriage Allowance checker",
+        href: "../tools/marriage-allowance-checker/",
+        blurb: "The Budget keeps Marriage Allowance at £1,260 for 2026/27 and 2027/28. Check what it saves you as a couple.",
+        live: true
+      },
+      {
         id: "budget-pay",
         name: "Budget 2026 pay calculator",
         href: "../tools/budget-2026-pay-calculator/",
