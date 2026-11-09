@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HMRC Late Payment Interest Calculator: Daily Interest Across Rate Changes | Plain Sums</title>
+  <meta name="description" content="Estimate HMRC late payment interest, or repayment interest, day by day across rate changes. Rates from GOV.UK, including 8% late payment interest from 24 November 2026. An estimate, not tax advice.">
+  <link rel="canonical" href="https://e13ctr0n1c.github.io/tools/hmrc-late-payment-interest-calculator/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f7f6f2">
+  <link rel="sitemap" type="application/xml" href="https://e13ctr0n1c.github.io/sitemap.xml">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Plain Sums">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://e13ctr0n1c.github.io/tools/hmrc-late-payment-interest-calculator/">
+  <meta property="og:title" content="HMRC Late Payment Interest Calculator: Daily Interest Across Rate Changes | Plain Sums">
+  <meta property="og:description" content="Estimate HMRC late payment interest, or repayment interest, day by day across rate changes. Rates from GOV.UK, including 8% late payment interest from 24 November 2026. An estimate, not tax advice.">
+  <meta property="og:image" content="https://e13ctr0n1c.github.io/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HMRC Late Payment Interest Calculator: Daily Interest Across Rate Changes | Plain Sums">
+  <meta name="twitter:description" content="Estimate HMRC late payment interest, or repayment interest, day by day across rate changes. Rates from GOV.UK, including 8% late payment interest from 24 November 2026. An estimate, not tax advice.">
+  <meta name="twitter:image" content="https://e13ctr0n1c.github.io/og-image.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "HMRC late payment interest calculator",
+      "url": "https://e13ctr0n1c.github.io/tools/hmrc-late-payment-interest-calculator/",
+      "description": "Estimate HMRC late payment interest, or repayment interest, day by day across rate changes. An estimate, not tax advice.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any (web browser)",
+      "browserRequirements": "Requires JavaScript",
+      "inLanguage": "en-GB",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+      "dateModified": "2026-11-09"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does HMRC work out late payment interest?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HMRC charges simple interest for each day the tax is late. The number of days is the gap between the due date and the payment date, so tax due on 31 January and paid on 1 February is one day. The amount is the tax times the rate for that day, divided by 365. If the rate changes, each stretch is worked out on its own and then added up."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the HMRC late payment interest rate now?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "From 9 January 2026 the late payment rate is 7.75% and the repayment rate is 2.75%. From 24 November 2026, which HMRC published on 6 November 2026, late payment interest is 8% and repayment interest is 3%. Late payment interest has been the Bank of England base rate plus 4% since 6 April 2025. Repayment interest is the base rate minus 1%, and it cannot fall below 0.5%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this the same as interest on a late invoice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. This page is the interest HMRC charges you, or pays you. Interest you can add to a late business invoice is a different rule: 8% plus the Bank of England base rate for a half year, and it stays fixed for that debt. That calculator is separate."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f6f2;
+      --surface: #ffffff;
+      --surface-2: #f1efe9;
+      --border: #dcd8cf;
+      --field: #8a918c;
+      --field-bg: #ffffff;
+      --text: #1c2422;
+      --muted: #55605b;
+      --accent: #0f6b4f;
+      --accent-soft: #e3f0ea;
+      --success: #0f6b4f;
+      --warning: #8a5300;
+      --danger: #b3261e;
+      --radius: 10px;
+      --shadow: none;
+      --font: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0; min-height: 100vh; font-family: var(--font); background: var(--bg); color: var(--text);
+      line-height: 1.6; font-size: 16px; -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-underline-offset: 3px; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
+    header.page-head { margin-bottom: 1.75rem; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.04em; text-transform: uppercase; color: #6b4300; background: #fff4df;
+      border: 1px solid #e8c98f; padding: 0.35rem 0.7rem; border-radius: 999px; margin-bottom: 0.85rem;
+    }
+    h1 { font-size: clamp(1.55rem, 4vw, 2rem); font-weight: 700; letter-spacing: -0.02em; margin: 0 0 0.5rem; line-height: 1.2; }
+    .lede { margin: 0; color: var(--muted); font-size: 1.05rem; max-width: 40em; }
+    .crumbs { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.9rem; }
+    .crumbs a { color: var(--accent); text-decoration: none; }
+    .card, .prose {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1.35rem 1.25rem; margin-bottom: 1.25rem;
+    }
+    .card h2 { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text); margin: 0 0 1rem; }
+    .field { margin-bottom: 1.1rem; }
+    .field:last-child { margin-bottom: 0; }
+    label { display: block; font-weight: 500; font-size: 0.925rem; margin-bottom: 0.4rem; }
+    .hint { display: block; font-size: 0.8rem; color: var(--muted); font-weight: 400; margin-top: 0.25rem; }
+    .input-wrap { position: relative; display: flex; align-items: stretch; }
+    .prefix {
+      display: flex; align-items: center; padding: 0 0.75rem; background: var(--surface-2);
+      border: 1px solid var(--field); border-right: none; border-radius: 8px 0 0 8px; color: var(--muted); font-weight: 600;
+    }
+    input[type="number"], input[type="date"] {
+      width: 100%; padding: 0.7rem 0.85rem; font: inherit; font-size: 16px; color: var(--text);
+      background: var(--field-bg); border: 1px solid var(--field); border-radius: 8px; outline: none;
+    }
+    input[type="date"] { font-family: var(--mono); border-radius: 0; color-scheme: light; }
+    .input-wrap input { border-radius: 0 8px 8px 0; }
+    input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(15, 107, 79, 0.25); }
+    input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    input[type="number"] { -moz-appearance: textfield; }
+    .seg { display: grid; grid-template-columns: 1fr; gap: 0.6rem; }
+    @media (min-width: 560px) { .seg { grid-template-columns: 1fr 1fr; } }
+    .status-option { position: relative; }
+    .status-option input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+    .status-option label {
+      display: flex; flex-direction: column; gap: 0.15rem; padding: 0.85rem 0.9rem; background: var(--surface);
+      border: 1px solid var(--field); border-radius: 10px; cursor: pointer; margin: 0; min-height: 100%;
+    }
+    .status-option input:focus-visible + label { box-shadow: 0 0 0 3px rgba(15, 107, 79, 0.25); }
+    .status-option input:checked + label { border-color: var(--accent); background: var(--accent-soft); box-shadow: inset 0 0 0 1px var(--accent); }
+    .status-name { font-size: 0.95rem; font-weight: 600; }
+    .status-desc { font-size: 0.75rem; color: var(--muted); font-weight: 400; }
+    .results { border-color: var(--accent); }
+    .result-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+    .result-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .result-label { color: var(--muted); font-size: 0.9rem; }
+    .result-value { font-family: var(--mono); font-size: 1.05rem; font-weight: 500; text-align: right; }
+    .result-row.highlight { margin-top: 0.35rem; padding: 1rem; background: #fdecea; border: 1px solid var(--danger); border-radius: 10px; }
+    .result-row.highlight .result-label { color: var(--text); font-weight: 600; }
+    .result-row.highlight .result-value { font-size: 1.35rem; color: var(--danger); }
+    .results.is-repay .result-row.highlight { background: var(--accent-soft); border-color: var(--accent); }
+    .results.is-repay .result-row.highlight .result-value { color: var(--accent); }
+    .disclaimer, .note, .answer { color: var(--text); }
+    .disclaimer {
+      background: #fff4df; border: 1px solid #e8c98f; border-radius: var(--radius); padding: 1rem 1.15rem;
+      font-size: 0.875rem; margin-bottom: 1.25rem;
+    }
+    .disclaimer strong { color: var(--warning); display: block; margin-bottom: 0.35rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .answer { margin: 1rem 0 0; padding: 0.9rem 1rem; background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; font-size: 0.95rem; }
+    .prose h2 { font-size: 1.2rem; margin: 0 0 0.75rem; letter-spacing: -0.01em; text-transform: none; }
+    .prose h3 { font-size: 1rem; margin: 1.25rem 0 0.35rem; }
+    .prose p, .prose li { color: var(--muted); }
+    .prose strong { color: var(--text); }
+    .prose ol, .prose ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+    .prose li { margin-bottom: 0.35rem; }
+    .prose .src, .src { font-size: 0.8rem; margin-top: 0.25rem; color: var(--muted); }
+    .table-wrap { overflow-x: auto; margin: 0.75rem 0; }
+    table.calc { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    table.calc th, table.calc td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--border); }
+    table.calc th { background: var(--surface-2); color: var(--text); font-weight: 600; }
+    table.calc td { color: var(--muted); }
+    table.calc td.num, table.calc th.num { text-align: right; font-family: var(--mono); white-space: nowrap; }
+    table.calc tr.total td { color: var(--text); font-weight: 600; }
+    .headline { padding: 1.1rem 1rem; border-radius: 10px; margin-bottom: 0.75rem; text-align: center; }
+    .headline .h-label { display: block; font-size: 0.85rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+    .headline .h-value { display: block; font-family: var(--mono); font-size: 2rem; font-weight: 500; margin-top: 0.2rem; }
+    .headline .h-sub { display: block; font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem; }
+    .headline.owed { background: #fdecea; border: 1px solid var(--danger); }
+    .headline.owed .h-value { color: var(--danger); }
+    .headline.refund { background: var(--accent-soft); border: 1px solid var(--accent); }
+    .headline.refund .h-value { color: var(--accent); }
+    .note { margin-top: 0.75rem; padding: 0.75rem 0.9rem; border-radius: 8px; font-size: 0.85rem; background: var(--surface-2); border-left: 3px solid var(--warning); }
+    .note:empty, #out-msg:empty { display: none; }
+    .related { display: grid; gap: 0.75rem; }
+    @media (min-width: 560px) { .related { grid-template-columns: 1fr 1fr; } }
+    .related a { display: block; padding: 0.9rem 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; text-decoration: none; color: var(--text); }
+    .related a:hover { border-color: var(--accent); }
+    .related a span { display: block; font-size: 0.82rem; color: var(--muted); margin-top: 0.2rem; }
+    .page-foot { text-align: center; font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem; }
+    .page-foot a { color: var(--accent); }
+    [hidden] { display: none !important; }
+    @media (max-width: 559px) {
+      .result-row { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+      .result-value { text-align: left; }
+    }
+    ::selection { background: var(--accent); color: #fff; }
+  </style>
+  <link rel="stylesheet" href="../../assets/chrome.css">
+</head>
+<body>
+<header class="ps-top"><div class="ps-in"><a class="ps-brand" href="../../"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f6b4f"/><rect x="8" y="11" width="16" height="3.2" rx="1.2" fill="#fff"/><rect x="8" y="18" width="16" height="3.2" rx="1.2" fill="#fff"/></svg><span>Plain Sums</span></a><nav aria-label="Main"><a href="../../">Home</a><a href="../../tools/" aria-current="page">Tools</a><a href="../../templates/">Templates</a><a href="../../about/">About</a></nav></div></header>
+  <div class="wrap">
+    <p class="dx-label"><b>HMRC interest</b><span>Estimate, not tax advice</span></p>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">Plain Sums</a> › <a href="../">Tools</a> › HMRC late payment interest calculator</nav>
+    <header class="page-head">
+      <div class="badge" role="status">Estimate only · Not tax advice</div>
+      <h1>How much interest will HMRC add if I pay tax late?</h1>
+      <p class="lede">Put in the tax, the day it was due and the day you paid it (or today, if you have not paid yet). I work out HMRC late payment interest day by day, and I split it wherever the rate changed. You can switch to repayment interest, which is what HMRC pays when they repay you late. Nothing you type leaves your browser.</p>
+      <p class="answer" id="quick-answer"><strong>Quick answer:</strong> late payment interest is <strong>7.75%</strong> from 9 January 2026 and <strong>8%</strong> from 24 November 2026. Repayment interest is <strong>2.75%</strong>, then <strong>3%</strong>. It is simple interest: the amount times the rate, divided by 365, times the days. A £1,000 bill due on 31 January 2025 and paid on 31 January 2026 comes to <strong>£79.59</strong> of late payment interest, across six rate changes. Source: <a href="https://www.gov.uk/government/publications/rates-and-allowances-hmrc-interest-rates-for-late-and-early-payments/rates-and-allowances-hmrc-interest-rates" target="_blank" rel="noopener">GOV.UK: HMRC interest rates</a>.</p>
+    </header>
+
+    <aside class="disclaimer" role="note">
+      <strong>An estimate, not tax advice</strong>
+      I use the main HMRC rates for Income Tax, National Insurance, Capital Gains Tax, Stamp Duty Land Tax and VAT (periods starting on or after 1 January 2023). From 29 September 2009 those same percentages are also on the Corporation Tax (normal due date) and Inheritance Tax rows. I do not cover Corporation Tax quarterly instalments: HMRC says those rates change on 16 November 2026, and they are a different table. Some taxes start the interest clock on a different day. HMRC's own calculation is the one that counts. This is not a penalty calculator.
+    </aside>
+
+    <form id="calc-form" novalidate>
+      <section class="card" aria-labelledby="s0">
+        <h2 id="s0">Which interest?</h2>
+        <div class="seg" role="radiogroup" aria-label="Which HMRC interest">
+          <div class="status-option"><input type="radio" name="mode" id="mode-late" value="late" checked><label for="mode-late"><span class="status-name">Late payment interest</span><span class="status-desc">What HMRC charges you for paying late</span></label></div>
+          <div class="status-option"><input type="radio" name="mode" id="mode-repay" value="repayment"><label for="mode-repay"><span class="status-name">Repayment interest</span><span class="status-desc">What HMRC pays you when they repay you late</span></label></div>
+        </div>
+      </section>
+      <section class="card" aria-labelledby="s1">
+        <h2 id="s1">1 · The tax</h2>
+        <div class="field">
+          <label id="amount-label" for="amount">Tax paid late</label>
+          <div class="input-wrap"><span class="prefix" aria-hidden="true">£</span><input type="number" inputmode="decimal" id="amount" name="amount" min="0" step="0.01" placeholder="1000" autocomplete="off" aria-describedby="amount-hint"></div>
+          <span class="hint" id="amount-hint">The tax that was outstanding. Interest is worked out on this amount, not on interest already charged.</span>
+        </div>
+        <div class="field">
+          <label id="due-label" for="due">Date the tax was due</label>
+          <input type="date" id="due" name="due" aria-describedby="due-hint">
+          <span class="hint" id="due-hint">Interest starts the day after this date. Paid on the due date means no interest.</span>
+        </div>
+        <div class="field">
+          <label id="paid-label" for="paid">Date you paid (or today, if still unpaid)</label>
+          <input type="date" id="paid" name="paid" aria-describedby="paid-hint">
+          <span class="hint" id="paid-hint">Set to today when the page loads. Change it to the day HMRC treats the payment as received.</span>
+        </div>
+      </section>
+    </form>
+
+    <section class="card results" aria-live="polite" aria-atomic="true" id="results">
+      <h2>The estimate</h2>
+      <div class="headline owed" id="headline"><span class="h-label" id="h-label">Late payment interest</span><span class="h-value" id="out-headline">£0.00</span><span class="h-sub" id="out-headline-sub"></span></div>
+      <p class="note" id="out-msg"></p>
+      <div class="result-rows" id="out-rows" hidden>
+        <div class="result-row"><span class="result-label">Interest start date</span><span class="result-value" id="out-due"></span></div>
+        <div class="result-row"><span class="result-label">Interest end date</span><span class="result-value" id="out-paid"></span></div>
+        <div class="result-row"><span class="result-label">Days interest runs</span><span class="result-value" id="out-days"></span></div>
+        <div class="result-row highlight"><span class="result-label">Interest</span><span class="result-value" id="out-interest"></span></div>
+      </div>
+      <div class="table-wrap" id="period-wrap" hidden>
+        <table class="calc">
+          <caption class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Interest by rate period</caption>
+          <thead><tr><th scope="col">Rate period</th><th scope="col" class="num">Days</th><th scope="col" class="num">Rate</th><th scope="col" class="num">Interest</th></tr></thead>
+          <tbody id="period-body"></tbody>
+        </table>
+      </div>
+      <p class="note">This is an estimate, not tax advice. A part payment, a different start date, or a quarterly instalment can change HMRC's figure. I round the total to the nearest penny, and I adjust the last period so the rows add up to that total.</p>
+    </section>
+
+    <section class="prose" id="how-it-works" aria-labelledby="how-h">
+      <h2 id="how-h">How I work it out</h2>
+      <ol>
+        <li><strong>Count the days.</strong> HMRC's manual counts the gap between the start date and the end date. Due on 31 January and paid on 1 February is 1 day. Paid on the due date is none. The days run from the day after the due date up to and including the day you pay.</li>
+        <li><strong>Pick the rate for each day.</strong> If HMRC's rate changes while the tax is unpaid, I split the period on the change date and use the rate in force on each day.</li>
+        <li><strong>Simple interest.</strong> Tax times the rate, divided by 365, times the days in that stretch. I divide by 365 even when the stretch covers 29 February. Interest is not charged on interest.</li>
+        <li><strong>Add the stretches and round once</strong> to the nearest penny.</li>
+      </ol>
+      <h3>A worked check</h3>
+      <p>£1,000 due on 31 January 2025 and paid on 31 January 2026 is 365 days and six rates: 24 days at 7.25%, 40 days at 7%, 52 days at 8.5%, 91 days at 8.25%, 135 days at 8% and 23 days at 7.75%. Late payment interest is £79.59. The same dates on repayment interest come to £32.22.</p>
+      <p class="src">Day count: <a href="https://www.gov.uk/hmrc-internal-manuals/compliance-handbook/ch140220" target="_blank" rel="noopener">HMRC Compliance Handbook CH140220</a> and <a href="https://www.gov.uk/hmrc-internal-manuals/compliance-handbook/ch141120" target="_blank" rel="noopener">CH141120</a>. Simple interest: <a href="https://www.gov.uk/hmrc-internal-manuals/compliance-handbook/ch140260" target="_blank" rel="noopener">CH140260</a>.</p>
+    </section>
+
+    <section class="prose" id="rates" aria-labelledby="rates-h">
+      <h2 id="rates-h">The rates I use</h2>
+      <p>Late payment interest is the Bank of England base rate plus 4% from 6 April 2025. Before that it was the base rate plus 2.5%. Repayment interest is the base rate minus 1%, and it cannot fall below 0.5% (the minimum floor). I store the published percentages, so a future base rate change does nothing here until I add the row HMRC publishes.</p>
+      <p>The Bank of England raised Bank Rate to 4% on 5 November 2026. HMRC published the new rates on 6 November 2026: <strong>8% late payment interest and 3% repayment interest from 24 November 2026</strong> for these taxes. I use that published date. I do not ask you to guess a start date, and I do not apply 8% before 24 November 2026.</p>
+      <div class="table-wrap">
+        <table class="calc">
+          <caption class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">HMRC interest rates</caption>
+          <thead><tr><th scope="col">From</th><th scope="col" class="num">Late payment</th><th scope="col" class="num">Repayment</th></tr></thead>
+          <tbody id="rate-body"></tbody>
+        </table>
+      </div>
+      <p>The first row I hold is 6 February 2000. Anything earlier is outside this calculator. Corporation Tax quarterly instalment interest is not in the table: HMRC's 6 November 2026 news item says those rates change on 16 November 2026, and the percentages are different.</p>
+      <p class="src">Sources: <a href="https://www.gov.uk/government/publications/rates-and-allowances-hmrc-interest-rates-for-late-and-early-payments/rates-and-allowances-hmrc-interest-rates" target="_blank" rel="noopener">GOV.UK: HMRC interest rates</a> (updated 6 November 2026) · <a href="https://www.gov.uk/government/news/hmrc-interest-rates-update--2" target="_blank" rel="noopener">GOV.UK: HMRC interest rates update, 6 November 2026</a> · <a href="https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/november-2026" target="_blank" rel="noopener">Bank of England: Bank Rate increased to 4% on 5 November 2026</a>. I checked the table on <time datetime="2026-11-09">9 November 2026</time>.</p>
+    </section>
+
+    <section class="prose" id="faq" aria-labelledby="faq-h">
+      <h2 id="faq-h">Questions I get asked</h2>
+      <h3>How does HMRC work out late payment interest?</h3>
+      <p>HMRC charges simple interest for each day the tax is late. The number of days is the gap between the due date and the payment date, so tax due on 31 January and paid on 1 February is one day. If the rate changes, each stretch is worked out on its own and then added up.</p>
+      <p class="src">Source: <a href="https://www.gov.uk/hmrc-internal-manuals/compliance-handbook/ch141120" target="_blank" rel="noopener">CH141120</a></p>
+      <h3>What is the rate now?</h3>
+      <p>From 9 January 2026 the late payment rate is 7.75% and the repayment rate is 2.75%. From 24 November 2026 late payment interest is 8% and repayment interest is 3%. Those November rates are published. They are not a guess.</p>
+      <p class="src">Source: <a href="https://www.gov.uk/government/publications/rates-and-allowances-hmrc-interest-rates-for-late-and-early-payments/rates-and-allowances-hmrc-interest-rates" target="_blank" rel="noopener">GOV.UK: HMRC interest rates</a></p>
+      <h3>Is this the same as interest on a late invoice?</h3>
+      <p>No. This page is the interest HMRC charges you, or pays you. Interest you can add to a late business invoice is a different rule: 8% plus the Bank of England base rate for a half year, and it stays fixed for that debt. I keep that on its own calculator.</p>
+      <p class="src">Source: <a href="https://www.gov.uk/late-commercial-payments-interest-debt-recovery/charging-interest-commercial-debt" target="_blank" rel="noopener">GOV.UK: interest on late commercial payments</a></p>
+      <h3>Does paying some of it help?</h3>
+      <p>Yes. Interest runs on the amount still unpaid. This calculator uses one amount for the whole period. If you paid in stages, run each stage with its own amount and dates, or use the figure on your HMRC statement.</p>
+    </section>
+
+    <section class="prose" id="related" aria-labelledby="rel-h">
+      <h2 id="rel-h">Related tools</h2>
+      <div class="related">
+        <a href="../late-payment-interest-calculator/">Late payment interest on a business invoice<span>A different rule: 8% plus base rate, fixed for the half year, plus £40, £70 or £100 compensation. Not HMRC interest.</span></a>
+        <a href="../self-assessment-payments-on-account-calculator/">Self Assessment payments on account<span>The 31 January and 31 July amounts, and what happens if you reduce them. HMRC can charge interest if you reduce them too far.</span></a>
+        <a href="../">All free UK money tools<span>Each one links to the GOV.UK rules it uses. Estimates, not advice.</span></a>
+      </div>
+    </section>
+
+    <footer class="page-foot">
+      <p>Free static utility · Rates checked against <a href="https://www.gov.uk/government/publications/rates-and-allowances-hmrc-interest-rates-for-late-and-early-payments/rates-and-allowances-hmrc-interest-rates" target="_blank" rel="noopener">GOV.UK</a> on <time datetime="2026-11-09">9 November 2026</time> · <a href="../">More tools</a> · Built by <a href="../../about/">Arthur Jones</a></p>
+      <p>This is an estimate, not legal, tax or financial advice. Check anything that matters with HMRC, GOV.UK or a qualified adviser.</p>
+    </footer>
+  </div>
+<footer class="ps-foot"><div class="ps-in"><nav aria-label="Site"><a href="../../about/">About</a><a href="../../privacy/">Privacy</a><a href="../../cookies/">Cookies</a><a href="../../terms/">Terms</a><a href="../../disclaimer/">Disclaimer</a></nav><p>Free UK calculators and spreadsheet templates. Estimates, not tax advice. Not affiliated with HMRC.</p><p>&copy; 2026 Arthur Jones</p></div></footer>
+  <script src="rates.js"></script>
+  <script src="hmrc-interest.js"></script>
+  <script src="app.js"></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "50becbbfccc84869ae6ea32a24a32453"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
