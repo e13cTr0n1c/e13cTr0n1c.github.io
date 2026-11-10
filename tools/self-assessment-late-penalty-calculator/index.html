@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Self Assessment late penalty calculator | Plain Sums</title>
+  <meta name="description" content="Estimate Self Assessment late filing penalties, late payment penalties and late payment interest. The 2025 to 2026 return is the default. An estimate, not tax advice.">
+  <link rel="canonical" href="https://e13ctr0n1c.github.io/tools/self-assessment-late-penalty-calculator/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f7f6f2">
+  <link rel="sitemap" type="application/xml" href="https://e13ctr0n1c.github.io/sitemap.xml">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Plain Sums">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://e13ctr0n1c.github.io/tools/self-assessment-late-penalty-calculator/">
+  <meta property="og:title" content="Self Assessment late penalty calculator | Plain Sums">
+  <meta property="og:description" content="Estimate Self Assessment late filing penalties, late payment penalties and late payment interest. The 2025 to 2026 return is the default. An estimate, not tax advice.">
+  <meta property="og:image" content="https://e13ctr0n1c.github.io/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Self Assessment late penalty calculator | Plain Sums">
+  <meta name="twitter:description" content="Estimate Self Assessment late filing penalties, late payment penalties and late payment interest. The 2025 to 2026 return is the default. An estimate, not tax advice.">
+  <meta name="twitter:image" content="https://e13ctr0n1c.github.io/og-image.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Self Assessment late penalty calculator",
+      "url": "https://e13ctr0n1c.github.io/tools/self-assessment-late-penalty-calculator/",
+      "description": "Estimate Self Assessment late filing penalties, late payment penalties and late payment interest. An estimate, not tax advice.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any (web browser)",
+      "browserRequirements": "Requires JavaScript",
+      "inLanguage": "en-GB",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+      "dateModified": "2026-11-10"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What do I pay if I file my Self Assessment return late?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An initial £100 penalty, then £10 a day after 3 months up to £900, then the greater of 5% of the tax and £300 after 6 months, and the same again after 12 months if the delay was not deliberate. The £100 is charged even if no tax is due."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do I pay if I pay my Self Assessment tax late?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "5% of the tax still unpaid at 30 days, again at 6 months and again at 12 months, plus late payment interest. For a 31 January 2027 bill those penalty dates are the end of 2 March 2027, 2 August 2027 and 2 February 2028."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Making Tax Digital change the penalties for a 2025 to 2026 return?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, not for a normal return. If you use Making Tax Digital for Income Tax from 6 April 2026, current penalties still apply to the 2025 to 2026 return due on 31 January 2027. The new points regime applies to that year only if you already volunteered or were in HMRC's test for 2025 to 2026."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I appeal a Self Assessment penalty?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. If you had a reasonable excuse, you can appeal and HMRC can cancel the penalty. An appeal has a time limit, usually 30 days from the penalty notice. This calculator does not decide whether an excuse is reasonable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is HMRC late payment interest worked out?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Simple interest for each day after the due date, up to and including the day you pay. The amount is the tax times the rate for that day, divided by 365. From 24 November 2026 the late payment rate is 8%. I use the same rate table as my HMRC interest calculator."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the 31 July payment on account get these penalties?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not on its own. HMRC charges these late payment penalties on the balancing payment. A payment on account that is still unpaid when the balancing payment is due is included in that figure. A payment on account due on 31 July can still attract interest."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f6f2;
+      --surface: #ffffff;
+      --surface-2: #f1efe9;
+      --border: #dcd8cf;
+      --field: #8a918c;
+      --field-bg: #ffffff;
+      --text: #1c2422;
+      --muted: #55605b;
+      --accent: #0f6b4f;
+      --accent-soft: #e3f0ea;
+      --success: #0f6b4f;
+      --warning: #8a5300;
+      --danger: #b3261e;
+      --radius: 10px;
+      --shadow: none;
+      --font: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0; min-height: 100vh; font-family: var(--font); background: var(--bg); color: var(--text);
+      line-height: 1.6; font-size: 16px; -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-underline-offset: 3px; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
+    header.page-head { margin-bottom: 1.75rem; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.04em; text-transform: uppercase; color: #6b4300; background: #fff4df;
+      border: 1px solid #e8c98f; padding: 0.35rem 0.7rem; border-radius: 999px; margin-bottom: 0.85rem;
+    }
+    h1 { font-size: clamp(1.55rem, 4vw, 2rem); font-weight: 700; letter-spacing: -0.02em; margin: 0 0 0.5rem; line-height: 1.2; }
+    .lede { margin: 0; color: var(--muted); font-size: 1.05rem; max-width: 40em; }
+    .crumbs { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.9rem; }
+    .crumbs a { color: var(--accent); text-decoration: none; }
+    .card, .prose {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1.35rem 1.25rem; margin-bottom: 1.25rem;
+    }
+    .card h2 { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text); margin: 0 0 1rem; }
+    .field { margin-bottom: 1.1rem; }
+    .field:last-child { margin-bottom: 0; }
+    label { display: block; font-weight: 500; font-size: 0.925rem; margin-bottom: 0.4rem; }
+    .hint { display: block; font-size: 0.8rem; color: var(--muted); font-weight: 400; margin-top: 0.25rem; }
+    .input-wrap { position: relative; display: flex; align-items: stretch; }
+    .prefix {
+      display: flex; align-items: center; padding: 0 0.75rem; background: var(--surface-2);
+      border: 1px solid var(--field); border-right: none; border-radius: 8px 0 0 8px; color: var(--muted); font-weight: 600;
+    }
+    input[type="number"], input[type="date"], select {
+      width: 100%; padding: 0.7rem 0.85rem; font: inherit; font-size: 16px; color: var(--text);
+      background: var(--field-bg); border: 1px solid var(--field); border-radius: 8px; outline: none;
+    }
+    input[type="date"] { font-family: var(--mono); color-scheme: light; }
+    .input-wrap input { border-radius: 0 8px 8px 0; }
+    input:focus, select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(15, 107, 79, 0.25); }
+    input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    input[type="number"] { -moz-appearance: textfield; }
+    input:disabled { background: var(--surface-2); color: var(--muted); }
+    .check { display: flex; align-items: flex-start; gap: 0.55rem; font-weight: 500; margin: 0 0 0.55rem; cursor: pointer; }
+    .check input { margin-top: 0.28rem; width: 1rem; height: 1rem; accent-color: var(--accent); }
+    .seg { display: grid; grid-template-columns: 1fr; gap: 0.6rem; }
+    @media (min-width: 560px) { .seg { grid-template-columns: 1fr 1fr; } }
+    .status-option { position: relative; }
+    .status-option input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+    .status-option label {
+      display: flex; flex-direction: column; gap: 0.15rem; padding: 0.85rem 0.9rem; background: var(--surface);
+      border: 1px solid var(--field); border-radius: 10px; cursor: pointer; margin: 0; min-height: 100%;
+    }
+    .status-option input:focus-visible + label { box-shadow: 0 0 0 3px rgba(15, 107, 79, 0.25); }
+    .status-option input:checked + label { border-color: var(--accent); background: var(--accent-soft); box-shadow: inset 0 0 0 1px var(--accent); }
+    .status-name { font-size: 0.95rem; font-weight: 600; }
+    .status-desc { font-size: 0.75rem; color: var(--muted); font-weight: 400; }
+    .results { border-color: var(--accent); }
+    .result-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+    .result-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .result-label { color: var(--muted); font-size: 0.9rem; }
+    .result-value { font-family: var(--mono); font-size: 1.05rem; font-weight: 500; text-align: right; }
+    .result-row.highlight { margin-top: 0.35rem; padding: 1rem; background: #fdecea; border: 1px solid var(--danger); border-radius: 10px; }
+    .result-row.highlight .result-label { color: var(--text); font-weight: 600; }
+    .result-row.highlight .result-value { font-size: 1.35rem; color: var(--danger); }
+    .disclaimer, .note, .answer { color: var(--text); }
+    .disclaimer {
+      background: #fff4df; border: 1px solid #e8c98f; border-radius: var(--radius); padding: 1rem 1.15rem;
+      font-size: 0.875rem; margin-bottom: 1.25rem;
+    }
+    .disclaimer strong { color: var(--warning); display: block; margin-bottom: 0.35rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .answer { margin: 1rem 0 0; padding: 0.9rem 1rem; background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; font-size: 0.95rem; }
+    .prose h2 { font-size: 1.2rem; margin: 0 0 0.75rem; letter-spacing: -0.01em; text-transform: none; }
+    .prose h3 { font-size: 1rem; margin: 1.25rem 0 0.35rem; }
+    .prose p, .prose li { color: var(--muted); }
+    .prose strong { color: var(--text); }
+    .prose ol, .prose ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+    .prose li { margin-bottom: 0.35rem; }
+    .prose .src, .src { font-size: 0.8rem; margin-top: 0.25rem; color: var(--muted); }
+    .table-wrap { overflow-x: auto; margin: 0.75rem 0; }
+    table.calc { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    table.calc th, table.calc td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    table.calc th { background: var(--surface-2); color: var(--text); font-weight: 600; }
+    table.calc td { color: var(--muted); }
+    table.calc td.num, table.calc th.num { text-align: right; font-family: var(--mono); white-space: nowrap; }
+    table.calc tr.total td { color: var(--text); font-weight: 600; }
+    .status { font-weight: 600; white-space: nowrap; }
+    .status.charged, .status.missed { color: var(--danger); }
+    .status.accruing { color: var(--warning); }
+    .status.avoided, .status.met { color: var(--accent); }
+    .status.upcoming { color: var(--muted); }
+    .headline { padding: 1.1rem 1rem; border-radius: 10px; margin-bottom: 0.75rem; text-align: center; }
+    .headline .h-label { display: block; font-size: 0.85rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+    .headline .h-value { display: block; font-family: var(--mono); font-size: 2rem; font-weight: 500; margin-top: 0.2rem; }
+    .headline .h-sub { display: block; font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem; }
+    .headline.owed { background: #fdecea; border: 1px solid var(--danger); }
+    .headline.owed .h-value { color: var(--danger); }
+    .note { margin-top: 0.75rem; padding: 0.75rem 0.9rem; border-radius: 8px; font-size: 0.85rem; background: var(--surface-2); border-left: 3px solid var(--warning); }
+    .note:empty, #out-msg:empty { display: none; }
+    .related { display: grid; gap: 0.75rem; }
+    @media (min-width: 560px) { .related { grid-template-columns: 1fr 1fr; } }
+    .related a { display: block; padding: 0.9rem 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; text-decoration: none; color: var(--text); }
+    .related a:hover { border-color: var(--accent); }
+    .related a span { display: block; font-size: 0.82rem; color: var(--muted); margin-top: 0.2rem; }
+    .page-foot { text-align: center; font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem; }
+    .page-foot a { color: var(--accent); }
+    [hidden] { display: none !important; }
+    @media (max-width: 559px) {
+      .result-row { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+      .result-value { text-align: left; }
+    }
+    ::selection { background: var(--accent); color: #fff; }
+  </style>
+  <link rel="stylesheet" href="../../assets/chrome.css">
+</head>
+<body>
+<header class="ps-top"><div class="ps-in"><a class="ps-brand" href="../../"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f6b4f"/><rect x="8" y="11" width="16" height="3.2" rx="1.2" fill="#fff"/><rect x="8" y="18" width="16" height="3.2" rx="1.2" fill="#fff"/></svg><span>Plain Sums</span></a><nav aria-label="Main"><a href="../../">Home</a><a href="../../tools/" aria-current="page">Tools</a><a href="../../templates/">Templates</a><a href="../../about/">About</a></nav></div></header>
+  <div class="wrap">
+    <p class="dx-label"><b>Self Assessment</b><span>Estimate, not tax advice</span></p>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">Plain Sums</a> › <a href="../">Tools</a> › Self Assessment late penalty calculator</nav>
+    <header class="page-head">
+      <div class="badge" role="status">Estimate only · Not tax advice</div>
+      <h1>What will a late Self Assessment return and a late payment cost me?</h1>
+      <p class="lede">Choose the tax year, whether you filed online or on paper, and the dates you filed and paid. I estimate the late filing penalties, the late payment penalties and the late payment interest, and I show when each one lands. Nothing you type leaves your browser.</p>
+      <p class="answer" id="quick-answer"><strong>Quick answer:</strong> for a 2025 to 2026 online return, file and pay by the end of <strong>31 January 2027</strong>. After that, filing starts at <strong>£100</strong>, then <strong>£10 a day</strong> from 1 May 2027 (up to £900), then the greater of 5% of the tax and £300 on 1 August 2027 and again on 1 February 2028. Paying late adds <strong>5%</strong> of the tax still unpaid at the end of 2 March 2027, 2 August 2027 and 2 February 2028, plus interest. A £3,750 bill filed on 16 June 2027 and paid on 3 March 2027 comes to <strong>£782.98</strong> on these rules. This is an estimate, not tax advice. Source: <a href="https://www.gov.uk/self-assessment-tax-returns/penalties" target="_blank" rel="noopener">GOV.UK: Self Assessment penalties</a>.</p>
+    </header>
+
+    <aside class="disclaimer" role="note">
+      <strong>An estimate, not tax advice</strong>
+      I follow the penalty rules HMRC publishes for income tax self assessment. I do not know your reasonable excuse, your Time to Pay arrangement, or what is on your statement. HMRC's figure is the one that counts. People who appeal with a reasonable excuse may have penalties cancelled. If a penalty looks wrong, appeal rather than treating this page as the bill.
+    </aside>
+
+    <form id="calc-form" novalidate>
+      <section class="card" aria-labelledby="s0">
+        <h2 id="s0">The tax year</h2>
+        <div class="field">
+          <label for="year">Tax year</label>
+          <select id="year" name="year" aria-describedby="year-hint"></select>
+          <span class="hint" id="year-hint">2025 to 2026 is the default. The online filing deadline for that year is 31 January 2027. The paper deadline is 31 October 2026. The tax is due on 31 January 2027 either way.</span>
+        </div>
+        <div class="seg" role="radiogroup" aria-label="How the return is filed">
+          <div class="status-option"><input type="radio" name="method" id="method-online" value="online" checked><label for="method-online"><span class="status-name">Online</span><span class="status-desc">Deadline 31 January after the tax year</span></label></div>
+          <div class="status-option"><input type="radio" name="method" id="method-paper" value="paper"><label for="method-paper"><span class="status-name">Paper</span><span class="status-desc">Deadline 31 October after the tax year</span></label></div>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="s1">
+        <h2 id="s1">1 · The return</h2>
+        <div class="field">
+          <label class="check" for="not-filed"><input type="checkbox" id="not-filed" name="not-filed"> I have not filed yet</label>
+          <label for="filed">Date you filed</label>
+          <input type="date" id="filed" name="filed" aria-describedby="filed-hint">
+          <span class="hint" id="filed-hint">The day HMRC received the return. Leave this on "not yet" if it is still outstanding.</span>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="s2">
+        <h2 id="s2">2 · The tax</h2>
+        <div class="field">
+          <label for="amount">Tax due on 31 January</label>
+          <div class="input-wrap"><span class="prefix" aria-hidden="true">£</span><input type="number" inputmode="decimal" id="amount" name="amount" min="0" step="0.01" placeholder="3750" autocomplete="off" aria-describedby="amount-hint"></div>
+          <span class="hint" id="amount-hint">The balancing payment. Include any payment on account for this year that was still unpaid on 31 January. Use 0 if nothing was due. Do not include a payment on account that is not due until 31 July.</span>
+        </div>
+        <div class="field">
+          <label for="liability">Net tax on the return, if it is different</label>
+          <div class="input-wrap"><span class="prefix" aria-hidden="true">£</span><input type="number" inputmode="decimal" id="liability" name="liability" min="0" step="0.01" placeholder="Same as the January bill" autocomplete="off" aria-describedby="liability-hint"></div>
+          <span class="hint" id="liability-hint">Optional. The 6 and 12 month filing penalties use the year's net tax, after tax taken off at source. They are not reduced by payments you have already made. Leave this blank and I will use the January figure.</span>
+        </div>
+        <div class="field">
+          <label class="check" for="not-paid"><input type="checkbox" id="not-paid" name="not-paid"> I have not paid yet</label>
+          <label for="paid">Date you paid the 31 January tax</label>
+          <input type="date" id="paid" name="paid" aria-describedby="paid-hint">
+          <span class="hint" id="paid-hint">The day HMRC treats the payment as received. I assume the whole amount was paid on this one day.</span>
+        </div>
+        <div class="field">
+          <label class="check" for="mtd"><input type="checkbox" id="mtd" name="mtd"> <span id="mtd-label">I volunteered for Making Tax Digital for Income Tax for this tax year, or I was in HMRC's test.</span></label>
+          <span class="hint" id="mtd-hint"></span>
+        </div>
+      </section>
+    </form>
+
+    <section class="card results" aria-live="polite" aria-atomic="true" id="results">
+      <h2>The estimate</h2>
+      <div class="headline owed" id="headline"><span class="h-label" id="h-label">Estimated total</span><span class="h-value" id="out-total">£0.00</span><span class="h-sub" id="out-sub"></span></div>
+      <p class="answer" id="out-next" hidden></p>
+      <p class="note" id="out-msg"></p>
+      <div id="out-body" hidden>
+        <div class="result-rows" id="out-rows">
+          <div class="result-row" id="row-filing"><span class="result-label">Late filing penalties</span><span class="result-value" id="out-filing"></span></div>
+          <div class="result-row" id="row-payment"><span class="result-label">Late payment penalties</span><span class="result-value" id="out-payment"></span></div>
+          <div class="result-row"><span class="result-label">Late payment interest</span><span class="result-value" id="out-interest"></span></div>
+          <div class="result-row"><span class="result-label">Days interest runs</span><span class="result-value" id="out-interest-days"></span></div>
+          <div class="result-row highlight"><span class="result-label">Total</span><span class="result-value" id="out-total-row"></span></div>
+        </div>
+        <div class="note" id="out-notes" hidden></div>
+        <div class="table-wrap" id="time-wrap">
+          <table class="calc">
+            <caption class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">When each penalty lands</caption>
+            <thead><tr><th scope="col">When</th><th scope="col">What</th><th scope="col" class="num">Amount</th><th scope="col">Where it stands</th></tr></thead>
+            <tbody id="time-body"></tbody>
+          </table>
+          <p class="src">Charged and building up are included in the total. Not yet is the penalty if that date arrives and you still have not filed or paid. Avoided is £0 in this estimate.</p>
+        </div>
+        <div class="table-wrap" id="period-wrap" hidden>
+          <table class="calc">
+            <caption class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Interest by rate period</caption>
+            <thead><tr><th scope="col">Interest period</th><th scope="col" class="num">Days</th><th scope="col" class="num">Rate</th><th scope="col" class="num">Interest</th></tr></thead>
+            <tbody id="period-body"></tbody>
+          </table>
+        </div>
+      </div>
+      <p class="note">This is an estimate, not tax advice. If you had a reasonable excuse you can appeal, and HMRC can cancel the penalty. <a href="https://www.gov.uk/guidance/check-when-to-appeal-a-self-assessment-penalty-for-late-filing-or-late-payment" target="_blank" rel="noopener">GOV.UK: appeal a Self Assessment penalty</a>.</p>
+    </section>
+
+    <section class="prose" id="how-it-works" aria-labelledby="how-h">
+      <h2 id="how-h">How I work it out</h2>
+      <ol>
+        <li><strong>Filing deadline.</strong> Online is 31 January after the tax year. Paper is 31 October. The penalty date is the next day. For 2025 to 2026 that is 1 February 2027 online, or 1 November 2026 on paper.</li>
+        <li><strong>£100</strong> if the return is not in by the filing deadline. It is charged even when no tax is due, and even when the tax was paid on time.</li>
+        <li><strong>£10 a day</strong> from 3 months after the penalty date, for up to 90 days, including the day the return arrives. Online, that run is 1 May to 29 July. The cap is £900.</li>
+        <li><strong>6 months and 12 months after the penalty date,</strong> the greater of 5% of the net tax on the return and £300. I assume the 12 month delay was not deliberate. If HMRC says you deliberately withheld information, that penalty can be 70% or 100% of the tax, and higher still if an offshore matter is involved. I do not estimate that.</li>
+        <li><strong>Late payment.</strong> 5% of the tax unpaid at the end of the day 30 days after 31 January, then 5 months after that first date, then 11 months after it. For 31 January 2027 those days are 2 March 2027, 2 August 2027 and 2 February 2028. In a leap year each of those dates is one day earlier.</li>
+        <li><strong>Interest</strong> on the tax, not on the penalties. I use the same day count and the same rate table as my <a href="../hmrc-late-payment-interest-calculator/">HMRC interest calculator</a>. The days are the gap between the due date and the payment date. Due on 31 January and paid on 1 February is 1 day. From 24 November 2026 the late payment rate in that table is 8%.</li>
+      </ol>
+      <h3>A worked check</h3>
+      <p>£3,750 due on 31 January 2027. The online return is filed on 16 June 2027 and the tax is paid on 3 March 2027.</p>
+      <ul>
+        <li>£100 on 1 February 2027.</li>
+        <li>£470 of daily penalties: 31 days in May plus 16 days in June, at £10.</li>
+        <li>No 6 month filing penalty, because the return is in before 1 August 2027.</li>
+        <li>£187.50 late payment penalty, because the tax was still unpaid at the end of 2 March 2027. Paying on 3 March is before 2 August, so the later payment penalties do not arise.</li>
+        <li>£25.48 interest: 31 days at 8%, from 1 February to 3 March.</li>
+      </ul>
+      <p>The total is £782.98. Filing by 31 July 2027 avoids the 6 month filing penalty. Paying by 2 March 2027 avoids the £187.50.</p>
+      <p class="src">Filing dates: <a href="https://www.gov.uk/hmrc-internal-manuals/compliance-handbook/ch62100" target="_blank" rel="noopener">CH62100</a>, <a href="https://www.gov.uk/hmrc-internal-manuals/compliance-handbook/ch62140" target="_blank" rel="noopener">CH62140</a>, <a href="https://www.gov.uk/hmrc-internal-manuals/self-assessment-manual/sam61230" target="_blank" rel="noopener">SAM61230</a>. Payment dates: <a href="https://www.gov.uk/hmrc-internal-manuals/self-assessment-legal-framework/salf308a" target="_blank" rel="noopener">SALF308A</a>, <a href="https://www.gov.uk/hmrc-internal-manuals/self-assessment-manual/sam61390" target="_blank" rel="noopener">SAM61390</a>. Interest days: <a href="https://www.gov.uk/hmrc-internal-manuals/compliance-handbook/ch140220" target="_blank" rel="noopener">CH140220</a>.</p>
+    </section>
+
+    <section class="prose" id="rules" aria-labelledby="rules-h">
+      <h2 id="rules-h">The figures I use</h2>
+      <ul>
+        <li><strong>Deadlines for 2025 to 2026.</strong> Paper return by the end of 31 October 2026. Online return by the end of 31 January 2027. Tax by the end of 31 January 2027. There is a second payment deadline of 31 July if you make payments on account. <a href="https://www.gov.uk/self-assessment-tax-returns/deadlines" target="_blank" rel="noopener">GOV.UK: deadlines</a>.</li>
+        <li><strong>Late filing.</strong> £100, then £10 a day up to £900, then 5% or £300 (whichever is greater) at 6 months and again at 12 months. <a href="https://www.gov.uk/self-assessment-tax-returns/penalties" target="_blank" rel="noopener">GOV.UK: penalties</a> and <a href="https://www.gov.uk/hmrc-internal-manuals/compliance-handbook/ch62080" target="_blank" rel="noopener">CH62080</a>.</li>
+        <li><strong>The 5% filing penalties use the net tax on the return,</strong> after tax deducted at source. They are not reduced by tax you have already paid. <a href="https://www.gov.uk/hmrc-internal-manuals/compliance-handbook/ch62140" target="_blank" rel="noopener">CH62140</a>.</li>
+        <li><strong>Late payment.</strong> 5% of the tax unpaid at 30 days, 6 months and 12 months. The manual's trigger is the end of the day 30 days after the due date, then 5 months and 11 months later. <a href="https://www.gov.uk/hmrc-internal-manuals/self-assessment-manual/sam61250" target="_blank" rel="noopener">SAM61250</a> and <a href="https://www.gov.uk/hmrc-internal-manuals/self-assessment-manual/sam61390" target="_blank" rel="noopener">SAM61390</a>.</li>
+        <li><strong>What the late payment penalty covers.</strong> The balancing payment, including any payment on account still unpaid on that date. Income tax, capital gains tax, student loan repayments and Class 4 National Insurance. Class 2 National Insurance is part of that balancing payment from the 2015 to 2016 tax year. Penalties are not charged on the 31 July payment on account on its own. <a href="https://www.gov.uk/hmrc-internal-manuals/self-assessment-legal-framework/salf308a" target="_blank" rel="noopener">SALF308A</a>.</li>
+        <li><strong>Interest rate.</strong> I do not keep a second copy of the rates. I read <a href="../hmrc-late-payment-interest-calculator/rates.js">the shared HMRC rate table</a>. Late payment interest is 8% from 24 November 2026. <a href="https://www.gov.uk/government/publications/rates-and-allowances-hmrc-interest-rates-for-late-and-early-payments/rates-and-allowances-hmrc-interest-rates" target="_blank" rel="noopener">GOV.UK: HMRC interest rates</a>.</li>
+        <li><strong>You can cross check HMRC's own estimator.</strong> It will not match this page if you have paid part of the bill, because I assume one payment of the whole January amount. <a href="https://www.gov.uk/estimate-self-assessment-penalties" target="_blank" rel="noopener">GOV.UK: estimate your penalty</a>.</li>
+      </ul>
+      <h3>What I am not sure about</h3>
+      <ul>
+        <li><strong>Rounding.</strong> I round each 5% penalty to the nearest penny. I have not found an HMRC page that says how they round a split penny. Your statement may differ by a penny.</li>
+        <li><strong>Student loans and the filing percentage.</strong> The filing manual calls the 6 and 12 month figure a liability to tax. SALF308A does include student loan repayments in the late payment penalty. I have not found a sentence that clearly adds a student loan to the 6 and 12 month filing penalty. If your return has a student loan, check the penalty notice before relying on that 5%.</li>
+        <li><strong>One sentence in SAM61230</strong> says that if the return is filed during the 90 days, the daily penalty will not be charged. The worked examples on that same page charge £10 for each day up to and including the day the return is received, and <a href="https://www.gov.uk/hmrc-internal-manuals/compliance-handbook/ch63520" target="_blank" rel="noopener">CH63520</a> says the same. I follow the examples. If HMRC's notice uses the other reading, the daily total would be lower.</li>
+        <li><strong>Interest on the penalties themselves</strong> runs from 30 days after the penalty notice. I do not know when HMRC will issue the notice, so I do not add that interest.</li>
+      </ul>
+      <p class="src">Also the statute: <a href="https://www.legislation.gov.uk/ukpga/2009/10/schedule/55" target="_blank" rel="noopener">Finance Act 2009 Schedule 55</a> (late filing) and <a href="https://www.legislation.gov.uk/ukpga/2009/10/schedule/56" target="_blank" rel="noopener">Schedule 56</a> (late payment). Checked on <time datetime="2026-11-10">10 November 2026</time>.</p>
+    </section>
+
+    <section class="prose" id="mtd" aria-labelledby="mtd-h">
+      <h2 id="mtd-h">Making Tax Digital and the 2025 to 2026 return</h2>
+      <p>The new penalty points regime does <strong>not</strong> replace these penalties for a normal 2025 to 2026 return. GOV.UK's own example says that if you use Making Tax Digital for Income Tax from 6 April 2026, the current penalties still apply to the 2025 to 2026 return due on 31 January 2027.</p>
+      <p>The new penalties apply to 2025 to 2026 only if you were already in Making Tax Digital for that year: you volunteered, or you were in HMRC's test, and you agreed to the new penalties. Tick the box on the form if that is you. I then stop adding up the old penalties, because they would be the wrong bill. Late payment interest does not change.</p>
+      <p>I do not estimate the new regime. It depends on penalty points already on your account, on whether this is your first year of the new late payment rules, and on how much is unpaid at day 15 and day 30. The published shape, which you should read rather than take from me, is:</p>
+      <ul>
+        <li><strong>Volunteers.</strong> One point for a late tax return. A £200 penalty at 2 points, and £200 each time you miss another return while you are at that threshold. Quarterly updates are not penalised while you are volunteering. Late payment in your first year has 30 days to pay or to agree a plan before penalties start. The 2025 to 2026 late payment table is on the volunteer page. <a href="https://www.gov.uk/guidance/penalties-for-income-tax-self-assessment-volunteers" target="_blank" rel="noopener">GOV.UK: penalties for volunteers</a>.</li>
+        <li><strong>People who have to use it.</strong> The new penalties start from the tax year you join. Someone who has to use Making Tax Digital from April 2026 is on the new penalties for 2026 to 2027, not for 2025 to 2026. The points threshold is 4. There are no penalty points for a late quarterly update in 2026 to 2027. <a href="https://www.gov.uk/guidance/penalties-for-making-tax-digital-for-income-tax" target="_blank" rel="noopener">GOV.UK: penalties for Making Tax Digital for Income Tax</a>.</li>
+        <li><strong>From April 2027,</strong> GOV.UK says the new penalties apply to everyone who sends a personal Self Assessment return. This calculator does not cover the 2027 to 2028 tax year.</li>
+      </ul>
+      <p>Partnership returns, trust and estate returns, and returns for a company that is not UK resident stay on the current penalties even when Making Tax Digital applies to a personal return. I do not calculate those returns either.</p>
+    </section>
+
+    <section class="prose" id="appeal" aria-labelledby="appeal-h">
+      <h2 id="appeal-h">If you disagree with a penalty</h2>
+      <p>A reasonable excuse can get a penalty cancelled. HMRC, or the tribunal if you appeal further, has to accept the excuse. Being short of money is not a reasonable excuse unless something outside your control caused it. Relying on someone else is not a reasonable excuse unless you took reasonable care. Once the excuse ends, you need to file or pay without unreasonable delay.</p>
+      <p>Appeal within the time limit on the notice, usually 30 days. You can ask HMRC to cancel a penalty if you did not need to send a return at all. A Time to Pay arrangement agreed on or before a late payment trigger date can stop the late payment penalties that would have arisen during the arrangement, if you keep to it. Interest usually still runs. I do not try to model either of those.</p>
+      <p class="src"><a href="https://www.gov.uk/self-assessment-tax-returns/penalties" target="_blank" rel="noopener">GOV.UK: penalties, including reasonable excuse</a> · <a href="https://www.gov.uk/guidance/check-when-to-appeal-a-self-assessment-penalty-for-late-filing-or-late-payment" target="_blank" rel="noopener">GOV.UK: check when to appeal</a> · <a href="https://www.gov.uk/hmrc-internal-manuals/self-assessment-legal-framework/salf308a" target="_blank" rel="noopener">SALF308A: reasonable excuse and Time to Pay</a> · <a href="https://www.gov.uk/difficulties-paying-hmrc" target="_blank" rel="noopener">GOV.UK: if you cannot pay your tax bill</a>.</p>
+    </section>
+
+    <section class="prose" id="faq" aria-labelledby="faq-h">
+      <h2 id="faq-h">Questions I get asked</h2>
+      <h3>What do I pay if I file late?</h3>
+      <p>£100 straight away, then £10 a day after 3 months up to £900, then the greater of 5% of the tax and £300 after 6 months, and the same again after 12 months if the delay was not deliberate. The £100 applies even if you owe nothing.</p>
+      <p class="src"><a href="https://www.gov.uk/self-assessment-tax-returns/penalties" target="_blank" rel="noopener">GOV.UK: penalties</a></p>
+      <h3>What do I pay if I pay late?</h3>
+      <p>5% of whatever is still unpaid at 30 days, 6 months and 12 months, plus interest. For tax due on 31 January 2027, pay by the end of 2 March 2027 to avoid the first 5%.</p>
+      <p class="src"><a href="https://www.gov.uk/hmrc-internal-manuals/self-assessment-manual/sam61390" target="_blank" rel="noopener">SAM61390</a></p>
+      <h3>Does Making Tax Digital change 2025 to 2026?</h3>
+      <p>Not for a normal return. Joining from April 2026 leaves the 2025 to 2026 return on these penalties. The points regime applies to that year only if you already volunteered or were in the test. See the section above.</p>
+      <h3>Can I appeal?</h3>
+      <p>Yes. If you had a reasonable excuse, ask HMRC to cancel the penalty. I cannot tell you whether your excuse will be accepted. The appeal usually has to be in within 30 days of the notice.</p>
+      <p class="src"><a href="https://www.gov.uk/guidance/check-when-to-appeal-a-self-assessment-penalty-for-late-filing-or-late-payment" target="_blank" rel="noopener">GOV.UK: appeal a penalty</a></p>
+      <h3>How is the interest worked out?</h3>
+      <p>Each day after the due date, up to and including the day you pay, at the rate in force that day, divided by 365. From 24 November 2026 that rate is 8%. I use the shared rate table, not a copy.</p>
+      <p class="src"><a href="https://www.gov.uk/government/publications/rates-and-allowances-hmrc-interest-rates-for-late-and-early-payments/rates-and-allowances-hmrc-interest-rates" target="_blank" rel="noopener">GOV.UK: HMRC interest rates</a></p>
+      <h3>What about the 31 July payment on account?</h3>
+      <p>These 5% penalties are not charged on a 31 July payment on account on its own. Interest can still be charged if you pay it late. Any part of a payment on account that is still unpaid when the balancing payment is due is included in the January figure, and the penalties can then apply to it. My <a href="../self-assessment-payments-on-account-calculator/">payments on account calculator</a> works out the January and July amounts.</p>
+      <p class="src"><a href="https://www.gov.uk/hmrc-internal-manuals/self-assessment-manual/sam61250" target="_blank" rel="noopener">SAM61250</a></p>
+    </section>
+
+    <section class="prose" id="left-out" aria-labelledby="left-h">
+      <h2 id="left-h">What this estimate leaves out</h2>
+      <ul>
+        <li>A return that HMRC issued late. The filing deadline can then be 3 months from the date on their letter, while the tax can still be due on 31 January. <a href="https://www.gov.uk/self-assessment-tax-returns/deadlines" target="_blank" rel="noopener">GOV.UK: deadlines</a>.</li>
+        <li>A failure to notify penalty, if you register after 5 October and do not pay everything by 31 January. <a href="https://www.gov.uk/self-assessment-tax-returns/penalties" target="_blank" rel="noopener">GOV.UK: penalties</a>.</li>
+        <li>Partnership returns. Every partner can be charged if the partnership return is late.</li>
+        <li>Amendments, determinations and discovery assessments. Extra tax from an amendment can have a later payment date.</li>
+        <li>Part payments on different days. I use one amount and one payment date. If you paid in stages, the later penalties should be on whatever was still unpaid, which may be less than I show.</li>
+        <li>Interest on the penalties, Time to Pay, and special reduction. HMRC can also reduce a penalty in special circumstances. Shortage of money is not, on its own, a special circumstance.</li>
+      </ul>
+    </section>
+
+    <section class="prose" id="related" aria-labelledby="rel-h">
+      <h2 id="rel-h">Related tools</h2>
+      <div class="related">
+        <a href="../hmrc-late-payment-interest-calculator/">HMRC late payment interest calculator<span>The day by day interest, including 8% from 24 November 2026. This page uses that same rate table.</span></a>
+        <a href="../self-assessment-payments-on-account-calculator/">Self Assessment payments on account<span>The 31 January and 31 July amounts. A July payment is not given these 5% penalties on its own.</span></a>
+        <a href="../self-assessment-timely-payments-planner/">Timely payments planner<span>How the move to in year payments from April 2029 changes the dates you pay.</span></a>
+        <a href="../">All free UK money tools<span>Each one links to the GOV.UK rules it uses. Estimates, not advice.</span></a>
+      </div>
+    </section>
+
+    <footer class="page-foot">
+      <p>Free static utility · Sources: <a href="https://www.gov.uk/self-assessment-tax-returns/penalties" target="_blank" rel="noopener">GOV.UK penalties</a>, <a href="https://www.gov.uk/self-assessment-tax-returns/deadlines" target="_blank" rel="noopener">GOV.UK deadlines</a>, HMRC manuals cited above · Checked on <time datetime="2026-11-10">10 November 2026</time> · <a href="../">More tools</a> · Built by <a href="../../about/">Arthur Jones</a></p>
+      <p>This is an estimate, not legal, tax or financial advice. Check anything that matters with HMRC, GOV.UK or a qualified adviser.</p>
+    </footer>
+  </div>
+<footer class="ps-foot"><div class="ps-in"><nav aria-label="Site"><a href="../../about/">About</a><a href="../../privacy/">Privacy</a><a href="../../cookies/">Cookies</a><a href="../../terms/">Terms</a><a href="../../disclaimer/">Disclaimer</a></nav><p>Free UK calculators and spreadsheet templates. Estimates, not tax advice. Not affiliated with HMRC.</p><p>&copy; 2026 Arthur Jones</p></div></footer>
+  <script src="../hmrc-late-payment-interest-calculator/rates.js"></script>
+  <script src="../hmrc-late-payment-interest-calculator/hmrc-interest.js"></script>
+  <script src="penalties.js"></script>
+  <script src="app.js"></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "50becbbfccc84869ae6ea32a24a32453"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
