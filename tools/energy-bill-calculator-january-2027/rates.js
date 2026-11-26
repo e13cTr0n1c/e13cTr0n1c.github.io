@@ -1,29 +1,21 @@
 /* Energy price cap rates for the January 2027 bill calculator.
-   This is the only file to edit when Ofgem publishes the January cap.
-
-   On 25 November 2026, edit the object ENERGY_CAP_RATES.next in this file:
-     1. Set status to "official".
-     2. Fill rates in the same shape as current.rates (pence per day and
-        pence per kWh, for each payment method and region, including gb).
-        Use the VAT treatment Ofgem publishes. Gas currently includes VAT
-        at 5%. Electricity has no VAT from 1 October 2026 to 31 March 2027.
-     3. Leave forecast in place as a record. The calculator ignores it
-        once status is "official" and rates is filled in.
-   The page banner reads next.status and switches from FORECAST to official.
-
-   Last checked 24 November 2026.
+   ENERGY_CAP_RATES.next holds Ofgem's official cap for 1 January to
+   31 March 2027, published 25 November 2026. status is "official".
+   Gas includes VAT at 5%. Electricity has no VAT from 1 October 2026
+   to 30 June 2027.
+   Last checked 26 November 2026.
 */
 (function (root) {
   "use strict";
 
   var ENERGY_CAP_RATES = {
-  lastChecked: "2026-11-24",
+  lastChecked: "2026-11-26",
   daysInYear: 365,
   vat: {
     electricityPercent: 0,
     gasPercent: 5,
-    electricityVatUntil: "2027-03-31",
-    note: "Gas rates include VAT at 5%. Electricity has no VAT from 1 October 2026 to 31 March 2027. The pence rates below already include that VAT treatment, so the calculator does not add VAT on top."
+    electricityVatUntil: "2027-06-30",
+    note: "Gas rates include VAT at 5%. Electricity has no VAT from 1 October 2026 to 30 June 2027. The pence rates below already include that VAT treatment, so the calculator does not add VAT on top."
   },
   tdcv: {
     from: "2026-07-01",
@@ -131,41 +123,79 @@
 
   },
 
-  /* January to March 2027. status is "forecast" until Ofgem's figures are pasted in. */
+  /* January to March 2027. Official Ofgem cap, published 25 November 2026. */
   next: {
-    status: "forecast",
+    status: "official",
     label: "1 January to 31 March 2027",
     period: { from: "2027-01-01", to: "2027-03-31" },
-    announcementDate: "2026-11-25",
-    announcementSourceUrl: "https://www.ofgem.gov.uk/news/changes-energy-price-cap-between-1-october-and-31-december-2026",
-    /* Paste official rates here on 25 November 2026. null means "use the forecast scale". */
-    rates: null,
-    forecast: {
-      published: "2026-11-18",
-      sourceName: "Cornwall Insight",
-      sourceTitle: "Cornwall Insight, Energy bills set for steep rise in January, 18 November 2026",
-      sourceUrl: "https://www.cornwall-insight.com/press-releases/energy-bills-set-for-steep-rise-in-january/",
-      confirmSourceTitle: "Selectra, Energy bills are forecast to jump in January, 18 November 2026",
-      confirmSourceUrl: "https://selectra.co.uk/energy/news/energy-price-cap-january-2027-cornwall-forecast",
-      /* Headline figures as published. 443 / 1723 is 25.7%, which they call 26%. */
-      reportedRisePercent: 26,
-      currentHeadlinePounds: 1723,
-      typicalDualFuelDirectDebitPounds: 2166,
-      increaseOnHeadlinePounds: 443,
-      tableTotalPounds: 2165.89,
-      /* Standing charges in the press table are rounded to the nearest penny.
-         The yearly fuel costs imply 55.78p and 31.04p a day. The calculator
-         uses those implied daily rates so the typical Direct Debit bill
-         matches the £1,017.09 and £1,148.80 in the table. */
-      basis: {
-        payment: "directDebit",
-        region: "gb",
-        electricityKwh: 2500,
-        gasKwh: 9500,
-        electricity: { unitPence: 32.54, annualPounds: 1017.09, standingPoundsPerDayDisplayed: 0.56 },
-        gas: { unitPence: 10.90, annualPounds: 1148.80, standingPoundsPerDayDisplayed: 0.31 }
+    published: "2026-11-25",
+    nextAnnouncementDate: "2027-02-23",
+    nextPeriodLabel: "1 April to 30 June 2027",
+    /* Ofgem rounds these typical dual fuel bills to the nearest pound. */
+    headlinePounds: { directDebit: 2166, standardCredit: 2328, prepayment: 2108 },
+    sourceTitle: "Ofgem, Energy price cap unit rates and standing charges, 1 January to 31 March 2027",
+    sourceUrl: "https://www.ofgem.gov.uk/your-energy-supply/your-energy-bill/energy-price-cap-unit-rates-and-standing-charges",
+    newsTitle: "Ofgem, Changes to the energy price cap between 1 January and 31 March 2027, 25 November 2026",
+    newsUrl: "https://www.ofgem.gov.uk/news/changes-energy-price-cap-between-1-january-and-31-march-2027",
+    tablesTitle: "Ofgem, Benchmark maximum charges for charge restriction period 17b, 25 November 2026",
+    tablesUrl: "https://www.ofgem.gov.uk/sites/default/files/2026-11/energy-price-cap-levels-1-January-to-31-March-2027.pdf",
+    summaryTitle: "Ofgem, Summary of changes to the energy price cap, 1 January to 31 March 2027",
+    summaryUrl: "https://www.ofgem.gov.uk/sites/default/files/2026-11/summary-of-changes-to-energy-price-cap-1-January-to-31-March-2027.pdf",
+    /* gb is the average Ofgem publishes. Regional pence rates match Ofgem's
+       consumer tables and the cap tables PDF with 5% VAT on gas and no VAT
+       on electricity. */
+    rates: {
+      directDebit: {
+        gb: { electricityStandingPence: 54.77, electricityUnitPence: 32.69, gasStandingPence: 29.65, gasUnitPence: 10.96 },
+        northWest: { electricityStandingPence: 45.62, electricityUnitPence: 32.85, gasStandingPence: 29.78, gasUnitPence: 10.85 },
+        northEast: { electricityStandingPence: 61.51, electricityUnitPence: 31.69, gasStandingPence: 29.77, gasUnitPence: 10.92 },
+        yorkshire: { electricityStandingPence: 61.59, electricityUnitPence: 32.11, gasStandingPence: 29.73, gasUnitPence: 10.89 },
+        northernScotland: { electricityStandingPence: 55.07, electricityUnitPence: 32.40, gasStandingPence: 29.84, gasUnitPence: 10.86 },
+        southern: { electricityStandingPence: 47.74, electricityUnitPence: 32.78, gasStandingPence: 29.10, gasUnitPence: 11.16 },
+        southernScotland: { electricityStandingPence: 61.33, electricityUnitPence: 32.57, gasStandingPence: 29.86, gasUnitPence: 10.86 },
+        merseysideNorthWales: { electricityStandingPence: 67.59, electricityUnitPence: 34.44, gasStandingPence: 30.06, gasUnitPence: 10.90 },
+        london: { electricityStandingPence: 42.88, electricityUnitPence: 33.08, gasStandingPence: 30.19, gasUnitPence: 11.14 },
+        southEast: { electricityStandingPence: 52.25, electricityUnitPence: 33.29, gasStandingPence: 29.21, gasUnitPence: 11.04 },
+        eastern: { electricityStandingPence: 51.76, electricityUnitPence: 33.05, gasStandingPence: 29.28, gasUnitPence: 10.90 },
+        eastMidlands: { electricityStandingPence: 51.38, electricityUnitPence: 31.65, gasStandingPence: 29.37, gasUnitPence: 10.81 },
+        westMidlands: { electricityStandingPence: 57.16, electricityUnitPence: 32.00, gasStandingPence: 29.68, gasUnitPence: 10.89 },
+        southWest: { electricityStandingPence: 55.51, electricityUnitPence: 32.86, gasStandingPence: 29.26, gasUnitPence: 11.11 },
+        southWales: { electricityStandingPence: 55.35, electricityUnitPence: 32.92, gasStandingPence: 29.94, gasUnitPence: 11.08 }
       },
-      method: "Scale each current unit rate and standing charge by the ratio of Cornwall Insight's Great Britain average Direct Debit forecast to Ofgem's current Great Britain average Direct Debit rate. Electricity and gas are scaled separately, and the unit rate is scaled separately from the standing charge. The same scales are applied to every region and payment method, because the forecast was published only for the Direct Debit average. Standing charges use the daily rate implied by the published yearly fuel cost."
+      standardCredit: {
+        gb: { electricityStandingPence: 63.37, electricityUnitPence: 34.52, gasStandingPence: 37.38, gasUnitPence: 11.55 },
+        northWest: { electricityStandingPence: 53.62, electricityUnitPence: 34.68, gasStandingPence: 37.38, gasUnitPence: 11.44 },
+        northEast: { electricityStandingPence: 70.48, electricityUnitPence: 33.46, gasStandingPence: 37.38, gasUnitPence: 11.50 },
+        yorkshire: { electricityStandingPence: 70.54, electricityUnitPence: 33.90, gasStandingPence: 37.38, gasUnitPence: 11.47 },
+        northernScotland: { electricityStandingPence: 63.55, electricityUnitPence: 34.21, gasStandingPence: 37.38, gasUnitPence: 11.45 },
+        southern: { electricityStandingPence: 56.30, electricityUnitPence: 34.61, gasStandingPence: 37.37, gasUnitPence: 11.76 },
+        southernScotland: { electricityStandingPence: 70.06, electricityUnitPence: 34.39, gasStandingPence: 37.38, gasUnitPence: 11.45 },
+        merseysideNorthWales: { electricityStandingPence: 76.60, electricityUnitPence: 36.36, gasStandingPence: 37.38, gasUnitPence: 11.48 },
+        london: { electricityStandingPence: 50.40, electricityUnitPence: 34.92, gasStandingPence: 37.37, gasUnitPence: 11.74 },
+        southEast: { electricityStandingPence: 61.07, electricityUnitPence: 35.15, gasStandingPence: 37.37, gasUnitPence: 11.63 },
+        eastern: { electricityStandingPence: 60.50, electricityUnitPence: 34.90, gasStandingPence: 37.38, gasUnitPence: 11.49 },
+        eastMidlands: { electricityStandingPence: 59.92, electricityUnitPence: 33.42, gasStandingPence: 37.38, gasUnitPence: 11.40 },
+        westMidlands: { electricityStandingPence: 65.87, electricityUnitPence: 33.78, gasStandingPence: 37.38, gasUnitPence: 11.48 },
+        southWest: { electricityStandingPence: 64.43, electricityUnitPence: 34.69, gasStandingPence: 37.37, gasUnitPence: 11.70 },
+        southWales: { electricityStandingPence: 63.81, electricityUnitPence: 34.76, gasStandingPence: 37.37, gasUnitPence: 11.67 }
+      },
+      prepayment: {
+        gb: { electricityStandingPence: 54.77, electricityUnitPence: 31.70, gasStandingPence: 29.65, gasUnitPence: 10.60 },
+        northWest: { electricityStandingPence: 45.62, electricityUnitPence: 31.85, gasStandingPence: 29.78, gasUnitPence: 10.49 },
+        northEast: { electricityStandingPence: 61.51, electricityUnitPence: 30.72, gasStandingPence: 29.77, gasUnitPence: 10.57 },
+        yorkshire: { electricityStandingPence: 61.59, electricityUnitPence: 31.13, gasStandingPence: 29.73, gasUnitPence: 10.52 },
+        northernScotland: { electricityStandingPence: 55.07, electricityUnitPence: 31.41, gasStandingPence: 29.84, gasUnitPence: 10.48 },
+        southern: { electricityStandingPence: 47.74, electricityUnitPence: 31.78, gasStandingPence: 29.10, gasUnitPence: 10.84 },
+        southernScotland: { electricityStandingPence: 61.33, electricityUnitPence: 31.58, gasStandingPence: 29.86, gasUnitPence: 10.48 },
+        merseysideNorthWales: { electricityStandingPence: 67.59, electricityUnitPence: 33.39, gasStandingPence: 30.06, gasUnitPence: 10.53 },
+        london: { electricityStandingPence: 42.88, electricityUnitPence: 32.07, gasStandingPence: 30.19, gasUnitPence: 10.80 },
+        southEast: { electricityStandingPence: 52.25, electricityUnitPence: 32.28, gasStandingPence: 29.21, gasUnitPence: 10.69 },
+        eastern: { electricityStandingPence: 51.76, electricityUnitPence: 32.05, gasStandingPence: 29.28, gasUnitPence: 10.58 },
+        eastMidlands: { electricityStandingPence: 51.38, electricityUnitPence: 30.69, gasStandingPence: 29.37, gasUnitPence: 10.44 },
+        westMidlands: { electricityStandingPence: 57.16, electricityUnitPence: 31.02, gasStandingPence: 29.68, gasUnitPence: 10.54 },
+        southWest: { electricityStandingPence: 55.51, electricityUnitPence: 31.86, gasStandingPence: 29.26, gasUnitPence: 10.79 },
+        southWales: { electricityStandingPence: 55.35, electricityUnitPence: 31.92, gasStandingPence: 29.94, gasUnitPence: 10.70 }
+      }
     }
   }
 };

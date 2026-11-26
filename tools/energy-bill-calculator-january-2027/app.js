@@ -80,7 +80,7 @@
     if (R.next.status === "official") {
       banner.className = "banner official";
       kicker.textContent = "Official cap";
-      text.textContent = "The January to March 2027 figures are Ofgem's published cap. Last checked " + checkedLabel() + ".";
+      text.textContent = "These are Ofgem's unit rates and standing charges for 1 January to 31 March 2027. Last checked " + checkedLabel() + ".";
       if (tag) tag.textContent = "Official cap";
     } else {
       banner.className = "banner forecast";
