@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://e13ctr0n1c.github.io/</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://e13ctr0n1c.github.io/tools/</loc><lastmod>2026-11-16</lastmod></url>
+  <url><loc>https://e13ctr0n1c.github.io/tools/</loc><lastmod>2026-11-28</lastmod></url>
   <url><loc>https://e13ctr0n1c.github.io/budget-2026/</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://e13ctr0n1c.github.io/tools/cis-refund-estimator/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://e13ctr0n1c.github.io/tools/cis-deduction-calculator/</loc><lastmod>2026-10-09</lastmod></url>
@@ -11,7 +11,7 @@
   <url><loc>https://e13ctr0n1c.github.io/tools/gift-iht-taper-checker/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://e13ctr0n1c.github.io/tools/vat-threshold-checker/</loc><lastmod>2026-10-09</lastmod></url>
   <url><loc>https://e13ctr0n1c.github.io/tools/budget-2026-pay-calculator/</loc><lastmod>2026-11-02</lastmod></url>
-  <url><loc>https://e13ctr0n1c.github.io/tools/is-this-hmrc-message-real/</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://e13ctr0n1c.github.io/tools/is-this-hmrc-message-real/</loc><lastmod>2026-11-28</lastmod></url>
   <url><loc>https://e13ctr0n1c.github.io/tools/child-benefit-charge-calculator/</loc><lastmod>2026-11-03</lastmod></url>
   <url><loc>https://e13ctr0n1c.github.io/tools/state-pension-benefits-increase-april-2027/</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://e13ctr0n1c.github.io/tools/minimum-wage-rise-calculator/</loc><lastmod>2026-11-02</lastmod></url>
@@ -33,9 +33,10 @@
   <url><loc>https://e13ctr0n1c.github.io/tools/state-pension-tax-calculator/</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://e13ctr0n1c.github.io/tools/mileage-allowance-tax-relief-calculator/</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://e13ctr0n1c.github.io/tools/working-from-home-tax-relief-checker/</loc><lastmod>2026-11-16</lastmod></url>
-  <url><loc>https://e13ctr0n1c.github.io/tools/gas-standing-charge-calculator/</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://e13ctr0n1c.github.io/tools/gas-standing-charge-calculator/</loc><lastmod>2026-11-28</lastmod></url>
+  <url><loc>https://e13ctr0n1c.github.io/tools/watersure-eligibility-checker/</loc><lastmod>2026-11-28</lastmod></url>
   <url><loc>https://e13ctr0n1c.github.io/tools/savings-interest-tax-calculator/</loc><lastmod>2026-11-02</lastmod></url>
-  <url><loc>https://e13ctr0n1c.github.io/tools/household-energy-payment-checker/</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://e13ctr0n1c.github.io/tools/household-energy-payment-checker/</loc><lastmod>2026-11-28</lastmod></url>
   <url><loc>https://e13ctr0n1c.github.io/tools/first-time-buyer-isa-vs-lifetime-isa/</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://e13ctr0n1c.github.io/tools/landlord-property-income-tax-calculator/</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://e13ctr0n1c.github.io/tools/self-assessment-timely-payments-planner/</loc><lastmod>2026-11-02</lastmod></url>
